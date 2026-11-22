@@ -1,0 +1,44 @@
+---
+layout: null
+permalink: /stats/
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Stats — Karun Pacholi</title>
+<meta name="description" content="Open-source stats for Karun Pacholi.">
+<meta property="og:title" content="Stats — Karun Pacholi">
+<meta property="og:description" content="Open-source stats for Karun Pacholi.">
+<meta property="og:image" content="https://kpj2006.github.io/me/assets/karun-lake.jpg">
+<link rel="icon" href="/me/assets/avatar.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/me/assets/style.css">
+<script>try{document.documentElement.dataset.theme=localStorage.getItem('theme')||(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light')}catch(e){}</script>
+</head>
+<body>
+<header id="hdr"></header>
+<main class="wrap">
+<section class="pagehead"><h1>Stats</h1><p>Numbers from my open-source work, pulled from GitHub data that CI refreshes every Monday.</p></section>
+<div class="stats"><div class="stat"><div class="n" data-pr="prs">—</div><div class="l">merged PRs (other orgs)</div></div><div class="stat"><div class="n" data-pr="repos">—</div><div class="l">repositories</div></div><div class="stat"><div class="n" data-pr="orgs">—</div><div class="l">organizations</div></div><div class="stat"><div class="n" id="gh-repos">—</div><div class="l">public repos on GitHub</div></div></div>
+<section><div class="sh"><h2><span class="hash">#</span>Merged PRs per month</h2></div><div class="chart" id="monthChart"></div></section>
+<section><div class="sh"><h2><span class="hash">#</span>By organization</h2></div><div class="bars" id="orgBars"></div></section>
+<section><div class="sh"><h2><span class="hash">#</span>Elsewhere</h2></div><div class="stats" style="grid-template-columns:repeat(3,1fr)"><div class="stat"><div class="n">1,462</div><div class="l">LinkedIn followers · Nov 2026</div></div><div class="stat"><div class="n">15</div><div class="l">YouTube videos</div></div><div class="stat"><div class="n" id="gh-followers">—</div><div class="l">GitHub followers</div></div></div></section>
+<script>
+fetch('/me/data/prs.json',{cache:'no-cache'}).then(r=>r.json()).then(all=>{
+ const prs=all.filter(p=>p.repo.split('/')[0].toLowerCase()!=='kpj2006');
+ const m={};prs.forEach(p=>{const k=p.merged.slice(0,7);m[k]=(m[k]||0)+1});
+ const ks=Object.keys(m).sort().slice(-14),mx=Math.max(...ks.map(k=>m[k]));
+ document.getElementById('monthChart').innerHTML=ks.map(k=>`<div class="col" title="${k}: ${m[k]}"><span class="v">${m[k]}</span><i style="height:${m[k]/mx*100}%"></i><span class="k">${k.slice(2).replace('-','/')}</span></div>`).join('');
+ const o={};prs.forEach(p=>{const k=p.repo.split('/')[0];o[k]=(o[k]||0)+1});const os=Object.entries(o).sort((a,b)=>b[1]-a[1]),om=os[0][1];
+ document.getElementById('orgBars').innerHTML=os.map(([k,n])=>`<div class="bar"><span>${k}</span><span class="t"><i style="width:${n/om*100}%"></i></span><span class="c">${n}</span></div>`).join('');
+});
+fetch('https://api.github.com/users/kpj2006').then(r=>r.json()).then(u=>{if(u.public_repos!=null){document.getElementById('gh-repos').textContent=u.public_repos;document.getElementById('gh-followers').textContent=u.followers}}).catch(()=>{});
+</script>
+</main>
+<footer id="ftr"></footer>
+<script src="/me/assets/site.js"></script>
+</body>
+</html>

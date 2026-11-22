@@ -21,14 +21,20 @@ permalink: /contact/
 <body>
 <header id="hdr"></header>
 <main class="wrap">
-<section class="pagehead"><h1>Contact</h1><p>Internship, collaboration, talk or event — I'd like to hear from you.</p></section>
-<section style="padding-top:10px"><div class="three">
-  <a class="do" href="mailto:jaihanumanji2006@gmail.com" style="text-decoration:none"><div class="ic">✉️</div><h3>Email</h3><p>jaihanumanji2006@gmail.com</p></a>
-  <a class="do" href="https://calendar.app.google/Wvp7aZNk29KuAJxH6" target="_blank" rel="noopener" style="text-decoration:none"><div class="ic">📅</div><h3>Book a call</h3><p>Pick a slot on my calendar.</p></a>
-  <a class="do" href="https://docs.google.com/document/d/1c9CfRKa6iIBsk2vvV6EQX7kZ4jbOnIymQfl7N_JmMT0/edit?usp=sharing" target="_blank" rel="noopener" style="text-decoration:none"><div class="ic">📄</div><h3>Resume</h3><p>Latest version on Google Docs.</p></a>
-</div>
-<div class="sh" style="margin-top:30px"><h2><span class="hash">#</span>Find me online</h2></div>
-<div class="socials"></div></section>
+<section class="pagehead"><h1>Let's connect</h1><p>Have a question or want to work together? Write here.</p></section>
+<section style="padding-top:6px"><form class="cform" id="cform">
+  <label>Name *<input name="name" required></label>
+  <label>Email *<input name="email" type="email" required></label>
+  <label>Company / website<input name="site"></label>
+  <label>Topic<select name="topic"><option>Job / internship</option><option>Open-source collaboration</option><option>Talk or workshop</option><option>Community event</option><option>Other</option></select></label>
+  <label class="full">Message *<textarea name="msg" rows="6" required></textarea></label>
+  <div class="full"><button class="btn primary" type="submit">Send message</button> <span class="muted" style="font-size:13px">Opens your email app with the message filled in.</span></div>
+</form></section>
+<section><div class="sh"><h2><span class="hash">#</span>Elsewhere</h2><span class="muted" style="font-size:13.5px">Or pick a platform</span></div>
+<div class="plat"><a href="mailto:jaihanumanji2006@gmail.com" ><b>Email</b><span>jaihanumanji2006@gmail.com</span></a><a href="https://www.linkedin.com/in/kpj2006/" target="_blank" rel="noopener"><b>LinkedIn</b><span>in/kpj2006</span></a><a href="https://github.com/kpj2006" target="_blank" rel="noopener"><b>GitHub</b><span>@kpj2006</span></a><a href="https://x.com/_kpj2006" target="_blank" rel="noopener"><b>X</b><span>@_kpj2006</span></a><a href="https://www.youtube.com/channel/UC1jB0sHS3HeekQmmk4utdNA" target="_blank" rel="noopener"><b>YouTube</b><span>kpj2006</span></a><a href="https://t.me/kpj2006" target="_blank" rel="noopener"><b>Telegram</b><span>@kpj2006</span></a><a href="https://instagram.com/karunpacholi" target="_blank" rel="noopener"><b>Instagram</b><span>@karunpacholi</span></a><a href="https://calendar.app.google/Wvp7aZNk29KuAJxH6" target="_blank" rel="noopener"><b>Calendar</b><span>Book a call</span></a></div></section>
+<script>document.getElementById('cform').onsubmit=e=>{e.preventDefault();const f=new FormData(e.target);
+const body=`${f.get('msg')}\n\n— ${f.get('name')} (${f.get('email')})${f.get('site')?'\n'+f.get('site'):''}`;
+location.href='mailto:jaihanumanji2006@gmail.com?subject='+encodeURIComponent('['+f.get('topic')+'] from '+f.get('name'))+'&body='+encodeURIComponent(body);};</script>
 
 </main>
 <footer id="ftr"></footer>
