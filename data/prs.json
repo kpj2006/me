@@ -1,0 +1,1286 @@
+[
+ {
+  "repo": "AOSSIE-Org/SkillBot",
+  "title": "docs: add a privacy policy",
+  "url": "https://github.com/AOSSIE-Org/SkillBot/pull/69",
+  "merged": "2026-11-16"
+ },
+ {
+  "repo": "AOSSIE-Org/MCP-Template",
+  "title": "test: add test suite, docs, and CI/CD workflows",
+  "url": "https://github.com/AOSSIE-Org/MCP-Template/pull/34",
+  "merged": "2026-11-17"
+ },
+ {
+  "repo": "StabilityNexus/GitPay",
+  "title": "Override minimatch to 11.0.3 so the OSV scan passes",
+  "url": "https://github.com/StabilityNexus/GitPay/pull/76",
+  "merged": "2026-11-01"
+ },
+ {
+  "repo": "StabilityNexus/GitPay",
+  "title": "Bump to 1.1.1",
+  "url": "https://github.com/StabilityNexus/GitPay/pull/75",
+  "merged": "2026-11-01"
+ },
+ {
+  "repo": "StabilityNexus/GitPay",
+  "title": "License as GPL-3.0 and add Terms of Use",
+  "url": "https://github.com/StabilityNexus/GitPay/pull/74",
+  "merged": "2026-11-01"
+ },
+ {
+  "repo": "StabilityNexus/Website",
+  "title": "Add GitPay to the software page",
+  "url": "https://github.com/StabilityNexus/Website/pull/79",
+  "merged": "2026-11-12"
+ },
+ {
+  "repo": "StabilityNexus/GitPay",
+  "title": "Confirm /send authors' write access; keep the delegate key out of errors",
+  "url": "https://github.com/StabilityNexus/GitPay/pull/73",
+  "merged": "2026-11-01"
+ },
+ {
+  "repo": "AOSSIE-Org/Resonate",
+  "title": "ci: redirect PRs opened against master to dev",
+  "url": "https://github.com/AOSSIE-Org/Resonate/pull/890",
+  "merged": "2026-11-01"
+ },
+ {
+  "repo": "StabilityNexus/GitPay",
+  "title": "Say 'wait' while a payout transaction is pending",
+  "url": "https://github.com/StabilityNexus/GitPay/pull/72",
+  "merged": "2026-11-01"
+ },
+ {
+  "repo": "AOSSIE-Org/PullRequestDashboard",
+  "title": "Raise dependency floors to clear OSV-Scanner findings",
+  "url": "https://github.com/AOSSIE-Org/PullRequestDashboard/pull/57",
+  "merged": "2026-10-31"
+ },
+ {
+  "repo": "StabilityNexus/GitPay",
+  "title": "Site: show the MetaMask/wallet option, round:N and unconfirmed; add the setup guide",
+  "url": "https://github.com/StabilityNexus/GitPay/pull/71",
+  "merged": "2026-10-31"
+ },
+ {
+  "repo": "AOSSIE-Org/PullRequestDashboard",
+  "title": "Make PR Dashboard a standalone tool any organization can use",
+  "url": "https://github.com/AOSSIE-Org/PullRequestDashboard/pull/56",
+  "merged": "2026-10-31"
+ },
+ {
+  "repo": "StabilityNexus/GitPay",
+  "title": "Release v1.1.0: pay from an ordinary wallet, re-pay with round:N",
+  "url": "https://github.com/StabilityNexus/GitPay/pull/70",
+  "merged": "2026-10-31"
+ },
+ {
+  "repo": "AOSSIE-Org/SkillBot",
+  "title": "Remove AOSSIE-only files from the template; link the AOSSIE example",
+  "url": "https://github.com/AOSSIE-Org/SkillBot/pull/53",
+  "merged": "2026-10-31"
+ },
+ {
+  "repo": "StabilityNexus/GitPay",
+  "title": "Never log 'settled' for a payout that did not settle",
+  "url": "https://github.com/StabilityNexus/GitPay/pull/69",
+  "merged": "2026-10-31"
+ },
+ {
+  "repo": "AOSSIE-Org/SkillBot",
+  "title": "Make Skill Bot a template any organization can use",
+  "url": "https://github.com/AOSSIE-Org/SkillBot/pull/52",
+  "merged": "2026-10-31"
+ },
+ {
+  "repo": "StabilityNexus/GitPay",
+  "title": "Accept round:N on /send, and report an unconfirmed receipt as unconfirmed",
+  "url": "https://github.com/StabilityNexus/GitPay/pull/68",
+  "merged": "2026-10-31"
+ },
+ {
+  "repo": "StabilityNexus/GitPay",
+  "title": "Add scheme: approve, to pay from an ordinary wallet without a Safe",
+  "url": "https://github.com/StabilityNexus/GitPay/pull/67",
+  "merged": "2026-10-29"
+ },
+ {
+  "repo": "AOSSIE-Org/PullRequestDashboard",
+  "title": "ci: add anti-slop PR workflow",
+  "url": "https://github.com/AOSSIE-Org/PullRequestDashboard/pull/54",
+  "merged": "2026-10-21"
+ },
+ {
+  "repo": "AOSSIE-Org/SkillBot",
+  "title": "ci: add anti-slop PR workflow",
+  "url": "https://github.com/AOSSIE-Org/SkillBot/pull/51",
+  "merged": "2026-10-21"
+ },
+ {
+  "repo": "AOSSIE-Org/Skills",
+  "title": "ci: add anti-slop PR workflow",
+  "url": "https://github.com/AOSSIE-Org/Skills/pull/12",
+  "merged": "2026-10-21"
+ },
+ {
+  "repo": "StabilityNexus/GitPay",
+  "title": "Add the anti-slop PR check from the AOSSIE template",
+  "url": "https://github.com/StabilityNexus/GitPay/pull/58",
+  "merged": "2026-10-21"
+ },
+ {
+  "repo": "AOSSIE-Org/Skills",
+  "title": "docs: note that Template-Repo skills branch already wires in these skills",
+  "url": "https://github.com/AOSSIE-Org/Skills/pull/11",
+  "merged": "2026-10-19"
+ },
+ {
+  "repo": "StabilityNexus/GitPay",
+  "title": "Pin workflow actions to SHAs and default tokens to read-only",
+  "url": "https://github.com/StabilityNexus/GitPay/pull/57",
+  "merged": "2026-10-19"
+ },
+ {
+  "repo": "AOSSIE-Org/Skills",
+  "title": "docs: refocus README on org-wide skills",
+  "url": "https://github.com/AOSSIE-Org/Skills/pull/10",
+  "merged": "2026-10-19"
+ },
+ {
+  "repo": "StabilityNexus/GitPay",
+  "title": "Best-practices follow-ups: release notes, CodeQL, gitleaks",
+  "url": "https://github.com/StabilityNexus/GitPay/pull/56",
+  "merged": "2026-10-19"
+ },
+ {
+  "repo": "AOSSIE-Org/Template-Repo",
+  "title": "ci: auto-sync skills branch with main",
+  "url": "https://github.com/AOSSIE-Org/Template-Repo/pull/166",
+  "merged": "2026-10-19"
+ },
+ {
+  "repo": "StabilityNexus/GitPay",
+  "title": "Add brand folder: SVG logo, favicons and icons (fixes broken README logo)",
+  "url": "https://github.com/StabilityNexus/GitPay/pull/51",
+  "merged": "2026-10-18"
+ },
+ {
+  "repo": "StabilityNexus/GitPay",
+  "title": "Close the remaining repo-quality items",
+  "url": "https://github.com/StabilityNexus/GitPay/pull/50",
+  "merged": "2026-10-18"
+ },
+ {
+  "repo": "kpj2006/demo-XOps",
+  "title": "Queue payouts at job level so other comments cannot cancel a pending /send",
+  "url": "https://github.com/kpj2006/demo-XOps/pull/4",
+  "merged": "2026-10-18"
+ },
+ {
+  "repo": "StabilityNexus/GitPay",
+  "title": "Queue payouts at job level so other comments cannot cancel a pending /send",
+  "url": "https://github.com/StabilityNexus/GitPay/pull/49",
+  "merged": "2026-10-18"
+ },
+ {
+  "repo": "StabilityNexus/GitPay",
+  "title": "Add brand guidelines",
+  "url": "https://github.com/StabilityNexus/GitPay/pull/48",
+  "merged": "2026-10-18"
+ },
+ {
+  "repo": "StabilityNexus/GitPay",
+  "title": "Fill in the best practices checklist (42/49, 86%)",
+  "url": "https://github.com/StabilityNexus/GitPay/pull/47",
+  "merged": "2026-10-17"
+ },
+ {
+  "repo": "StabilityNexus/GitPay",
+  "title": "Fix the gitleaks allowlist, which CI's gitleaks 8.24 never loaded",
+  "url": "https://github.com/StabilityNexus/GitPay/pull/46",
+  "merged": "2026-10-15"
+ },
+ {
+  "repo": "StabilityNexus/GitPay",
+  "title": "Release v1.0.1: ship the /send asset fix",
+  "url": "https://github.com/StabilityNexus/GitPay/pull/44",
+  "merged": "2026-10-15"
+ },
+ {
+  "repo": "StabilityNexus/GitPay",
+  "title": "Refuse a /send that names a different asset than the workflow pays",
+  "url": "https://github.com/StabilityNexus/GitPay/pull/43",
+  "merged": "2026-10-14"
+ },
+ {
+  "repo": "StabilityNexus/GitPay",
+  "title": "Add the marketing site in frontend/ and deploy it to GitHub Pages",
+  "url": "https://github.com/StabilityNexus/GitPay/pull/33",
+  "merged": "2026-10-14"
+ },
+ {
+  "repo": "StabilityNexus/GitPay",
+  "title": "Close the release gate: v1.0.0 tagged, SBOM and provenance published",
+  "url": "https://github.com/StabilityNexus/GitPay/pull/32",
+  "merged": "2026-10-13"
+ },
+ {
+  "repo": "StabilityNexus/GitPay",
+  "title": "Look up the major tag exactly before moving it",
+  "url": "https://github.com/StabilityNexus/GitPay/pull/31",
+  "merged": "2026-10-13"
+ },
+ {
+  "repo": "StabilityNexus/GitPay",
+  "title": "Bump to 1.0.0 and rewrite AGENTS.md for the allowance model",
+  "url": "https://github.com/StabilityNexus/GitPay/pull/30",
+  "merged": "2026-10-13"
+ },
+ {
+  "repo": "StabilityNexus/GitPay",
+  "title": "Run the Action on Node 24",
+  "url": "https://github.com/StabilityNexus/GitPay/pull/26",
+  "merged": "2026-10-13"
+ },
+ {
+  "repo": "StabilityNexus/GitPay",
+  "title": "Fix the README quickstart, which could not run",
+  "url": "https://github.com/StabilityNexus/GitPay/pull/25",
+  "merged": "2026-10-13"
+ },
+ {
+  "repo": "StabilityNexus/GitPay",
+  "title": "Record 20 consecutive Sepolia settlements and a merged-PR payout",
+  "url": "https://github.com/StabilityNexus/GitPay/pull/24",
+  "merged": "2026-10-13"
+ },
+ {
+  "repo": "StabilityNexus/GitPay",
+  "title": "Publish and freeze the input schema; refuse an unknown mode",
+  "url": "https://github.com/StabilityNexus/GitPay/pull/23",
+  "merged": "2026-10-13"
+ },
+ {
+  "repo": "StabilityNexus/GitPay",
+  "title": "Release a Node Action with an SBOM and signed build provenance",
+  "url": "https://github.com/StabilityNexus/GitPay/pull/22",
+  "merged": "2026-10-01"
+ },
+ {
+  "repo": "kpj2006/demo-XOps",
+  "title": "Run GitPay from StabilityNexus/GitPay",
+  "url": "https://github.com/kpj2006/demo-XOps/pull/2",
+  "merged": "2026-09-30"
+ },
+ {
+  "repo": "StabilityNexus/GitPay",
+  "title": "Record the live Sepolia evidence in the release gate",
+  "url": "https://github.com/StabilityNexus/GitPay/pull/21",
+  "merged": "2026-09-30"
+ },
+ {
+  "repo": "StabilityNexus/GitPay",
+  "title": "Close three release-gate boxes with tests",
+  "url": "https://github.com/StabilityNexus/GitPay/pull/20",
+  "merged": "2026-09-30"
+ },
+ {
+  "repo": "StabilityNexus/GitPay",
+  "title": "Replace the XOps logo with GitPay artwork",
+  "url": "https://github.com/StabilityNexus/GitPay/pull/19",
+  "merged": "2026-09-30"
+ },
+ {
+  "repo": "StabilityNexus/GitPay",
+  "title": "Upgrade brace-expansion and js-yaml past known vulnerabilities",
+  "url": "https://github.com/StabilityNexus/GitPay/pull/18",
+  "merged": "2026-09-30"
+ },
+ {
+  "repo": "StabilityNexus/GitPay",
+  "title": "Rename XOps to GitPay",
+  "url": "https://github.com/StabilityNexus/GitPay/pull/10",
+  "merged": "2026-09-30"
+ },
+ {
+  "repo": "StabilityNexus/GitPay",
+  "title": "Import the XOps implementation into GitPay",
+  "url": "https://github.com/StabilityNexus/GitPay/pull/9",
+  "merged": "2026-09-30"
+ },
+ {
+  "repo": "AOSSIE-Org/MCP-Template",
+  "title": "Feat/tools resources catalog",
+  "url": "https://github.com/AOSSIE-Org/MCP-Template/pull/6",
+  "merged": "2026-09-15"
+ },
+ {
+  "repo": "AOSSIE-Org/MCP-Template",
+  "title": "feat: add core MCP server implementation and project scaffolding",
+  "url": "https://github.com/AOSSIE-Org/MCP-Template/pull/4",
+  "merged": "2026-09-15"
+ },
+ {
+  "repo": "AOSSIE-Org/MCP-Template",
+  "title": "chore: update configuration files for Node.js/TypeScript stack and st\u2026",
+  "url": "https://github.com/AOSSIE-Org/MCP-Template/pull/3",
+  "merged": "2026-08-27"
+ },
+ {
+  "repo": "AOSSIE-Org/MCP-Template",
+  "title": "chore: remove outdated workflows and related files",
+  "url": "https://github.com/AOSSIE-Org/MCP-Template/pull/2",
+  "merged": "2026-08-27"
+ },
+ {
+  "repo": "StabilityNexus/GitPay",
+  "title": "Add REFERENCES.md and ROADMAP.md for XOps project documentation",
+  "url": "https://github.com/StabilityNexus/GitPay/pull/2",
+  "merged": "2026-08-27"
+ },
+ {
+  "repo": "StabilityNexus/GitPay",
+  "title": "chore: remove initial issues automation files and related configurations",
+  "url": "https://github.com/StabilityNexus/GitPay/pull/1",
+  "merged": "2026-09-12"
+ },
+ {
+  "repo": "kpj2006/test",
+  "title": "Docs",
+  "url": "https://github.com/kpj2006/test/pull/1",
+  "merged": "2026-08-18"
+ },
+ {
+  "repo": "AOSSIE-Org/SocialShareButton",
+  "title": ".",
+  "url": "https://github.com/AOSSIE-Org/SocialShareButton/pull/230",
+  "merged": "2026-08-13"
+ },
+ {
+  "repo": "AOSSIE-Org/Skills",
+  "title": "feat: add GitHub Actions workflow for deploying static content to Pages",
+  "url": "https://github.com/AOSSIE-Org/Skills/pull/7",
+  "merged": "2026-08-13"
+ },
+ {
+  "repo": "AOSSIE-Org/Skills",
+  "title": "Refactor dashboard layout and card styles for improved responsiveness\u2026",
+  "url": "https://github.com/AOSSIE-Org/Skills/pull/6",
+  "merged": "2026-08-13"
+ },
+ {
+  "repo": "AOSSIE-Org/Skills",
+  "title": ".",
+  "url": "https://github.com/AOSSIE-Org/Skills/pull/5",
+  "merged": "2026-08-12"
+ },
+ {
+  "repo": "AOSSIE-Org/Skills",
+  "title": ".",
+  "url": "https://github.com/AOSSIE-Org/Skills/pull/4",
+  "merged": "2026-08-12"
+ },
+ {
+  "repo": "AOSSIE-Org/PullRequestDashboard",
+  "title": "feat: add Gitleaks license check workflow",
+  "url": "https://github.com/AOSSIE-Org/PullRequestDashboard/pull/23",
+  "merged": "2026-08-04"
+ },
+ {
+  "repo": "AOSSIE-Org/Template-Repo",
+  "title": "remove coderabbit approval",
+  "url": "https://github.com/AOSSIE-Org/Template-Repo/pull/146",
+  "merged": "2026-07-31"
+ },
+ {
+  "repo": "AOSSIE-Org/PullRequestDashboard",
+  "title": "feat: add fallback path lookup for HTML reports in simulation deploym\u2026",
+  "url": "https://github.com/AOSSIE-Org/PullRequestDashboard/pull/18",
+  "merged": "2026-07-30"
+ },
+ {
+  "repo": "AOSSIE-Org/PullRequestDashboard",
+  "title": "feat: add CI workflow for GH Pages and generate standalone conflict/i\u2026",
+  "url": "https://github.com/AOSSIE-Org/PullRequestDashboard/pull/17",
+  "merged": "2026-07-30"
+ },
+ {
+  "repo": "AOSSIE-Org/SkillBot",
+  "title": "Org wide",
+  "url": "https://github.com/AOSSIE-Org/SkillBot/pull/23",
+  "merged": "2026-07-30"
+ },
+ {
+  "repo": "AOSSIE-Org/Template-Repo",
+  "title": "Update copyright year from 2025 to 2026",
+  "url": "https://github.com/AOSSIE-Org/Template-Repo/pull/145",
+  "merged": "2026-07-30"
+ },
+ {
+  "repo": "AOSSIE-Org/admin",
+  "title": "remove files which is not needed.",
+  "url": "https://github.com/AOSSIE-Org/admin/pull/2",
+  "merged": "2026-07-31"
+ },
+ {
+  "repo": "AOSSIE-Org/Template-Repo",
+  "title": "add maintainers.md",
+  "url": "https://github.com/AOSSIE-Org/Template-Repo/pull/144",
+  "merged": "2026-08-05"
+ },
+ {
+  "repo": "AOSSIE-Org/Info",
+  "title": "docs: add documentation for Contributor, Ideator, and Maintainer role\u2026",
+  "url": "https://github.com/AOSSIE-Org/Info/pull/71",
+  "merged": "2026-07-28"
+ },
+ {
+  "repo": "AOSSIE-Org/SkillBot",
+  "title": "add skills",
+  "url": "https://github.com/AOSSIE-Org/SkillBot/pull/21",
+  "merged": "2026-08-12"
+ },
+ {
+  "repo": "AOSSIE-Org/PullRequestDashboard",
+  "title": "feat: add context and implement automated subtree synchronization wor\u2026",
+  "url": "https://github.com/AOSSIE-Org/PullRequestDashboard/pull/14",
+  "merged": "2026-08-19"
+ },
+ {
+  "repo": "AOSSIE-Org/PullRequestDashboard",
+  "title": "feat: add simulation script for gh page",
+  "url": "https://github.com/AOSSIE-Org/PullRequestDashboard/pull/13",
+  "merged": "2026-07-30"
+ },
+ {
+  "repo": "AOSSIE-Org/PullRequestDashboard",
+  "title": "docs: complete best practices checklist and add security reporting po\u2026",
+  "url": "https://github.com/AOSSIE-Org/PullRequestDashboard/pull/12",
+  "merged": "2026-07-30"
+ },
+ {
+  "repo": "AOSSIE-Org/SocialShareButton",
+  "title": "Fix Next.js build failure caused by malformed JSX in `Footer.tsx`",
+  "url": "https://github.com/AOSSIE-Org/SocialShareButton/pull/197",
+  "merged": "2026-07-23"
+ },
+ {
+  "repo": "AOSSIE-Org/Template-Repo",
+  "title": "Create socket.yml",
+  "url": "https://github.com/AOSSIE-Org/Template-Repo/pull/142",
+  "merged": "2026-07-30"
+ },
+ {
+  "repo": "AOSSIE-Org/SocialShareButton",
+  "title": "Updated all occurrences of v1.0.3 to v1.0.4 across all framework CDN \u2026",
+  "url": "https://github.com/AOSSIE-Org/SocialShareButton/pull/194",
+  "merged": "2026-07-19"
+ },
+ {
+  "repo": "AOSSIE-Org/SocialShareButton",
+  "title": "update in pkg for v1.0.4",
+  "url": "https://github.com/AOSSIE-Org/SocialShareButton/pull/193",
+  "merged": "2026-07-19"
+ },
+ {
+  "repo": "AOSSIE-Org/PullRequestDashboard",
+  "title": "docs: update README with project-specific documentation and metadata \u2026",
+  "url": "https://github.com/AOSSIE-Org/PullRequestDashboard/pull/9",
+  "merged": "2026-07-20"
+ },
+ {
+  "repo": "AOSSIE-Org/SkillBot",
+  "title": "update readme",
+  "url": "https://github.com/AOSSIE-Org/SkillBot/pull/18",
+  "merged": "2026-07-20"
+ },
+ {
+  "repo": "kpj2006/Skills",
+  "title": "Redesign skills ecosystem and integrate Discord Chat scenario",
+  "url": "https://github.com/kpj2006/Skills/pull/3",
+  "merged": "2026-07-17"
+ },
+ {
+  "repo": "kpj2006/Skills",
+  "title": "Redesign skills ecosystem and integrate Discord Chat scenario",
+  "url": "https://github.com/kpj2006/Skills/pull/2",
+  "merged": "2026-07-17"
+ },
+ {
+  "repo": "kpj2006/Skills",
+  "title": "Sync UI iterations and component refinements from v0",
+  "url": "https://github.com/kpj2006/Skills/pull/1",
+  "merged": "2026-07-17"
+ },
+ {
+  "repo": "AOSSIE-Org/Zplit-Website",
+  "title": "feat: add scheduled OSV-Scanner vulnerability workflow",
+  "url": "https://github.com/AOSSIE-Org/Zplit-Website/pull/12",
+  "merged": "2026-08-02"
+ },
+ {
+  "repo": "AOSSIE-Org/SkillBot",
+  "title": "Replace placeholder README security badge URLs with repository-specific links",
+  "url": "https://github.com/AOSSIE-Org/SkillBot/pull/17",
+  "merged": "2026-07-13"
+ },
+ {
+  "repo": "kpj2006/aktr",
+  "title": "Update site theme and loading screen branding",
+  "url": "https://github.com/kpj2006/aktr/pull/1",
+  "merged": "2026-07-12"
+ },
+ {
+  "repo": "AOSSIE-Org/.github",
+  "title": "Create CODE_OF_CONDUCT.md",
+  "url": "https://github.com/AOSSIE-Org/.github/pull/3",
+  "merged": "2026-07-13"
+ },
+ {
+  "repo": "AOSSIE-Org/.github",
+  "title": "Enhance security policy with reporting guidelines",
+  "url": "https://github.com/AOSSIE-Org/.github/pull/2",
+  "merged": "2026-07-24"
+ },
+ {
+  "repo": "AOSSIE-Org/Skills",
+  "title": "feat: implement interactive ecosystem simulation dashboard for AOSSIE\u2026",
+  "url": "https://github.com/AOSSIE-Org/Skills/pull/2",
+  "merged": "2026-07-20"
+ },
+ {
+  "repo": "AOSSIE-Org/SkillBot",
+  "title": "Roadmap",
+  "url": "https://github.com/AOSSIE-Org/SkillBot/pull/14",
+  "merged": "2026-07-18"
+ },
+ {
+  "repo": "AOSSIE-Org/SkillBot",
+  "title": "feat: add bot mention stripping and enable cross-channel responses wh\u2026",
+  "url": "https://github.com/AOSSIE-Org/SkillBot/pull/13",
+  "merged": "2026-07-01"
+ },
+ {
+  "repo": "AOSSIE-Org/SocialShareButton",
+  "title": "Copilot Integration Prompt Updates",
+  "url": "https://github.com/AOSSIE-Org/SocialShareButton/pull/158",
+  "merged": "2026-06-26"
+ },
+ {
+  "repo": "AOSSIE-Org/PullRequestDashboard",
+  "title": "Patch 1",
+  "url": "https://github.com/AOSSIE-Org/PullRequestDashboard/pull/6",
+  "merged": "2026-08-04"
+ },
+ {
+  "repo": "AOSSIE-Org/SocialShareButton",
+  "title": "redirect to https://social-share-button.aossie.org/",
+  "url": "https://github.com/AOSSIE-Org/SocialShareButton/pull/157",
+  "merged": "2026-06-25"
+ },
+ {
+  "repo": "AOSSIE-Org/SocialShareButton",
+  "title": "Update GitHub Actions workflow to set working directory and adjust pa\u2026",
+  "url": "https://github.com/AOSSIE-Org/SocialShareButton/pull/155",
+  "merged": "2026-06-23"
+ },
+ {
+  "repo": "AOSSIE-Org/PythonScripts",
+  "title": "Update Best Practices badge to dynamic JSON",
+  "url": "https://github.com/AOSSIE-Org/PythonScripts/pull/4",
+  "merged": "2026-07-24"
+ },
+ {
+  "repo": "AOSSIE-Org/SkillBot",
+  "title": "feat: implement OOD query filtering in bot logic and enforce scoped i\u2026",
+  "url": "https://github.com/AOSSIE-Org/SkillBot/pull/11",
+  "merged": "2026-06-23"
+ },
+ {
+  "repo": "AOSSIE-Org/Skills",
+  "title": "Add AOSSIE AI Contributor Policy and Communication Guidelines",
+  "url": "https://github.com/AOSSIE-Org/Skills/pull/1",
+  "merged": "2026-06-13"
+ },
+ {
+  "repo": "AOSSIE-Org/SkillBot",
+  "title": "feat: add gap logging functionality and improve bot thread management",
+  "url": "https://github.com/AOSSIE-Org/SkillBot/pull/6",
+  "merged": "2026-06-15"
+ },
+ {
+  "repo": "AOSSIE-Org/PullRequestDashboard",
+  "title": "feat: Implement semantic clustering and analysis for PRs",
+  "url": "https://github.com/AOSSIE-Org/PullRequestDashboard/pull/4",
+  "merged": "2026-06-11"
+ },
+ {
+  "repo": "AOSSIE-Org/SkillBot",
+  "title": "feat: add initial bot implementation with environment configuration a\u2026",
+  "url": "https://github.com/AOSSIE-Org/SkillBot/pull/4",
+  "merged": "2026-06-11"
+ },
+ {
+  "repo": "AOSSIE-Org/Template-Repo",
+  "title": "Update README.md",
+  "url": "https://github.com/AOSSIE-Org/Template-Repo/pull/131",
+  "merged": "2026-06-07"
+ },
+ {
+  "repo": "kpj2006/Scientific-Paper-Visual-Abstract-Agent",
+  "title": "Align SAP integration with Synapse skills.md connection and discovery model",
+  "url": "https://github.com/kpj2006/Scientific-Paper-Visual-Abstract-Agent/pull/2",
+  "merged": "2026-05-31"
+ },
+ {
+  "repo": "kpj2006/Scientific-Paper-Visual-Abstract-Agent",
+  "title": "Scaffold autonomous OOBE \u00d7 Ace research agent with tiered extraction, SAP discovery, and x402-tracked workflows",
+  "url": "https://github.com/kpj2006/Scientific-Paper-Visual-Abstract-Agent/pull/1",
+  "merged": "2026-05-31"
+ },
+ {
+  "repo": "AOSSIE-Org/Template-Repo",
+  "title": "feat: add gitleaks scanning workflow",
+  "url": "https://github.com/AOSSIE-Org/Template-Repo/pull/125",
+  "merged": "2026-06-04"
+ },
+ {
+  "repo": "AOSSIE-Org/Template-Repo",
+  "title": "chore: add VSCode settings example file",
+  "url": "https://github.com/AOSSIE-Org/Template-Repo/pull/124",
+  "merged": "2026-06-04"
+ },
+ {
+  "repo": "AOSSIE-Org/Template-Repo",
+  "title": "chore: add VSCode extensions recommendations",
+  "url": "https://github.com/AOSSIE-Org/Template-Repo/pull/123",
+  "merged": "2026-06-04"
+ },
+ {
+  "repo": "AOSSIE-Org/Template-Repo",
+  "title": "feat: add GoReleaser configuration for automated builds and releases",
+  "url": "https://github.com/AOSSIE-Org/Template-Repo/pull/122",
+  "merged": "2026-05-29"
+ },
+ {
+  "repo": "AOSSIE-Org/Template-Repo",
+  "title": "Codeql fix",
+  "url": "https://github.com/AOSSIE-Org/Template-Repo/pull/121",
+  "merged": "2026-05-26"
+ },
+ {
+  "repo": "AOSSIE-Org/Template-Repo",
+  "title": "Goreleaser",
+  "url": "https://github.com/AOSSIE-Org/Template-Repo/pull/120",
+  "merged": "2026-05-26"
+ },
+ {
+  "repo": "AOSSIE-Org/Template-Repo",
+  "title": "OSV scanner",
+  "url": "https://github.com/AOSSIE-Org/Template-Repo/pull/119",
+  "merged": "2026-05-29"
+ },
+ {
+  "repo": "EvangeLabs/Contributors-Program-Acceptance-Automation",
+  "title": "Add reusable project docs and setup guide for Evangelist onboarding/email automation",
+  "url": "https://github.com/EvangeLabs/Contributors-Program-Acceptance-Automation/pull/5",
+  "merged": "2026-05-15"
+ },
+ {
+  "repo": "EvangeLabs/Research-gap",
+  "title": "feat: add local research-gap analysis pipeline for arXiv papers",
+  "url": "https://github.com/EvangeLabs/Research-gap/pull/1",
+  "merged": "2026-05-15"
+ },
+ {
+  "repo": "AOSSIE-Org/SocialShareButton",
+  "title": "Workflow",
+  "url": "https://github.com/AOSSIE-Org/SocialShareButton/pull/137",
+  "merged": "2026-03-30"
+ },
+ {
+  "repo": "AOSSIE-Org/Template-Repo",
+  "title": "Refactor sync PR labels workflow",
+  "url": "https://github.com/AOSSIE-Org/Template-Repo/pull/113",
+  "merged": "2026-03-30"
+ },
+ {
+  "repo": "AOSSIE-Org/Template-Repo",
+  "title": "Add Danger configuration and enforce PR description template",
+  "url": "https://github.com/AOSSIE-Org/Template-Repo/pull/111",
+  "merged": "2026-05-15"
+ },
+ {
+  "repo": "AOSSIE-Org/Template-Repo",
+  "title": "Refactor CodeRabbit approval workflow to use pull_request_target and \u2026",
+  "url": "https://github.com/AOSSIE-Org/Template-Repo/pull/109",
+  "merged": "2026-05-15"
+ },
+ {
+  "repo": "AOSSIE-Org/Template-Repo",
+  "title": "Patch 6",
+  "url": "https://github.com/AOSSIE-Org/Template-Repo/pull/108",
+  "merged": "2026-05-15"
+ },
+ {
+  "repo": "AOSSIE-Org/Template-Repo",
+  "title": "Add Scorecard workflow for supply-chain security and update README wi\u2026",
+  "url": "https://github.com/AOSSIE-Org/Template-Repo/pull/107",
+  "merged": "2026-05-16"
+ },
+ {
+  "repo": "AOSSIE-Org/Template-Repo",
+  "title": "Add dependency review workflow to scan for license violations and CVEs",
+  "url": "https://github.com/AOSSIE-Org/Template-Repo/pull/105",
+  "merged": "2026-03-19"
+ },
+ {
+  "repo": "StabilityNexus/Fate-Sui-Frontend",
+  "title": "Update dependencies and enhance UI components for better user experience",
+  "url": "https://github.com/StabilityNexus/Fate-Sui-Frontend/pull/83",
+  "merged": "2026-07-01"
+ },
+ {
+  "repo": "StabilityNexus/Template-Repo-EVM-Contracts",
+  "title": "Add features section and enhance project maturity checklist in README",
+  "url": "https://github.com/StabilityNexus/Template-Repo-EVM-Contracts/pull/21",
+  "merged": "2026-03-15"
+ },
+ {
+  "repo": "AOSSIE-Org/AutoInitialIssues",
+  "title": "feat: Implement initial GitHub Action for generating issues from pred\u2026",
+  "url": "https://github.com/AOSSIE-Org/AutoInitialIssues/pull/1",
+  "merged": "2026-03-14"
+ },
+ {
+  "repo": "AOSSIE-Org/Template-Repo",
+  "title": "Add workflow to mark stale issues and pull requests",
+  "url": "https://github.com/AOSSIE-Org/Template-Repo/pull/101",
+  "merged": "2026-03-12"
+ },
+ {
+  "repo": "AOSSIE-Org/Template-Repo",
+  "title": "Add Cache Reaper workflow to manage stale and orphaned caches",
+  "url": "https://github.com/AOSSIE-Org/Template-Repo/pull/100",
+  "merged": "2026-05-15"
+ },
+ {
+  "repo": "AOSSIE-Org/Template-Repo",
+  "title": "Add CodeQL security scan workflow",
+  "url": "https://github.com/AOSSIE-Org/Template-Repo/pull/99",
+  "merged": "2026-05-15"
+ },
+ {
+  "repo": "AOSSIE-Org/SocialShareButton",
+  "title": "Add analytics integration to SocialShareButton with customizable even\u2026",
+  "url": "https://github.com/AOSSIE-Org/SocialShareButton/pull/65",
+  "merged": "2026-03-12"
+ },
+ {
+  "repo": "AOSSIE-Org/SocialShareButton",
+  "title": "Add integration skill for SocialShareButton with detailed setup instr\u2026",
+  "url": "https://github.com/AOSSIE-Org/SocialShareButton/pull/64",
+  "merged": "2026-03-07"
+ },
+ {
+  "repo": "AOSSIE-Org/SocialShareButton",
+  "title": "Add integration overview and usage instructions to README",
+  "url": "https://github.com/AOSSIE-Org/SocialShareButton/pull/63",
+  "merged": "2026-03-07"
+ },
+ {
+  "repo": "AOSSIE-Org/Template-Repo",
+  "title": "Add detailed instructions for dependency manifest and lock file reviews",
+  "url": "https://github.com/AOSSIE-Org/Template-Repo/pull/94",
+  "merged": "2026-05-15"
+ },
+ {
+  "repo": "AOSSIE-Org/Template-Repo",
+  "title": "Add multi-repo analysis configuration guidance to CodeRabbit setup",
+  "url": "https://github.com/AOSSIE-Org/Template-Repo/pull/90",
+  "merged": "2026-05-15"
+ },
+ {
+  "repo": "AOSSIE-Org/Info",
+  "title": "Add evangelist reviewers and enhance welcome workflow with additional\u2026",
+  "url": "https://github.com/AOSSIE-Org/Info/pull/55",
+  "merged": "2026-02-25"
+ },
+ {
+  "repo": "AOSSIE-Org/Info",
+  "title": "Add GitHub Actions workflow for welcoming new Evangelist applicants",
+  "url": "https://github.com/AOSSIE-Org/Info/pull/51",
+  "merged": "2026-02-24"
+ },
+ {
+  "repo": "AOSSIE-Org/SocialShareButton",
+  "title": "feat: add template sync workflow for automated repository synchroniza\u2026",
+  "url": "https://github.com/AOSSIE-Org/SocialShareButton/pull/30",
+  "merged": "2026-02-21"
+ },
+ {
+  "repo": "AOSSIE-Org/Template-Repo",
+  "title": "Add template sync workflow for automated repository synchronization",
+  "url": "https://github.com/AOSSIE-Org/Template-Repo/pull/74",
+  "merged": "2026-02-24"
+ },
+ {
+  "repo": "AOSSIE-Org/Template-Repo",
+  "title": "Refactor CodeRabbit approval handler to use external labeller token f\u2026",
+  "url": "https://github.com/AOSSIE-Org/Template-Repo/pull/70",
+  "merged": "2026-02-21"
+ },
+ {
+  "repo": "AOSSIE-Org/Template-Repo",
+  "title": "Add CodeRabbit approval handler and sync PR labels for review status",
+  "url": "https://github.com/AOSSIE-Org/Template-Repo/pull/64",
+  "merged": "2026-02-16"
+ },
+ {
+  "repo": "AOSSIE-Org/Template-Repo",
+  "title": "add editorconfig",
+  "url": "https://github.com/AOSSIE-Org/Template-Repo/pull/62",
+  "merged": "2026-02-24"
+ },
+ {
+  "repo": "StabilityNexus/Chainvoice",
+  "title": "Revert \"change branch name for testing\"",
+  "url": "https://github.com/StabilityNexus/Chainvoice/pull/116",
+  "merged": "2026-02-11"
+ },
+ {
+  "repo": "StabilityNexus/Chainvoice",
+  "title": "change branch name for testing",
+  "url": "https://github.com/StabilityNexus/Chainvoice/pull/112",
+  "merged": "2026-02-11"
+ },
+ {
+  "repo": "StabilityNexus/Chainvoice",
+  "title": "Dco main",
+  "url": "https://github.com/StabilityNexus/Chainvoice/pull/106",
+  "merged": "2026-02-05"
+ },
+ {
+  "repo": "StabilityNexus/ContributorAutomation",
+  "title": "apply DCO",
+  "url": "https://github.com/StabilityNexus/ContributorAutomation/pull/12",
+  "merged": "2026-02-10"
+ },
+ {
+  "repo": "StabilityNexus/ContributorAutomation",
+  "title": "removed comment",
+  "url": "https://github.com/StabilityNexus/ContributorAutomation/pull/10",
+  "merged": "2026-02-03"
+ },
+ {
+  "repo": "StabilityNexus/ContributorAutomation",
+  "title": "Gist",
+  "url": "https://github.com/StabilityNexus/ContributorAutomation/pull/9",
+  "merged": "2026-02-03"
+ },
+ {
+  "repo": "StabilityNexus/Chainvoice",
+  "title": "fix \" error",
+  "url": "https://github.com/StabilityNexus/Chainvoice/pull/96",
+  "merged": "2026-01-30"
+ },
+ {
+  "repo": "StabilityNexus/ContributorAutomation",
+  "title": "fix message",
+  "url": "https://github.com/StabilityNexus/ContributorAutomation/pull/8",
+  "merged": "2026-01-31"
+ },
+ {
+  "repo": "StabilityNexus/Chainvoice",
+  "title": "Test branch added",
+  "url": "https://github.com/StabilityNexus/Chainvoice/pull/91",
+  "merged": "2026-01-30"
+ },
+ {
+  "repo": "EvangeLabs/demo-lifecycle-automation",
+  "title": "Merge pull request #47 from automation-workflows/main",
+  "url": "https://github.com/EvangeLabs/demo-lifecycle-automation/pull/48",
+  "merged": "2026-01-27"
+ },
+ {
+  "repo": "AOSSIE-Org/Template-Repo",
+  "title": "try using another api for checking",
+  "url": "https://github.com/AOSSIE-Org/Template-Repo/pull/53",
+  "merged": "2026-02-21"
+ },
+ {
+  "repo": "AOSSIE-Org/Template-Repo",
+  "title": "add centralized version file",
+  "url": "https://github.com/AOSSIE-Org/Template-Repo/pull/52",
+  "merged": "2026-01-21"
+ },
+ {
+  "repo": "StabilityNexus/ContributorAutomation",
+  "title": "add config",
+  "url": "https://github.com/StabilityNexus/ContributorAutomation/pull/7",
+  "merged": "2026-01-20"
+ },
+ {
+  "repo": "StabilityNexus/Chainvoice",
+  "title": "add workflow",
+  "url": "https://github.com/StabilityNexus/Chainvoice/pull/68",
+  "merged": "2026-01-20"
+ },
+ {
+  "repo": "StabilityNexus/ContributorAutomation",
+  "title": "add resuable workflow",
+  "url": "https://github.com/StabilityNexus/ContributorAutomation/pull/6",
+  "merged": "2026-01-20"
+ },
+ {
+  "repo": "StabilityNexus/ContributorAutomation",
+  "title": "add config",
+  "url": "https://github.com/StabilityNexus/ContributorAutomation/pull/5",
+  "merged": "2026-01-15"
+ },
+ {
+  "repo": "StabilityNexus/ContributorAutomation",
+  "title": "add scripts",
+  "url": "https://github.com/StabilityNexus/ContributorAutomation/pull/4",
+  "merged": "2026-01-15"
+ },
+ {
+  "repo": "manashatwar/x402_workflow",
+  "title": "comment out validation",
+  "url": "https://github.com/manashatwar/x402_workflow/pull/3",
+  "merged": "2026-01-11"
+ },
+ {
+  "repo": "manashatwar/x402_workflow",
+  "title": "remove comment on issue",
+  "url": "https://github.com/manashatwar/x402_workflow/pull/2",
+  "merged": "2026-01-11"
+ },
+ {
+  "repo": "manashatwar/x402_workflow",
+  "title": "add demo workflow",
+  "url": "https://github.com/manashatwar/x402_workflow/pull/1",
+  "merged": "2026-01-11"
+ },
+ {
+  "repo": "EvangeLabs/demo-lifecycle-automation",
+  "title": "Update check 1 to check 11 in README",
+  "url": "https://github.com/EvangeLabs/demo-lifecycle-automation/pull/15",
+  "merged": "2026-01-05"
+ },
+ {
+  "repo": "AOSSIE-Org/Template-Repo",
+  "title": "Add triage",
+  "url": "https://github.com/AOSSIE-Org/Template-Repo/pull/51",
+  "merged": "2026-01-26"
+ },
+ {
+  "repo": "kpj2006/gist-as-db",
+  "title": "Add check 10 to the README",
+  "url": "https://github.com/kpj2006/gist-as-db/pull/10",
+  "merged": "2026-01-01"
+ },
+ {
+  "repo": "kpj2006/gist-as-db",
+  "title": "Add check 7 and check 8 to README",
+  "url": "https://github.com/kpj2006/gist-as-db/pull/8",
+  "merged": "2026-01-01"
+ },
+ {
+  "repo": "kpj2006/gist-as-db",
+  "title": "Add check 6 to README",
+  "url": "https://github.com/kpj2006/gist-as-db/pull/6",
+  "merged": "2026-01-01"
+ },
+ {
+  "repo": "kpj2006/gist-as-db",
+  "title": "Add check 5 to the README",
+  "url": "https://github.com/kpj2006/gist-as-db/pull/5",
+  "merged": "2026-01-01"
+ },
+ {
+  "repo": "kpj2006/gist-as-db",
+  "title": "Add check 4 to README",
+  "url": "https://github.com/kpj2006/gist-as-db/pull/4",
+  "merged": "2026-01-01"
+ },
+ {
+  "repo": "kpj2006/gist-as-db",
+  "title": "Update README.md",
+  "url": "https://github.com/kpj2006/gist-as-db/pull/3",
+  "merged": "2026-01-01"
+ },
+ {
+  "repo": "kpj2006/gist-as-db",
+  "title": "Add 'check 2' to README",
+  "url": "https://github.com/kpj2006/gist-as-db/pull/2",
+  "merged": "2026-01-01"
+ },
+ {
+  "repo": "kpj2006/gist-as-db",
+  "title": "Update README.md",
+  "url": "https://github.com/kpj2006/gist-as-db/pull/1",
+  "merged": "2026-01-01"
+ },
+ {
+  "repo": "kpj2006/demo-contributor-lifecycle-automation",
+  "title": "Add check 19 to README",
+  "url": "https://github.com/kpj2006/demo-contributor-lifecycle-automation/pull/21",
+  "merged": "2026-01-01"
+ },
+ {
+  "repo": "kpj2006/demo-contributor-lifecycle-automation",
+  "title": "Add check 17 and check 18 to README",
+  "url": "https://github.com/kpj2006/demo-contributor-lifecycle-automation/pull/20",
+  "merged": "2025-12-31"
+ },
+ {
+  "repo": "kpj2006/demo-contributor-lifecycle-automation",
+  "title": "Add check 16 to README",
+  "url": "https://github.com/kpj2006/demo-contributor-lifecycle-automation/pull/19",
+  "merged": "2025-12-31"
+ },
+ {
+  "repo": "kpj2006/demo-contributor-lifecycle-automation",
+  "title": "Add check 15 to the README",
+  "url": "https://github.com/kpj2006/demo-contributor-lifecycle-automation/pull/18",
+  "merged": "2025-12-31"
+ },
+ {
+  "repo": "kpj2006/demo-contributor-lifecycle-automation",
+  "title": "Add check 14 to README",
+  "url": "https://github.com/kpj2006/demo-contributor-lifecycle-automation/pull/17",
+  "merged": "2025-12-31"
+ },
+ {
+  "repo": "kpj2006/demo-contributor-lifecycle-automation",
+  "title": "Add check 13 to README",
+  "url": "https://github.com/kpj2006/demo-contributor-lifecycle-automation/pull/16",
+  "merged": "2025-12-31"
+ },
+ {
+  "repo": "kpj2006/demo-contributor-lifecycle-automation",
+  "title": "Add check 11 and check 12 to README",
+  "url": "https://github.com/kpj2006/demo-contributor-lifecycle-automation/pull/15",
+  "merged": "2025-12-31"
+ },
+ {
+  "repo": "kpj2006/demo-contributor-lifecycle-automation",
+  "title": "Add check 10 to the README",
+  "url": "https://github.com/kpj2006/demo-contributor-lifecycle-automation/pull/14",
+  "merged": "2025-12-31"
+ },
+ {
+  "repo": "kpj2006/demo-contributor-lifecycle-automation",
+  "title": "Add check 9 to README",
+  "url": "https://github.com/kpj2006/demo-contributor-lifecycle-automation/pull/13",
+  "merged": "2025-12-31"
+ },
+ {
+  "repo": "kpj2006/demo-contributor-lifecycle-automation",
+  "title": "Add check 8 to the README",
+  "url": "https://github.com/kpj2006/demo-contributor-lifecycle-automation/pull/12",
+  "merged": "2025-12-31"
+ },
+ {
+  "repo": "kpj2006/demo-contributor-lifecycle-automation",
+  "title": "Add check 7 to the README",
+  "url": "https://github.com/kpj2006/demo-contributor-lifecycle-automation/pull/11",
+  "merged": "2025-12-31"
+ },
+ {
+  "repo": "AOSSIE-Org/Template-Repo",
+  "title": "add error and steps",
+  "url": "https://github.com/AOSSIE-Org/Template-Repo/pull/49",
+  "merged": "2026-02-21"
+ },
+ {
+  "repo": "AOSSIE-Org/Template-Repo",
+  "title": "pre-issue script",
+  "url": "https://github.com/AOSSIE-Org/Template-Repo/pull/48",
+  "merged": "2026-01-26"
+ },
+ {
+  "repo": "kpj2006/demo-contributor-lifecycle-automation",
+  "title": "Update README.md",
+  "url": "https://github.com/kpj2006/demo-contributor-lifecycle-automation/pull/10",
+  "merged": "2025-12-30"
+ },
+ {
+  "repo": "kpj2006/demo-contributor-lifecycle-automation",
+  "title": "Add check 5 to the README",
+  "url": "https://github.com/kpj2006/demo-contributor-lifecycle-automation/pull/9",
+  "merged": "2025-12-30"
+ },
+ {
+  "repo": "kpj2006/demo-contributor-lifecycle-automation",
+  "title": "Update README.md",
+  "url": "https://github.com/kpj2006/demo-contributor-lifecycle-automation/pull/8",
+  "merged": "2025-12-30"
+ },
+ {
+  "repo": "kpj2006/demo-contributor-lifecycle-automation",
+  "title": "Add 'check 3' to the README",
+  "url": "https://github.com/kpj2006/demo-contributor-lifecycle-automation/pull/7",
+  "merged": "2025-12-30"
+ },
+ {
+  "repo": "kpj2006/demo-contributor-lifecycle-automation",
+  "title": "Add 'check 2' to the README",
+  "url": "https://github.com/kpj2006/demo-contributor-lifecycle-automation/pull/6",
+  "merged": "2025-12-30"
+ },
+ {
+  "repo": "kpj2006/demo-contributor-lifecycle-automation",
+  "title": "Add 'check 1' to README",
+  "url": "https://github.com/kpj2006/demo-contributor-lifecycle-automation/pull/5",
+  "merged": "2025-12-30"
+ },
+ {
+  "repo": "kpj2006/demo-contributor-lifecycle-automation",
+  "title": "Add 'check' to README.md",
+  "url": "https://github.com/kpj2006/demo-contributor-lifecycle-automation/pull/4",
+  "merged": "2025-12-30"
+ },
+ {
+  "repo": "kpj2006/demo-contributor-lifecycle-automation",
+  "title": "Fix formatting of test header in README.md",
+  "url": "https://github.com/kpj2006/demo-contributor-lifecycle-automation/pull/3",
+  "merged": "2025-12-30"
+ },
+ {
+  "repo": "AOSSIE-Org/Template-Repo",
+  "title": "pre-issue",
+  "url": "https://github.com/AOSSIE-Org/Template-Repo/pull/15",
+  "merged": "2025-12-30"
+ },
+ {
+  "repo": "AOSSIE-Org/Template-Repo",
+  "title": "add pr template",
+  "url": "https://github.com/AOSSIE-Org/Template-Repo/pull/14",
+  "merged": "2025-12-30"
+ },
+ {
+  "repo": "AOSSIE-Org/Template-Repo",
+  "title": "pre-commit",
+  "url": "https://github.com/AOSSIE-Org/Template-Repo/pull/13",
+  "merged": "2025-12-30"
+ },
+ {
+  "repo": "AOSSIE-Org/Template-Repo",
+  "title": "add one more label",
+  "url": "https://github.com/AOSSIE-Org/Template-Repo/pull/8",
+  "merged": "2025-12-26"
+ },
+ {
+  "repo": "AOSSIE-Org/Template-Repo",
+  "title": "add sync-pr-labels",
+  "url": "https://github.com/AOSSIE-Org/Template-Repo/pull/6",
+  "merged": "2025-12-25"
+ },
+ {
+  "repo": "AOSSIE-Org/Template-Repo",
+  "title": "add dependabot",
+  "url": "https://github.com/AOSSIE-Org/Template-Repo/pull/5",
+  "merged": "2026-05-17"
+ },
+ {
+  "repo": "AOSSIE-Org/Template-Repo",
+  "title": "add release drafter",
+  "url": "https://github.com/AOSSIE-Org/Template-Repo/pull/4",
+  "merged": "2025-12-28"
+ },
+ {
+  "repo": "AOSSIE-Org/Template-Repo",
+  "title": "add issue template",
+  "url": "https://github.com/AOSSIE-Org/Template-Repo/pull/3",
+  "merged": "2025-12-25"
+ },
+ {
+  "repo": "AOSSIE-Org/Template-Repo",
+  "title": "update",
+  "url": "https://github.com/AOSSIE-Org/Template-Repo/pull/2",
+  "merged": "2025-12-24"
+ },
+ {
+  "repo": "kpj2006/ergoscript-lsp",
+  "title": "Change header from H1 to H2 in README",
+  "url": "https://github.com/kpj2006/ergoscript-lsp/pull/2",
+  "merged": "2025-12-23"
+ },
+ {
+  "repo": "AOSSIE-Org/SocialShareButton",
+  "title": "correct cdn path",
+  "url": "https://github.com/AOSSIE-Org/SocialShareButton/pull/5",
+  "merged": "2025-12-22"
+ },
+ {
+  "repo": "AOSSIE-Org/SocialShareButton",
+  "title": "saving logo in SVG format",
+  "url": "https://github.com/AOSSIE-Org/SocialShareButton/pull/2",
+  "merged": "2025-12-22"
+ },
+ {
+  "repo": "AOSSIE-Org/SocialShareButton",
+  "title": "Social share button",
+  "url": "https://github.com/AOSSIE-Org/SocialShareButton/pull/1",
+  "merged": "2025-12-22"
+ },
+ {
+  "repo": "StabilityNexus/Website",
+  "title": "fix: React key prop warnings and card image overflow on hover",
+  "url": "https://github.com/StabilityNexus/Website/pull/19",
+  "merged": "2025-12-22"
+ },
+ {
+  "repo": "r-rajaneesh/Agni-AI",
+  "title": "add contributing.md",
+  "url": "https://github.com/r-rajaneesh/Agni-AI/pull/6",
+  "merged": "2025-10-31"
+ },
+ {
+  "repo": "r-rajaneesh/Agni-AI",
+  "title": "add readme.md",
+  "url": "https://github.com/r-rajaneesh/Agni-AI/pull/5",
+  "merged": "2025-10-31"
+ },
+ {
+  "repo": "ember-bootstrap/ember-bootstrap",
+  "title": "feat: deprecate include and exclude configuration options",
+  "url": "https://github.com/ember-bootstrap/ember-bootstrap/pull/2206",
+  "merged": "2025-11-13"
+ },
+ {
+  "repo": "ember-bootstrap/ember-bootstrap-cp-validations",
+  "title": "Fix compatibility docs for Ember Bootstrap & CP Validations",
+  "url": "https://github.com/ember-bootstrap/ember-bootstrap-cp-validations/pull/274",
+  "merged": "2025-10-17"
+ },
+ {
+  "repo": "Elnaril/uniswap-universal-router-decoder",
+  "title": "Update integration test for Ethereum mainnet",
+  "url": "https://github.com/Elnaril/uniswap-universal-router-decoder/pull/121",
+  "merged": "2025-10-07"
+ },
+ {
+  "repo": "Elnaril/uniswap-universal-router-decoder",
+  "title": " Refactor integration tests to use Anvil instead of Ganache using eth",
+  "url": "https://github.com/Elnaril/uniswap-universal-router-decoder/pull/120",
+  "merged": "2025-10-07"
+ },
+ {
+  "repo": "Elnaril/uniswap-universal-router-decoder",
+  "title": "Replace ganache with anvil using ur address from base chain",
+  "url": "https://github.com/Elnaril/uniswap-universal-router-decoder/pull/119",
+  "merged": "2025-10-04"
+ },
+ {
+  "repo": "FlowiseAI/Flowise",
+  "title": "Enhance: Improve 'Strip New Lines' for Gemini/Vertex embedding effici\u2026",
+  "url": "https://github.com/FlowiseAI/Flowise/pull/5010",
+  "merged": "2025-08-07"
+ }
+]
