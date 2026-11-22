@@ -17,6 +17,7 @@ const cmds = [
   ...SOCIALS.map((s) => ({ n: s.name, u: s.url, g: 'social' })),
   { n: 'Resume', u: SITE.resume, g: 'link' },
   { n: 'Book a call', u: SITE.calendar, g: 'link' },
+  { n: 'Buy me a coffee', u: SITE.coffee, g: 'link' },
 ];
 ---
 <!doctype html>
@@ -74,7 +75,7 @@ const cmds = [
 
   <footer class="mt-10 border-t border-line dark:border-night-line">
     <div class="container-x flex flex-col gap-5 py-8 sm:flex-row sm:items-center sm:justify-between">
-      <div class="text-sm text-muted">© {new Date().getFullYear()} Karun Pacholi · Built with Astro · <a class="hover:text-brand" href="https://github.com/kpj2006/me" target="_blank" rel="noopener">source</a></div>
+      <div class="text-sm text-muted">© {new Date().getFullYear()} Karun Pacholi · Built with Astro · <a class="hover:text-brand" href="https://github.com/kpj2006/me" target="_blank" rel="noopener">source</a> · <a class="hover:text-brand" href={SITE.coffee} target="_blank" rel="noopener">☕ Buy me a coffee</a></div>
       <Socials size="sm" />
     </div>
   </footer>
