@@ -1,5 +1,8 @@
 @import "tailwindcss";
 @import "@fontsource-variable/inter";
+@import "@fontsource/spectral/500.css";
+@import "@fontsource/spectral/600.css";
+@import "@fontsource/spectral/700.css";
 @import "@fontsource/jetbrains-mono/400.css";
 @import "@fontsource/jetbrains-mono/600.css";
 
@@ -7,26 +10,39 @@
 
 @theme {
   --font-sans: "Inter Variable", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Spectral", Georgia, serif;
   --font-mono: "JetBrains Mono", ui-monospace, monospace;
-  --color-accent: #0d9488;
-  --color-accent-soft: #ccfbf1;
+  /* warm neutrals like santoshyadav.dev */
+  --color-ink: #1f1b19;
+  --color-paper: #fbf9f6;
+  --color-card: #ffffff;
+  --color-line: #e7e2dc;
+  --color-muted: #6b625b;
+  --color-night: #1f1c1a;
+  --color-night-card: #2a2624;
+  --color-night-line: #3a3431;
+  --color-night-muted: #a8a09a;
+  --color-brand: #2f6b4f;
+  --color-brand-soft: #8fc9a3;
 }
 
 @layer base {
   html { scroll-behavior: smooth; }
-  body { @apply bg-white text-zinc-800 antialiased dark:bg-zinc-950 dark:text-zinc-200; }
-  ::selection { @apply bg-teal-200 text-zinc-900; }
+  body { @apply bg-paper font-sans text-ink antialiased dark:bg-night dark:text-stone-200; font-size: 16.5px; }
+  h1, h2, h3 { font-family: var(--font-serif); }
+  ::selection { @apply bg-brand-soft text-ink; }
   a { @apply underline-offset-4; }
 }
 
 @layer components {
-  .container-x { @apply mx-auto w-full max-w-5xl px-5 sm:px-6; }
-  .h-section { @apply text-2xl font-bold tracking-tight text-zinc-900 dark:text-zinc-50; }
-  .card { @apply rounded-2xl border border-zinc-200 bg-white p-5 transition duration-200 dark:border-zinc-800 dark:bg-zinc-900/60; }
-  .card-hover { @apply hover:-translate-y-0.5 hover:border-teal-500/60 hover:shadow-lg hover:shadow-teal-900/5 dark:hover:border-teal-400/50; }
-  .pill { @apply inline-flex items-center rounded-full border border-zinc-200 bg-zinc-50 px-2.5 py-0.5 font-mono text-[11.5px] text-zinc-600 dark:border-zinc-700 dark:bg-zinc-800/60 dark:text-zinc-300; }
-  .btn { @apply inline-flex items-center gap-2 rounded-xl border border-zinc-300 px-4 py-2 text-sm font-semibold text-zinc-800 transition hover:border-teal-500 hover:text-teal-700 dark:border-zinc-700 dark:text-zinc-100 dark:hover:text-teal-300; }
-  .btn-primary { @apply border-zinc-900 bg-zinc-900 text-white hover:border-teal-600 hover:bg-teal-600 hover:text-white dark:border-zinc-100 dark:bg-zinc-100 dark:text-zinc-900 dark:hover:border-teal-400 dark:hover:bg-teal-400; }
-  .link { @apply font-medium text-teal-700 underline decoration-teal-700/30 hover:decoration-teal-700 dark:text-teal-300 dark:decoration-teal-300/30; }
-  .eyebrow { @apply font-mono text-[11.5px] font-semibold uppercase tracking-wider text-teal-700 dark:text-teal-300; }
+  .container-x { @apply mx-auto w-full max-w-[68rem] px-5 sm:px-6; }
+  .h-section { @apply font-serif text-[1.85rem] font-semibold tracking-tight text-ink dark:text-stone-50; }
+  .card { @apply rounded-xl border border-line bg-card p-5 transition duration-200 dark:border-night-line dark:bg-night-card; }
+  .card-hover { @apply hover:-translate-y-0.5 hover:border-brand/60 hover:shadow-lg hover:shadow-black/5 dark:hover:border-brand-soft/40; }
+  .pill { @apply inline-flex items-center gap-1.5 rounded-md border border-line bg-paper px-2 py-0.5 font-mono text-[11.5px] text-muted dark:border-night-line dark:bg-night dark:text-night-muted; }
+  .btn { @apply inline-flex items-center gap-2 rounded-lg border border-ink/25 px-5 py-2.5 text-[15px] font-semibold text-ink transition hover:border-brand hover:text-brand dark:border-stone-500 dark:text-stone-100 dark:hover:border-brand-soft dark:hover:text-brand-soft; }
+  .btn-primary { @apply border-brand bg-brand text-white hover:bg-[#285c44] hover:text-white dark:border-brand dark:text-white dark:hover:text-white; }
+  .link { @apply font-medium text-brand underline decoration-brand/30 hover:decoration-brand dark:text-brand-soft dark:decoration-brand-soft/30; }
+  .eyebrow { @apply font-mono text-[11.5px] font-semibold uppercase tracking-wider text-brand dark:text-brand-soft; }
+  .muted { @apply text-muted dark:text-night-muted; }
 }
