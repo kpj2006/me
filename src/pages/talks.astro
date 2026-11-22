@@ -3,18 +3,19 @@ import Base from '../layouts/Base.astro';
 import PageHeader from '../components/PageHeader.astro';
 import WorkWithMe from '../components/WorkWithMe.astro';
 import { TALKS } from '../data/content';
+import { url } from '../lib/url';
 ---
 <Base title="Talks & events" description="Talks, sessions and events by Karun Pacholi.">
   <PageHeader title="Talks & events" text={`Sessions I gave, hosted or organized. Want me at your meetup or college? <a class="link" href="mailto:jaihanumanji2006@gmail.com?subject=Talk%20invite">Invite me</a>.`} />
-  <div class="space-y-3">
+  <div class="grid gap-5 md:grid-cols-2">
     {TALKS.map((t) => (
-      <article class="card card-hover grid gap-2 sm:grid-cols-[7rem_1fr]">
-        <span class="font-mono text-xs text-muted">{t.date}</span>
-        <div>
-          <span class="eyebrow">{t.role}</span>
-          <h3 class="mt-1 text-lg font-semibold text-ink dark:text-stone-50">{t.title}</h3>
-          <p class="mt-1 text-[14.5px] text-muted dark:text-muted">{t.text}</p>
-          <div class="mt-2 flex gap-4">{t.links.map((l) => <a class="link text-sm" href={l.url} target="_blank" rel="noopener">{l.label} ↗</a>)}</div>
+      <article class="card card-hover flex flex-col overflow-hidden p-0">
+        <a href={t.links[0]?.url} target="_blank" rel="noopener" class="block p-3 pb-0"><div class="aspect-video overflow-hidden rounded-sm border border-line dark:border-night-line"><img src={t.img.startsWith('http') ? t.img : url(t.img)} alt="" loading="lazy" class="h-full w-full object-cover" /></div></a>
+        <div class="flex flex-1 flex-col p-5 pt-4">
+          <div class="flex items-center gap-3"><span class="eyebrow">{t.role}</span><span class="font-mono text-xs text-muted">{t.date}</span></div>
+          <h3 class="mt-1.5 font-serif text-[1.3rem] font-semibold text-ink dark:text-stone-50">{t.title}</h3>
+          <p class="muted mt-1 text-[15px]">{t.text}</p>
+          <div class="mt-auto flex gap-4 pt-3">{t.links.map((l) => <a class="link text-sm" href={l.url} target="_blank" rel="noopener">{l.label} ↗</a>)}</div>
         </div>
       </article>
     ))}

@@ -26,7 +26,7 @@ const top = BY_REPO.slice(0, 10), max = top[0]?.[1] ?? 1;
   </section>
   <section class="pb-10">
     <SectionHead title="Latest merged PRs" href="https://github.com/kpj2006/me#readme" linkText="By domain" />
-    <ul class="divide-y divide-line overflow-hidden rounded-2xl border border-line dark:divide-night-line dark:border-night-line">
+    <ul class="divide-y divide-line overflow-hidden rounded-md border border-line dark:divide-night-line dark:border-night-line">
       {RECENT.slice(0, 15).map((p) => (
         <li><a href={p.url} target="_blank" rel="noopener" class="grid grid-cols-[6.5rem_1fr] gap-3 px-4 py-3 hover:bg-paper dark:hover:bg-night-card">
           <span class="font-mono text-xs text-muted">{p.merged}</span>

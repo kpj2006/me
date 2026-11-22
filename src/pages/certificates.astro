@@ -3,13 +3,14 @@ import Base from '../layouts/Base.astro';
 import PageHeader from '../components/PageHeader.astro';
 import { CERTS } from '../data/content';
 import { SITE } from '../data/site';
+import BrandIcon from '../components/BrandIcon.astro';
 ---
 <Base title="Certificates" description="Programs and certificates of Karun Pacholi.">
   <PageHeader title="Certificates" text={`Programs I was selected for and certificates I earned. <a class="link" href="${SITE.linkedin}" target="_blank" rel="noopener">Proof on LinkedIn ↗</a>`} />
   <div class="grid gap-4 sm:grid-cols-2">
     {CERTS.map((c) => (
       <div class="card flex gap-4">
-        <div class="grid h-12 w-12 shrink-0 place-items-center rounded-xl bg-paper text-2xl dark:bg-night-card">{c.icon}</div>
+        <div class="grid h-14 w-14 shrink-0 place-items-center rounded-md border border-line bg-paper text-2xl dark:border-night-line dark:bg-night">{c.logo ? <BrandIcon name={c.logo} class="h-8 w-8" /> : c.icon}</div>
         <div>{c.year && <span class="font-mono text-xs font-semibold text-brand dark:text-brand-soft">{c.year}</span>}<b class="block text-ink dark:text-stone-50">{c.title}</b><span class="text-sm text-muted">{c.sub}</span></div>
       </div>
     ))}
