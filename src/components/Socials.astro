@@ -1,0 +1,14 @@
+---
+import Icon from './Icon.astro';
+import { SOCIALS } from '../data/site';
+const { size = 'md' } = Astro.props;
+const box = size === 'sm' ? 'h-9 w-9' : 'h-10 w-10';
+---
+<div class="flex flex-wrap gap-2">
+  {SOCIALS.map((s) => (
+    <a href={s.url} target={s.url.startsWith('mailto') ? undefined : '_blank'} rel="noopener" aria-label={s.name} title={s.name}
+      class={`${box} grid place-items-center rounded-xl border border-zinc-200 text-zinc-500 transition hover:-translate-y-0.5 hover:border-teal-500 hover:text-teal-600 dark:border-zinc-800 dark:text-zinc-400 dark:hover:text-teal-300`}>
+      <Icon name={s.icon} />
+    </a>
+  ))}
+</div>
