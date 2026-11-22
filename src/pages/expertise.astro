@@ -1,0 +1,53 @@
+---
+import Base from '../layouts/Base.astro';
+import PageHeader from '../components/PageHeader.astro';
+import ProjectCard from '../components/ProjectCard.astro';
+import BrandIcon from '../components/BrandIcon.astro';
+import { PROJECTS } from '../data/projects';
+import { ROLES, COMMUNITY } from '../data/roles';
+import { SKILLS_BY, DESIGNS } from '../data/content';
+import { url } from '../lib/url';
+const all = [...PROJECTS, ...COMMUNITY];
+const get = (s: string) => all.find((p) => p.slug === s)!;
+const domains = [
+  ...ROLES.map((r) => ({ key: r.key, title: r.title, icon: r.icon, pitch: r.pitch, items: r.items.map(get), more: `roles/${r.key}/` })),
+  { key: 'design', title: 'Graphic Design', icon: '🎨', pitch: 'Posters, banners and merch for college clubs and events, made in Figma.', items: [], more: '' },
+];
+const SHOW = 6;
+---
+<Base title="Expertise" description="Karun Pacholi's skills and projects, by domain: DevOps, DevSecOps, open-source maintenance, backend, full stack, AI, MLOps, Web3, DevRel and graphic design.">
+  <PageHeader title="Expertise" text="My skills and the work behind them, one domain at a time. Every card links to code, a demo or a post.">
+    <nav class="mt-6 flex flex-wrap gap-2" aria-label="Domains">
+      {domains.map((d) => <a href={`#${d.key}`} class="rounded-full border border-line px-3 py-1 text-[13px] font-semibold text-muted transition hover:border-brand hover:text-ink dark:border-night-line dark:hover:text-stone-100">{d.icon} {d.title}</a>)}
+    </nav>
+  </PageHeader>
+
+  {domains.map((d, i) => (
+    <section id={d.key} class={`scroll-mt-20 py-12 ${i % 2 ? 'band' : ''}`}>
+      <div class="mb-4 flex flex-col gap-1 sm:flex-row sm:items-end sm:justify-between">
+        <h2 class="font-serif text-[1.9rem] font-semibold text-ink dark:text-stone-50"><span class="mr-2">{d.icon}</span>{d.title}</h2>
+        {d.more && d.items.length > SHOW && <a href={url(d.more)} class="link shrink-0 text-sm">All {d.items.length} →</a>}
+      </div>
+      <p class="max-w-2xl text-[1.05rem] text-stone-700 dark:text-stone-300">{d.pitch}</p>
+      <div class="mt-4 flex flex-wrap gap-1.5">{(SKILLS_BY[d.key] ?? []).map((k) => <span class="pill text-[12.5px]"><BrandIcon name={k} />{k}</span>)}</div>
+
+      {d.key === 'design' ? (
+        <>
+          <div class="mt-6 columns-2 gap-4 sm:columns-3">
+            {DESIGNS.map((x) => (
+              <figure class="card mb-4 break-inside-avoid overflow-hidden p-2">
+                <img src={url(`assets/design/${x.img}.jpg`)} alt={x.title} class="w-full rounded-sm" />
+                <figcaption class="px-1.5 pb-1 pt-2"><b class="block text-[14px] text-ink dark:text-stone-100">{x.title}</b><span class="muted text-[12.5px]">{x.sub}</span></figcaption>
+              </figure>
+            ))}
+          </div>
+          <a href="https://github.com/kpj2006/Figma" target="_blank" rel="noopener" class="btn mt-2"><BrandIcon name="Figma" class="h-4 w-4" />All files on GitHub</a>
+        </>
+      ) : (
+        <div class="mt-6 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+          {d.items.slice(0, SHOW).map((p) => <ProjectCard p={p} compact />)}
+        </div>
+      )}
+    </section>
+  ))}
+</Base>

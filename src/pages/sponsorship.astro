@@ -4,24 +4,36 @@ import PageHeader from '../components/PageHeader.astro';
 import SectionHead from '../components/SectionHead.astro';
 import { SITE } from '../data/site';
 import { url } from '../lib/url';
+const help = [
+  { icon: '🧹', title: 'Triage the PR flood', text: 'AI tools bring many low-quality PRs. I review, label and close them fast, so real contributors get answers.' },
+  { icon: '🚦', title: 'CI gates', text: 'Checks that stop broken, unsafe or unlinked PRs before a human has to look.' },
+  { icon: '🤖', title: 'AI rules for contributors', text: 'AGENTS.md-style skills and AI-disclosure policies, like the ones I wrote for AOSSIE.' },
+  { icon: '🛡️', title: 'Security scans', text: 'CodeQL, Gitleaks, OSV-Scanner and OpenSSF Scorecard set up in the pipeline.' },
+  { icon: '🧭', title: 'Issue and release hygiene', text: 'Good-first issues, templates, labels and releases that ship the same way every time.' },
+  { icon: '🌱', title: 'Contributor onboarding', text: 'Clear docs and mentoring, as I did for GSSoC’26 contributors.' },
+];
 const ways = [
-  { icon: '☕', title: 'Buy me a coffee', text: 'One-time or monthly support on Buy Me a Coffee.', href: SITE.coffee },
-  { icon: '🤝', title: 'Sponsor directly', text: 'Company or one-time sponsorship — email me.', href: `mailto:${SITE.email}?subject=Sponsorship` },
-  { icon: '⭐', title: 'Star & use', text: 'Star GitPay or Template-Repo and try them in your org.', href: 'https://github.com/StabilityNexus/GitPay' },
-  { icon: '💼', title: 'Hire me', text: 'The best support: a role or a paid project.', href: url('work-with-me/') },
+  { icon: '💼', title: 'Hire me', text: 'A full-time role, internship or paid maintainer contract.', href: url('work-with-me/#contact') },
+  { icon: '🤝', title: 'Sponsor your project', text: 'Fund my time to maintain your open-source repo. Email me.', href: `mailto:${SITE.email}?subject=Open-source maintenance` },
+  { icon: '📅', title: 'Book a call', text: 'Talk through your repo and what it needs.', href: SITE.calendar },
+  { icon: '☕', title: 'Buy me a coffee', text: 'Small one-time support.', href: SITE.coffee },
 ];
 ---
-<Base title="Sponsorship" description="Support Karun Pacholi's open-source work.">
-  <PageHeader title="Sponsorship" text="Support my open-source work on CI/CD, DevSecOps and contributor tooling." />
-  <section class="pb-10 text-stone-700 dark:text-stone-300">
-    <p>I want to spend more time building free tools for maintainers. Support helps me:</p>
-    <ul class="mt-2 list-disc space-y-1 pl-5"><li>maintain GitPay, Template-Repo and SocialShareButton</li><li>prototype new contributor-automation tools</li><li>write posts, record demos and run community events in Jaipur</li></ul>
+<Base title="Sponsorship" description="Hire or sponsor Karun Pacholi to maintain your open-source project in the AI era.">
+  <PageHeader title="Sponsorship" text="Need help maintaining your open-source project in the AI era? Hire me or sponsor my time." />
+  <section class="pb-10">
+    <p class="max-w-2xl text-stone-700 dark:text-stone-300">I maintain open-source repos at AOSSIE: SocialShareButton as core maintainer, and Template-Repo, AutoInitialIssues and Skills as co-maintainer. I can do the same for your project.</p>
   </section>
-  <section class="pb-8">
-    <SectionHead title="How to support" />
-    <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-      {ways.map((w) => <a href={w.href} target={w.href.startsWith("http") ? "_blank" : undefined} rel="noopener" class="card card-hover"><div class="text-2xl">{w.icon}</div><h3 class="mt-2 font-semibold">{w.title}</h3><p class="text-sm text-muted">{w.text}</p></a>)}
+  <section class="pb-12">
+    <SectionHead title="What I can do for your project" />
+    <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+      {help.map((h) => <div class="card"><div class="text-2xl">{h.icon}</div><h3 class="mt-2 font-semibold text-ink dark:text-stone-50">{h.title}</h3><p class="mt-1 text-[14.5px] text-muted">{h.text}</p></div>)}
     </div>
   </section>
-  <p class="text-sm text-muted"><b>No pressure.</b> Reading, sharing and starring the work already helps.</p>
+  <section class="band py-12">
+    <SectionHead title="How to work together" />
+    <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+      {ways.map((w) => <a href={w.href} target={w.href.startsWith('http') ? '_blank' : undefined} rel="noopener" class="card card-hover"><div class="text-2xl">{w.icon}</div><h3 class="mt-2 font-semibold">{w.title}</h3><p class="text-sm text-muted">{w.text}</p></a>)}
+    </div>
+  </section>
 </Base>
