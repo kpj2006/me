@@ -1,0 +1,20 @@
+---
+import BrandIcon from './BrandIcon.astro';
+const items = [
+  { logo: 'GSoC', title: 'Google Summer of Code', sub: "2026 · DevOps Lead, AOSSIE", href: 'https://summerofcode.withgoogle.com/' },
+  { logo: 'Linux Foundation', title: 'LFX Mentorship', sub: '2026 · Magma', href: 'https://github.com/magma/magma' },
+  { logo: 'Gemini', title: 'Gemini Student Ambassador', sub: 'Google · GSA ID 14079', href: 'https://grow.google/intl/ALL_in/ai-skills/' },
+  { logo: '', emoji: '🏆', title: 'Rootcamp I', sub: 'Top 20 · winning project', href: 'https://github.com/kpj2006/prstake' },
+  { logo: 'Sui', title: 'SUI x Jaipur', sub: '3rd place', href: 'https://github.com/kpj2006/zklogin-raffle' },
+  { logo: 'Linux Foundation', title: 'AAIF Organizer', sub: 'Jaipur chapter', href: 'https://www.linkedin.com/feed/update/urn:li:activity:7484794478403268609/' },
+];
+---
+<div class="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-6">
+  {items.map((i) => (
+    <a href={i.href} target="_blank" rel="noopener" class="card card-hover flex flex-col items-center gap-2 px-3 py-4 text-center">
+      <span class="grid h-10 place-items-center">{i.logo ? <BrandIcon name={i.logo} class="h-8 w-8" /> : <span class="text-3xl">{i.emoji}</span>}</span>
+      <span class="text-[13.5px] font-semibold leading-tight text-ink dark:text-stone-100">{i.title}</span>
+      <span class="muted text-[12px] leading-tight">{i.sub}</span>
+    </a>
+  ))}
+</div>

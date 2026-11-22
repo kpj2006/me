@@ -3,5 +3,5 @@ const { title, href, linkText } = Astro.props;
 ---
 <div class="mb-6 flex items-end justify-between gap-4">
   <h2 class="h-section">{title}</h2>
-  {href && <a href={href} class="text-sm font-medium text-zinc-500 hover:text-teal-600 dark:text-zinc-400">{linkText} →</a>}
+  {href && <a href={href} class="text-sm font-medium text-muted hover:text-brand dark:text-muted">{linkText} →</a>}
 </div>

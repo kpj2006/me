@@ -1,0 +1,10 @@
+---
+import { brand } from '../lib/brands';
+interface Props { name: string; class?: string; mono?: boolean }
+const { name, class: cls = 'h-3.5 w-3.5', mono = false } = Astro.props;
+const b = brand(name);
+// very dark brand colours (GitHub, Next.js, Ollama…) follow the text colour so they stay visible in dark mode
+const dark = b ? parseInt(b.hex.slice(0, 2), 16) * 0.3 + parseInt(b.hex.slice(2, 4), 16) * 0.59 + parseInt(b.hex.slice(4, 6), 16) * 0.11 < 60 : false;
+const fill = !b || mono || dark ? 'currentColor' : `#${b.hex}`;
+---
+{b && <svg viewBox="0 0 24 24" class={cls} role="img" aria-label={b.title}><path fill={fill} d={b.path} /></svg>}
