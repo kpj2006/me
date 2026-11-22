@@ -262,3 +262,17 @@ header .wrap{max-width:1120px}
  .links.show{display:flex;flex-direction:column;position:absolute;top:60px;left:0;right:0;background:var(--bg);border-bottom:1px solid var(--line);padding:12px 22px;gap:10px}
  .links.show .more .menu{display:block;position:static;box-shadow:none;border:0;padding:0 0 0 10px}
  .links.show .more>button{display:none}}
+/* roles */
+.rtabs{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:12px}
+.rtab{font:inherit;font-size:14px;font-weight:600;padding:8px 12px;border-radius:999px;border:1px solid var(--line);background:var(--card);color:var(--muted);cursor:pointer}
+.rtab:hover{border-color:var(--accent);color:var(--fg)}
+.rtab[aria-selected="true"]{background:var(--fg);color:var(--bg);border-color:var(--fg)}
+.rbox{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px 22px;box-shadow:var(--shadow)}
+.rpanel h3{font-size:20px;margin:0 0 2px}
+.rpanel .pitch{color:var(--accent);font-weight:600;margin:0 0 10px}
+.rpanel ul{margin:0 0 14px;padding-left:20px}
+.rpanel li{margin:6px 0;font-size:15px}
+.skills.sm span{font-size:12px;padding:3px 8px}
+.proof{margin-top:14px;font-size:14.5px;display:flex;flex-wrap:wrap;gap:6px 14px;align-items:center}
+.proof b{color:var(--accent2)}
+.share{display:inline-block;margin-top:12px;font-size:12.5px;color:var(--muted)}
