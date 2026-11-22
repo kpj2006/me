@@ -1,478 +1,87 @@
+---
+layout: null
+permalink: /
+---
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Karun Pacholi — DevOps, open source, AI tooling</title>
-<meta name="description" content="Karun Pacholi (kpj2006) — GSoC 2026 contributor and DevOps Lead at AOSSIE. CI/CD, DevSecOps, AI tooling for maintainers, and open-source communities in Jaipur.">
-<meta property="og:title" content="Karun Pacholi">
-<meta property="og:description" content="GSoC 2026 contributor and DevOps Lead at AOSSIE. CI/CD, DevSecOps, AI tooling for open source.">
+<title>Karun Pacholi — DevOps &amp; platform engineer</title>
+<meta name="description" content="GSoC&#x27;26 DevOps Lead at AOSSIE and LFX&#x27;26 mentee at Magma. Looking for SDE, DevOps and platform internships.">
+<meta property="og:title" content="Karun Pacholi — DevOps &amp; platform engineer">
+<meta property="og:description" content="GSoC&#x27;26 DevOps Lead at AOSSIE and LFX&#x27;26 mentee at Magma. Looking for SDE, DevOps and platform internships.">
 <meta property="og:image" content="https://kpj2006.github.io/me/assets/karun-lake.jpg">
-<meta name="theme-color" content="#0b0d0e">
-<link rel="icon" href="assets/avatar.jpg">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="icon" href="/me/assets/avatar.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
-<style>
-:root{
-  --bg:#fbfaf7; --bg2:#f2f0ea; --card:#ffffff; --fg:#17191c; --muted:#5d636b; --line:#e4e1d8;
-  --accent:#d9480f; --accent2:#0f766e; --chip:#f1ede4; --shadow:0 1px 2px rgba(0,0,0,.04),0 8px 24px rgba(0,0,0,.05);
-}
-html[data-theme="dark"]{
-  --bg:#0b0d0e; --bg2:#121518; --card:#15191c; --fg:#e8e6e1; --muted:#9aa1a8; --line:#262b30;
-  --accent:#ff8a4c; --accent2:#2dd4bf; --chip:#1d2226; --shadow:0 1px 2px rgba(0,0,0,.3),0 8px 24px rgba(0,0,0,.25);
-}
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.65 Inter,system-ui,-apple-system,Segoe UI,sans-serif;-webkit-font-smoothing:antialiased}
-a{color:inherit;text-decoration-color:color-mix(in srgb,var(--accent) 55%,transparent);text-underline-offset:3px}
-a:hover{color:var(--accent)}
-.wrap{max-width:880px;margin:0 auto;padding:0 22px}
-.mono{font-family:"JetBrains Mono",ui-monospace,monospace}
-
-/* header */
-header{position:sticky;top:0;z-index:20;backdrop-filter:saturate(1.4) blur(10px);background:color-mix(in srgb,var(--bg) 82%,transparent);border-bottom:1px solid var(--line)}
-.nav{display:flex;align-items:center;gap:18px;height:60px}
-.brand{display:flex;align-items:center;gap:10px;font-weight:700;text-decoration:none;letter-spacing:-.01em}
-.brand img{width:30px;height:30px;border-radius:50%;object-fit:cover}
-.links{display:flex;gap:16px;margin-left:auto;font-size:14.5px}
-.links a{text-decoration:none;color:var(--muted)}
-.links a:hover{color:var(--fg)}
-.iconbtn{border:1px solid var(--line);background:var(--card);color:var(--fg);border-radius:9px;height:34px;padding:0 10px;display:inline-flex;align-items:center;gap:6px;cursor:pointer;font:inherit;font-size:13px}
-.iconbtn:hover{border-color:var(--accent)}
-kbd{font:600 11px "JetBrains Mono",monospace;border:1px solid var(--line);border-bottom-width:2px;border-radius:5px;padding:1px 5px;color:var(--muted)}
-@media(max-width:720px){.links{display:none}.nav .spacer{margin-left:auto}}
-
-/* hero */
-.hero{padding:56px 0 18px;display:grid;grid-template-columns:1.25fr .9fr;gap:40px;align-items:center}
-.hello{font-size:15px;color:var(--accent);font-weight:600;letter-spacing:.02em}
-h1{font-size:clamp(34px,5.4vw,52px);line-height:1.08;letter-spacing:-.035em;margin:8px 0 14px;font-weight:800}
-.creds{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 18px}
-.cred{font-size:12.5px;font-weight:600;padding:4px 10px;border-radius:999px;background:var(--chip);border:1px solid var(--line)}
-.cred b{color:var(--accent)}
-.lead{font-size:17.5px;color:var(--fg);margin:0 0 10px}
-.sub{color:var(--muted);margin:0 0 20px}
-.cta{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:22px}
-.btn{display:inline-flex;align-items:center;gap:8px;padding:10px 16px;border-radius:10px;font-weight:600;font-size:14.5px;text-decoration:none;border:1px solid var(--line);background:var(--card)}
-.btn.primary{background:var(--fg);color:var(--bg);border-color:var(--fg)}
-.btn.primary:hover{background:var(--accent);border-color:var(--accent);color:#fff}
-.btn:hover{border-color:var(--accent)}
-.socials{display:flex;flex-wrap:wrap;gap:8px}
-.socials a{width:38px;height:38px;border-radius:10px;border:1px solid var(--line);background:var(--card);display:grid;place-items:center;color:var(--muted)}
-.socials a:hover{color:var(--accent);border-color:var(--accent);transform:translateY(-1px)}
-.socials svg{width:18px;height:18px;fill:currentColor}
-.portrait{position:relative}
-.portrait img{width:100%;aspect-ratio:4/5;object-fit:cover;object-position:50% 30%;border-radius:22px;box-shadow:var(--shadow);display:block}
-.portrait .tag{position:absolute;left:14px;bottom:14px;background:color-mix(in srgb,var(--card) 88%,transparent);backdrop-filter:blur(6px);border:1px solid var(--line);border-radius:10px;padding:6px 10px;font-size:12.5px}
-.dot{display:inline-block;width:8px;height:8px;border-radius:50%;background:#22c55e;margin-right:6px;box-shadow:0 0 0 3px color-mix(in srgb,#22c55e 25%,transparent)}
-@media(max-width:760px){.hero{grid-template-columns:1fr;padding-top:34px}.portrait{order:-1;max-width:320px}}
-
-/* stats */
-.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:34px 0 8px}
-.stat{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px 16px}
-.stat .n{font-size:26px;font-weight:800;letter-spacing:-.03em}
-.stat .l{font-size:12.5px;color:var(--muted)}
-@media(max-width:640px){.stats{grid-template-columns:repeat(2,1fr)}}
-
-/* sections */
-section{padding:46px 0 6px}
-.sh{display:flex;align-items:baseline;justify-content:space-between;gap:12px;margin-bottom:18px}
-h2{font-size:24px;letter-spacing:-.025em;margin:0}
-h2 .hash{color:var(--accent);font-family:"JetBrains Mono",monospace;font-weight:600;margin-right:6px}
-.sh a{font-size:14px;color:var(--muted)}
-h3{font-size:17px;margin:0 0 6px;letter-spacing:-.01em}
-p{margin:0 0 12px}
-.muted{color:var(--muted)}
-
-.now{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px 22px;box-shadow:var(--shadow)}
-.now ul{margin:0;padding-left:0;list-style:none}
-.now li{padding:8px 0;border-bottom:1px dashed var(--line);display:flex;gap:12px}
-.now li:last-child{border:0}
-.now .k{flex:0 0 92px;font:600 12px "JetBrains Mono",monospace;color:var(--accent2);padding-top:3px;text-transform:uppercase;letter-spacing:.04em}
-@media(max-width:560px){.now li{flex-direction:column;gap:2px}.now .k{flex:none}}
-.tl{position:relative;margin:0;padding:0;list-style:none}
-.tl:before{content:"";position:absolute;left:7px;top:6px;bottom:6px;width:2px;background:var(--line)}
-.tl li{position:relative;padding:0 0 22px 32px}
-.tl li:before{content:"";position:absolute;left:0;top:6px;width:16px;height:16px;border-radius:50%;background:var(--bg);border:3px solid var(--accent)}
-.tl li:nth-child(2):before{border-color:var(--accent2)}
-.tl li:nth-child(3):before{border-color:#7c3aed}
-.tl li:nth-child(4):before{border-color:var(--muted)}
-.tl .when{font:600 12px "JetBrains Mono",monospace;color:var(--muted);letter-spacing:.03em}
-.tl h3{margin:2px 0 2px}
-.tl .org{color:var(--accent);font-weight:600;font-size:14.5px}
-.tl ul{margin:6px 0 0;padding-left:18px;color:var(--muted);font-size:14.5px}
-.tl ul li{padding:0;margin:3px 0}
-.tl ul li:before{display:none}
-.event{background:var(--card);border:1px solid var(--line);border-radius:18px;overflow:hidden;margin-bottom:16px}
-.event .head{padding:18px 20px 6px}
-.event .head .kind{display:inline-block;margin-bottom:4px}
-.gallery{display:grid;grid-template-columns:1fr 1.35fr 1.35fr;grid-template-rows:180px 180px;gap:6px;padding:12px}
-.gallery video,.gallery img{width:100%;height:100%;object-fit:cover;border-radius:10px;display:block}
-.gallery .tall{grid-row:span 2}
-@media(max-width:640px){.gallery{grid-template-columns:1fr 1fr;grid-template-rows:150px 150px 150px}.gallery .tall{grid-row:span 2}}
-.posts{display:grid;gap:12px}
-.post{display:grid;grid-template-columns:110px 1fr;gap:14px;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px 16px;text-decoration:none}
-.post:hover{border-color:var(--accent)}
-.post .d{font:12.5px "JetBrains Mono",monospace;color:var(--muted);padding-top:3px}
-.post h3{font-size:16px}
-.post p{color:var(--muted);font-size:14px;margin:0}
-@media(max-width:560px){.post{grid-template-columns:1fr;gap:2px}}
-.updated{font-size:12.5px;color:var(--muted);margin-top:10px}
-
-.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
-@media(max-width:680px){.grid{grid-template-columns:1fr}}
-.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px 18px 16px;display:flex;flex-direction:column;transition:border-color .15s,transform .15s}
-.card:hover{border-color:var(--accent);transform:translateY(-2px)}
-.card .top{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;gap:10px}
-.kind{font:600 11px "JetBrains Mono",monospace;text-transform:uppercase;letter-spacing:.06em;color:var(--accent)}
-.status{font-size:11.5px;color:var(--muted)}
-.card p{color:var(--muted);font-size:14.5px;flex:1}
-.tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:6px}
-.tags span{font:500 11.5px "JetBrains Mono",monospace;background:var(--chip);border:1px solid var(--line);border-radius:6px;padding:2px 7px;color:var(--muted)}
-.card .repo{font:500 12.5px "JetBrains Mono",monospace;margin-top:10px;color:var(--muted);text-decoration:none}
-.card .repo:hover{color:var(--accent)}
-
-.paths{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
-@media(max-width:760px){.paths{grid-template-columns:1fr}}
-.path{border-top:3px solid var(--accent);background:var(--card);border-radius:4px 4px 14px 14px;border-left:1px solid var(--line);border-right:1px solid var(--line);border-bottom:1px solid var(--line);padding:16px}
-.path:nth-child(2){border-top-color:var(--accent2)}
-.path:nth-child(3){border-top-color:#7c3aed}
-.path ul{margin:8px 0 0;padding-left:18px;font-size:14.5px}
-.path li{margin:4px 0}
-
-.prs{list-style:none;margin:0;padding:0;border:1px solid var(--line);border-radius:14px;background:var(--card);overflow:hidden}
-.prs li{display:grid;grid-template-columns:96px 1fr;gap:12px;padding:11px 16px;border-bottom:1px solid var(--line);font-size:14.5px}
-.prs li:last-child{border:0}
-.prs .d{font:12.5px "JetBrains Mono",monospace;color:var(--muted);padding-top:2px}
-.prs .r{display:block;font:12px "JetBrains Mono",monospace;color:var(--accent2)}
-.prs a{text-decoration:none}
-.bars{display:grid;gap:8px;margin-top:16px}
-.bar{display:grid;grid-template-columns:200px 1fr 40px;gap:10px;align-items:center;font-size:13.5px}
-.bar .t{height:8px;background:var(--chip);border-radius:9px;overflow:hidden}
-.bar .t i{display:block;height:100%;background:linear-gradient(90deg,var(--accent),color-mix(in srgb,var(--accent) 55%,var(--accent2)));border-radius:9px}
-.bar .c{font:600 12.5px "JetBrains Mono",monospace;text-align:right}
-@media(max-width:560px){.bar{grid-template-columns:130px 1fr 34px}.bar span:first-child{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}}
-
-.community{display:grid;grid-template-columns:1.5fr 1fr;gap:16px;align-items:stretch}
-.community figure{margin:0;border-radius:16px;overflow:hidden;border:1px solid var(--line);background:var(--card)}
-.community img{width:100%;height:100%;object-fit:cover;display:block}
-.community figcaption{font-size:12.5px;color:var(--muted);padding:8px 12px}
-.clist{display:grid;gap:10px}
-.citem{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:12px 14px}
-.citem b{display:block;font-size:15px}
-.citem span{font-size:13.5px;color:var(--muted)}
-@media(max-width:720px){.community{grid-template-columns:1fr}}
-
-.badges{display:flex;flex-wrap:wrap;gap:10px}
-.badge{display:flex;align-items:center;gap:10px;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:10px 14px;font-size:14px;text-decoration:none}
-.badge .ic{width:30px;height:30px;border-radius:8px;display:grid;place-items:center;background:var(--chip);font-size:16px}
-.badge small{display:block;color:var(--muted);font-size:12px}
-
-.about{display:grid;grid-template-columns:220px 1fr;gap:24px;align-items:start}
-.about img{width:100%;border-radius:16px;border:1px solid var(--line);aspect-ratio:3/4;object-fit:cover;object-position:50% 25%}
-@media(max-width:640px){.about{grid-template-columns:1fr}.about img{max-width:220px}}
-
-.contact{background:var(--fg);color:var(--bg);border-radius:20px;padding:30px 28px;margin:20px 0 10px;display:flex;flex-wrap:wrap;gap:18px;align-items:center;justify-content:space-between}
-.contact h2{color:var(--bg)}
-.contact p{color:color-mix(in srgb,var(--bg) 75%,var(--fg));margin:6px 0 0}
-.contact .btn{background:transparent;color:var(--bg);border-color:color-mix(in srgb,var(--bg) 35%,var(--fg))}
-.contact .btn.primary{background:var(--accent);border-color:var(--accent);color:#fff}
-
-footer{border-top:1px solid var(--line);margin-top:46px;padding:22px 0 40px;font-size:13.5px;color:var(--muted)}
-footer .wrap{display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between}
-
-/* command palette */
-#cmdk{position:fixed;inset:0;background:rgba(0,0,0,.45);display:none;align-items:flex-start;justify-content:center;padding-top:12vh;z-index:50}
-#cmdk.open{display:flex}
-.palette{width:min(560px,92vw);background:var(--card);border:1px solid var(--line);border-radius:16px;box-shadow:0 20px 60px rgba(0,0,0,.35);overflow:hidden}
-.palette input{width:100%;border:0;border-bottom:1px solid var(--line);padding:16px 18px;font:inherit;font-size:16px;background:transparent;color:var(--fg);outline:none}
-.palette ul{list-style:none;margin:0;padding:6px;max-height:50vh;overflow:auto}
-.palette li{padding:10px 12px;border-radius:9px;cursor:pointer;display:flex;justify-content:space-between;gap:10px;font-size:14.5px}
-.palette li small{color:var(--muted);font-family:"JetBrains Mono",monospace;font-size:11.5px}
-.palette li.sel{background:var(--chip);color:var(--accent)}
-.reveal{opacity:0;transform:translateY(10px);transition:opacity .5s ease,transform .5s ease}
-.reveal.in{opacity:1;transform:none}
-@media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}}
-</style>
+<link rel="stylesheet" href="/me/assets/style.css">
+<script>try{document.documentElement.dataset.theme=localStorage.getItem('theme')||(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light')}catch(e){}</script>
 </head>
 <body>
-<header>
-  <div class="wrap nav">
-    <a class="brand" href="#top"><img src="assets/avatar.jpg" alt="">kpj2006</a>
-    <nav class="links">
-      <a href="#now">Now</a><a href="#journey">Journey</a><a href="#projects">Projects</a><a href="#contributions">Contributions</a><a href="#community">Community</a><a href="#about">About</a><a href="#contact">Contact</a>
-    </nav>
-    <span class="spacer"></span>
-    <button class="iconbtn" id="openCmd" aria-label="Search">⌕ <kbd>Ctrl K</kbd></button>
-    <button class="iconbtn" id="theme" aria-label="Toggle theme"><svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z"/></svg></button>
+<header id="hdr"></header>
+<main class="wrap">
+
+<section class="hero" style="padding-top:44px">
+  <div>
+    <div class="hello">Namaste 🙏 I'm</div>
+    <h1>Karun Pacholi</h1>
+    <p class="lead"><b>DevOps &amp; platform engineer.</b> I automate CI/CD, security checks and developer tooling so open-source teams can ship faster.</p>
+    <div class="want"><b>Looking for:</b> SDE, DevOps / DevSecOps, platform or AI-engineering internships. Remote, hybrid or on-site in India.</div>
+    <div class="cta" style="margin-top:18px">
+      <a class="btn primary" href="https://docs.google.com/document/d/1c9CfRKa6iIBsk2vvV6EQX7kZ4jbOnIymQfl7N_JmMT0/edit?usp=sharing" target="_blank" rel="noopener">View resume</a>
+      <a class="btn" href="mailto:jaihanumanji2006@gmail.com">Email me</a>
+      <a class="btn" href="https://calendar.app.google/Wvp7aZNk29KuAJxH6" target="_blank" rel="noopener">Book a call</a>
+    </div>
+    <div class="socials"></div>
   </div>
-</header>
+  <div class="portrait"><img src="/me/assets/karun-lake.jpg" alt="Karun Pacholi"><div class="tag"><span class="dot"></span>Jaipur, India · open to work</div></div>
+</section>
 
-<main class="wrap" id="top">
-  <section class="hero" style="padding-top:48px">
-    <div>
-      <div class="hello">Namaste 🙏 I'm</div>
-      <h1>Karun Pacholi</h1>
-      <div class="creds">
-        <span class="cred"><b>GSoC 2026</b> · AOSSIE</span>
-        <span class="cred"><b>DevOps Lead</b> · AOSSIE</span>
-        <span class="cred"><b>LFX'26</b> · Magma</span>
-        <span class="cred"><b>GSSoC'26</b> Mentor</span>
-        <span class="cred">Organizer · AAIF Jaipur</span>
-        <span class="cred">Gemini Student Ambassador</span>
-      </div>
-      <p class="lead">I build CI/CD, security pipelines and AI tooling that help open-source maintainers ship faster.</p>
-      <p class="sub">DevOps Lead at AOSSIE for GSoC 2026, working across its 300+ repositories. Researching how AI coding agents open overlapping pull requests. B.Tech CSE at LNMIIT, Jaipur.</p>
-      <div class="cta">
-        <a class="btn primary" href="#projects">See my work →</a>
-        <a class="btn" href="https://docs.google.com/document/d/1c9CfRKa6iIBsk2vvV6EQX7kZ4jbOnIymQfl7N_JmMT0/edit?usp=sharing" target="_blank" rel="noopener">Resume</a>
-        <a class="btn" href="https://calendar.app.google/Wvp7aZNk29KuAJxH6" target="_blank" rel="noopener">Book a call</a>
-      </div>
-      <div class="socials" id="socials"></div>
-    </div>
-    <div class="portrait">
-      <img src="assets/karun-lake.jpg" alt="Karun Pacholi sitting by a lake with hills behind">
-      <div class="tag"><span class="dot"></span>Jaipur, India · open to internships</div>
-    </div>
-  </section>
-
-  <div class="stats reveal">
-    <div class="stat"><div class="n" id="s-prs">—</div><div class="l">merged PRs (other orgs)</div></div>
-    <div class="stat"><div class="n" id="s-repos">—</div><div class="l">repositories</div></div>
-    <div class="stat"><div class="n" id="s-orgs">—</div><div class="l">organizations</div></div>
-    <div class="stat"><div class="n">300+</div><div class="l">AOSSIE repos I support</div></div>
-  </div>
-
-  <section id="now" class="reveal">
-    <div class="sh"><h2><span class="hash">#</span>What I'm doing now</h2></div>
-    <div class="now">
-      <ul>
-        <li><span class="k">Building</span><span>Org-wide CI/CD, DevSecOps and contributor tooling at <a href="https://github.com/AOSSIE-Org" target="_blank" rel="noopener">AOSSIE</a> as GSoC 2026 contributor and DevOps Lead.</span></li>
-        <li><span class="k">Research</span><span>Intent-level overlap among AI-agent pull requests: PRs that do the same thing with no git conflict, and whether small local models (3B–8B) can catch them. Built on <a href="https://github.com/AOSSIE-Org/PullRequestDashboard" target="_blank" rel="noopener">PR Dashboard</a>.</span></li>
-        <li><span class="k">Community</span><span>Starting the AAIF Jaipur chapter (Agentic AI Foundation, Linux Foundation) and coordinating <a href="https://github.com/Cybros-OSDC" target="_blank" rel="noopener">Cybros OSDC</a> at LNMIIT.</span></li>
-        <li><span class="k">Learning</span><span>DSA, operating systems, DBMS, computer networks, distributed systems.</span></li>
-        <li><span class="k">Looking for</span><span>Internships in SDE, DevOps/DevSecOps, platform or AI engineering, and paid open-source programs.</span></li>
-      </ul>
-      <div class="updated mono">updated · Nov 2026</div>
-    </div>
-  </section>
-
-
-  <section id="journey" class="reveal">
-    <div class="sh"><h2><span class="hash">#</span>Journey</h2><a href="https://www.linkedin.com/in/kpj2006/" target="_blank" rel="noopener">LinkedIn →</a></div>
-    <ol class="tl">
-      <li><div class="when">MAY 2026 – PRESENT</div><h3>GSoC'26 Contributor &amp; DevOps Lead</h3><div class="org">AOSSIE · Google Summer of Code</div>
-        <ul>
-          <li>Org-wide CI/CD, repository automation and DevSecOps checks (CodeQL, OpenSSF Scorecard, Gitleaks, OSV-Scanner).</li>
-          <li>Built <a href="https://github.com/StabilityNexus/GitPay" target="_blank" rel="noopener">GitPay</a>: contributor payouts as a GitHub Action, triggered by maintainer PR comments.</li>
-          <li>Built <a href="https://github.com/AOSSIE-Org/SkillBot" target="_blank" rel="noopener">Skill Bot</a>, Skill Updater and <a href="https://github.com/AOSSIE-Org/PullRequestDashboard" target="_blank" rel="noopener">PR Dashboard</a> for maintainers.</li>
-        </ul></li>
-      <li><div class="when">JAN 2026 – APR 2026</div><h3>LFX Mentee</h3><div class="org">Magma · Linux Foundation</div>
-        <ul>
-          <li>Built reproducible Magma dev environments across operating systems with Vagrant, VirtualBox, Linux, Bash and Docker.</li>
-          <li>Ran 3GPP end-to-end tests of the 5G/LTE core (UERANSIM, srsRAN, Wireshark).</li>
-          <li>Wrote setup, workflow, troubleshooting and onboarding docs.</li>
-        </ul></li>
-      <li><div class="when">JAN 2026 – MAR 2026</div><h3>Blockchain Developer · Rootcamp</h3><div class="org">Rootstock Labs</div>
-        <ul>
-          <li>Selected for a 12-week Builder Rootcamp; finished in the top 20 builders.</li>
-          <li>Testing, debugging and security auditing in CI/CD pipelines; shipped a solution on Rootstock.</li>
-        </ul></li>
-      <li><div class="when">FEB 2025 – PRESENT</div><h3>Open Source Project Maintainer</h3><div class="org">AOSSIE</div>
-        <ul>
-          <li>Core maintainer of <a href="https://github.com/AOSSIE-Org/SocialShareButton" target="_blank" rel="noopener">SocialShareButton</a>; co-maintainer of <a href="https://github.com/AOSSIE-Org/Template-Repo" target="_blank" rel="noopener">Template-Repo</a>, AutoInitialIssues and <a href="https://github.com/AOSSIE-Org/Skills" target="_blank" rel="noopener">Skills</a>.</li>
-          <li>PR review, issue triage and CI/CD for contributors, including GSSoC'26 contributors.</li>
-        </ul></li>
-    </ol>
-  </section>
-
-  <section id="start" class="reveal">
-    <div class="sh"><h2><span class="hash">#</span>Start here</h2></div>
-    <div class="paths">
-      <div class="path"><h3>DevOps &amp; DevSecOps</h3><span class="muted" style="font-size:14px">CI/CD across 300+ repos</span>
-        <ul>
-          <li><a href="https://github.com/AOSSIE-Org/Template-Repo" target="_blank" rel="noopener">Template-Repo</a></li>
-          <li><a href="https://github.com/StabilityNexus/GitPay" target="_blank" rel="noopener">GitPay</a></li>
-          <li><a href="domains/devops.html">All DevOps work →</a></li>
-        </ul></div>
-      <div class="path"><h3>AI tooling for open source</h3><span class="muted" style="font-size:14px">RAG, embeddings, local LLMs</span>
-        <ul>
-          <li><a href="https://github.com/AOSSIE-Org/PullRequestDashboard" target="_blank" rel="noopener">PR Dashboard</a></li>
-          <li><a href="https://github.com/AOSSIE-Org/SkillBot" target="_blank" rel="noopener">Skill Bot</a></li>
-          <li><a href="domains/ai-ml.html">All AI / ML work →</a></li>
-        </ul></div>
-      <div class="path"><h3>Open-source maintainer</h3><span class="muted" style="font-size:14px">Maintaining since Feb 2025</span>
-        <ul>
-          <li><a href="https://github.com/AOSSIE-Org/SocialShareButton" target="_blank" rel="noopener">SocialShareButton</a></li>
-          <li><a href="https://github.com/AOSSIE-Org/Skills" target="_blank" rel="noopener">AI Agent Skills</a></li>
-          <li><a href="domains/open-source.html">All maintainer work →</a></li>
-        </ul></div>
-    </div>
-  </section>
-
-  <section id="projects" class="reveal">
-    <div class="sh"><h2><span class="hash">#</span>Featured projects</h2><a href="https://github.com/kpj2006" target="_blank" rel="noopener">GitHub →</a></div>
-    <div class="grid" id="projectGrid"></div>
-  </section>
-
-  <section id="contributions" class="reveal">
-    <div class="sh"><h2><span class="hash">#</span>Recent merged PRs</h2><a href="https://github.com/kpj2006/me#readme" target="_blank" rel="noopener">Full list →</a></div>
-    <ul class="prs" id="prList"><li><span class="d">…</span><span class="muted">Loading from GitHub data…</span></li></ul>
-    <div class="bars" id="bars"></div>
-    <p class="updated mono">auto-updated every Monday by a GitHub Action</p>
-  </section>
-
-
-  <section id="writing" class="reveal">
-    <div class="sh"><h2><span class="hash">#</span>Building in public</h2><a href="https://www.linkedin.com/in/kpj2006/recent-activity/all/" target="_blank" rel="noopener">All posts →</a></div>
-    <div class="posts">
-      <a class="post" href="https://www.linkedin.com/feed/update/urn:li:activity:7522430543284645888/" target="_blank" rel="noopener"><span class="d">Oct 2026</span><div><span class="kind">Launch</span><h3>Introducing GitPay v1.1.0</h3><p>Contributor payouts inside GitHub Actions: maintainers pay from a PR comment, with authorization policies and non-custodial execution.</p></div></a>
-      <a class="post" href="https://www.linkedin.com/feed/update/urn:li:activity:7520479036943384577/" target="_blank" rel="noopener"><span class="d">Oct 2026</span><div><span class="kind">Community</span><h3>Fetch-A-Thon 3.0 came to LNMIIT</h3><p>Recap of the AI agent hackathon we hosted in Jaipur on 24 October.</p></div></a>
-      <a class="post" href="https://www.linkedin.com/feed/update/urn:li:activity:7496770465722445824/" target="_blank" rel="noopener"><span class="d">Aug 2026</span><div><span class="kind">Deep-dive</span><h3>Week 1 of XOps (now GitPay)</h3><p>Why settlement is the last manual step in the delivery pipeline, and why I shipped it as a GitHub Action instead of a hosted service.</p></div></a>
-    </div>
-  </section>
-
-  <section id="community" class="reveal">
-    <div class="sh"><h2><span class="hash">#</span>Community</h2></div>
-    <div class="event">
-      <div class="head"><span class="kind">Hackathon · 24 Oct 2026</span><h3>Fetch-A-Thon 3.0 at LNMIIT, Jaipur</h3>
-        <p class="muted" style="font-size:14.5px">Cybros – LNMIIT hosted the Jaipur campus of Fetch-A-Thon 3.0, a nationwide AI agent hackathon with Fetch.ai Innovation Lab, run on the same day across six campuses with a ₹1,00,000 prize pool. Before it, we ran the session "Exploring Autonomous AI with Fetch.ai". <a href="https://www.linkedin.com/feed/update/urn:li:activity:7520479036943384577/" target="_blank" rel="noopener">Recap post ↗</a></p></div>
-      <div class="gallery">
-        <video class="tall" src="assets/fetchathon/hall.mp4" autoplay muted loop playsinline poster="assets/fetchathon/hall.jpg" aria-label="Students hacking in the LNMIIT lecture hall"></video>
-        <img src="assets/fetchathon/hall.jpg" alt="Full lecture hall during Fetch-A-Thon 3.0" loading="lazy">
-        <img src="assets/fetchathon/winners-1.jpg" alt="Prize winners with the organizers" loading="lazy">
-        <img src="assets/fetchathon/hacking.jpg" alt="Participants building at Fetch-A-Thon" loading="lazy">
-        <img src="assets/fetchathon/winners-2.jpg" alt="Prize winners with the organizers" loading="lazy">
-      </div>
-    </div>
-    <div class="community">
-      <figure><img src="assets/community-lnmiit.jpg" alt="Karun with organizers and a full lecture hall of students at LNMIIT" loading="lazy"><figcaption>With the community at LNMIIT, Jaipur</figcaption></figure>
-      <div class="clist">
-        <div class="citem"><b>AAIF Jaipur Chapter</b><span>Organizer · Agentic AI Foundation, Linux Foundation</span></div>
-        <div class="citem"><b><a href="https://github.com/Cybros-OSDC" target="_blank" rel="noopener">Cybros OSDC</a></b><span>Coordinator · open-source wing of Cybros Coding Club, LNMIIT</span></div>
-        <div class="citem"><b>ASI:ONE Community Lead, Jaipur</b><span>Since Oct 2026 · agentic AI meetups and workshops</span></div>
-        <div class="citem"><b>GSSoC'26 Mentor</b><span>GirlScript Summer of Code</span></div>
-        <div class="citem"><b>Gemini Student Ambassador</b><span>Google</span></div>
-      </div>
-    </div>
-  </section>
-
-  <section id="recognition" class="reveal">
-    <div class="sh"><h2><span class="hash">#</span>Recognition</h2></div>
-    <div class="badges">
-      <div class="badge"><span class="ic">☀️</span><div>Google Summer of Code 2026<small>Contributor · AOSSIE</small></div></div>
-      <div class="badge"><span class="ic">⚙️</span><div>DevOps Lead<small>AOSSIE · May–Nov 2026</small></div></div>
-      <div class="badge"><span class="ic">🐧</span><div>LFX Mentee 2026<small>Magma · Linux Foundation</small></div></div>
-      <div class="badge"><span class="ic">🧑‍🏫</span><div>GSSoC 2026 Mentor<small>GirlScript Summer of Code</small></div></div>
-      <div class="badge"><span class="ic">◎</span><div>Solana Summer School<small>Solana Foundation · selected 2026</small></div></div>
-      <div class="badge"><span class="ic">🏗️</span><div>Top 20 builders, Rootcamp I<small>Rootstock · 2026</small></div></div>
-    </div>
-  </section>
-
-  <section id="about" class="reveal">
-    <div class="sh"><h2><span class="hash">#</span>About me</h2></div>
-    <div class="about">
-      <img src="assets/karun-session.jpg" alt="Karun at a club session" loading="lazy">
-      <div>
-        <p>I'm a Computer Science student at LNMIIT, Jaipur (B.Tech, started 2024). I started in open source with AOSSIE in 2025 and have been maintaining AOSSIE projects since February 2025.</p>
-        <p>Before GSoC, I was an LFX mentee at Magma (Linux Foundation) and a Rootstock Rootcamp builder.</p>
-        <p>In GSoC 2026 I joined AOSSIE as a contributor and became its DevOps Lead. I brought the DevOps side to AOSSIE: shared templates, reusable GitHub Actions, and security checks like CodeQL, OpenSSF Scorecard, Gitleaks and OSV-Scanner across the org.</p>
-        <p>My way of working: first find everything the community has already solved, then design how the pieces connect, then automate it with CI/CD and agents. I like tools that make maintainers' lives easier.</p>
-        <p class="muted">Started with Web3 (Rootstock, SUI, Ergo). Now focused on DevOps, platform engineering and AI tooling for developers.</p>
-      </div>
-    </div>
-  </section>
-
-  <section id="contact" class="reveal">
-    <div class="contact">
-      <div><h2>Let's build something</h2><p>Internships, open-source collaboration, talks or community events — I'm happy to talk.</p></div>
-      <div class="cta" style="margin:0">
-        <a class="btn primary" href="mailto:jaihanumanji2006@gmail.com">Email me</a>
-        <a class="btn" href="https://calendar.app.google/Wvp7aZNk29KuAJxH6" target="_blank" rel="noopener">Book a call</a>
-      </div>
-    </div>
-  </section>
-</main>
-
-<footer><div class="wrap"><span>© <span id="yr"></span> Karun Pacholi · <a href="https://github.com/kpj2006/me" target="_blank" rel="noopener">source</a></span><span>Press <kbd>Ctrl K</kbd> to jump anywhere</span></div></footer>
-
-<div id="cmdk" role="dialog" aria-modal="true" aria-label="Command menu">
-  <div class="palette"><input id="cmdInput" placeholder="Search sections, projects, links…" autocomplete="off"><ul id="cmdList"></ul></div>
+<div class="facts reveal">
+  <div class="fact"><b>GSoC'26 · DevOps Lead</b><span>AOSSIE</span></div>
+  <div class="fact"><b>LFX'26 Mentee</b><span>Magma · Linux Foundation</span></div>
+  <div class="fact"><b><span data-pr="prs">177</span> merged PRs</b><span>in <span data-pr="repos">28</span> repos, <span data-pr="orgs">8</span> orgs</span></div>
+  <div class="fact"><b>B.Tech CSE</b><span>LNMIIT Jaipur</span></div>
 </div>
 
-<script>
-const SOCIALS=[
- ["GitHub","https://github.com/kpj2006","M12 .5a11.5 11.5 0 0 0-3.6 22.4c.6.1.8-.3.8-.6v-2c-3.2.7-3.9-1.5-3.9-1.5-.5-1.3-1.3-1.7-1.3-1.7-1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.7-1.6-2.6-.3-5.3-1.3-5.3-5.7 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.2 1.2a11 11 0 0 1 5.8 0C17.4 4.8 18.4 5 18.4 5c.6 1.6.2 2.8.1 3.1.8.8 1.2 1.8 1.2 3.1 0 4.4-2.7 5.4-5.3 5.7.4.4.8 1.1.8 2.2v3.2c0 .3.2.7.8.6A11.5 11.5 0 0 0 12 .5Z"],
- ["LinkedIn","https://www.linkedin.com/in/kpj2006","M20.4 20.5h-3.6v-5.6c0-1.3 0-3-1.8-3s-2.1 1.4-2.1 2.9v5.7H9.3V9h3.4v1.6c.5-.9 1.6-1.8 3.4-1.8 3.6 0 4.3 2.4 4.3 5.5v6.2ZM5.3 7.4a2.1 2.1 0 1 1 0-4.2 2.1 2.1 0 0 1 0 4.2ZM7.1 20.5H3.5V9h3.6v11.5Z"],
- ["X","https://x.com/_kpj2006","M18.2 2.3h3.4l-7.4 8.5 8.7 11.5h-6.8l-5.3-7-6.1 7H1.3l7.9-9L.9 2.3h7l4.8 6.4 5.5-6.4Zm-1.2 18h1.9L7.1 4.2H5.1l11.9 16.1Z"],
- ["YouTube","https://www.youtube.com/channel/UC1jB0sHS3HeekQmmk4utdNA","M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8ZM9.6 15.6V8.4l6.2 3.6-6.2 3.6Z"],
- ["Telegram","https://t.me/kpj2006","M21.9 3.6 18.6 19c-.2 1.1-.9 1.4-1.8.9l-5-3.7-2.4 2.3c-.3.3-.5.5-1 .5l.4-5.1 9.2-8.3c.4-.4-.1-.6-.6-.2L6 12.5l-4.9-1.5c-1.1-.3-1.1-1.1.2-1.6l19.1-7.4c.9-.3 1.7.2 1.5 1.6Z"],
- ["Instagram","https://instagram.com/karunpacholi","M12 2.2c3.2 0 3.6 0 4.8.1 3.2.1 4.8 1.7 4.9 4.9.1 1.3.1 1.6.1 4.8s0 3.6-.1 4.8c-.1 3.2-1.7 4.8-4.9 4.9-1.3.1-1.6.1-4.8.1s-3.6 0-4.8-.1c-3.3-.1-4.8-1.7-4.9-4.9C2.2 15.6 2.2 15.2 2.2 12s0-3.6.1-4.8C2.4 4 3.9 2.4 7.2 2.3 8.4 2.2 8.8 2.2 12 2.2Zm0 4.7a5.1 5.1 0 1 0 0 10.2 5.1 5.1 0 0 0 0-10.2Zm0 8.4a3.3 3.3 0 1 1 0-6.6 3.3 3.3 0 0 1 0 6.6Zm5.3-9.8a1.2 1.2 0 1 0 0 2.4 1.2 1.2 0 0 0 0-2.4Z"],
- ["Email","mailto:jaihanumanji2006@gmail.com","M2 5.5A2.5 2.5 0 0 1 4.5 3h15A2.5 2.5 0 0 1 22 5.5v13a2.5 2.5 0 0 1-2.5 2.5h-15A2.5 2.5 0 0 1 2 18.5v-13Zm2.3.2 7.7 6 7.7-6H4.3Zm15.7 2-7.4 5.8a1 1 0 0 1-1.2 0L4 7.7v10.8c0 .3.2.5.5.5h15c.3 0 .5-.2.5-.5V7.7Z"]
-];
-document.getElementById('socials').innerHTML=SOCIALS.map(([n,u,p])=>`<a href="${u}" target="_blank" rel="noopener" aria-label="${n}" title="${n}"><svg viewBox="0 0 24 24"><path d="${p}"/></svg></a>`).join('');
+<section class="reveal">
+  <div class="sh"><h2><span class="hash">#</span>What I do</h2></div>
+  <div class="three">
+    <div class="do"><div class="ic">⚙️</div><h3>CI/CD &amp; DevSecOps</h3><p>Shared templates, reusable GitHub Actions and security scans (CodeQL, Scorecard, Gitleaks, OSV) across AOSSIE.</p></div>
+    <div class="do"><div class="ic">🤖</div><h3>AI developer tools</h3><p>RAG bots and PR analysis with embeddings and local LLMs, built for maintainers.</p></div>
+    <div class="do"><div class="ic">🌱</div><h3>Community</h3><p>Maintainer, GSSoC mentor, and organizer of AI and open-source events in Jaipur.</p></div>
+  </div>
+</section>
 
-const PROJECTS=[
- {k:"DevOps",n:"GitPay",u:"https://github.com/StabilityNexus/GitPay",s:"Shipped",d:"CI/CD-native value transfer engine: settles USDC to contributors when their PRs merge, driven by maintainer commands. Built on x402.",t:["GitHub Actions","TypeScript","x402","USDC"]},
- {k:"AI tooling",n:"PR Dashboard",u:"https://github.com/AOSSIE-Org/PullRequestDashboard",s:"Shipped",d:"Groups pull requests by intent with sentence-embedding clustering, finds conflicts, suggests a dependency-aware merge order, and explains conflicts with local LLMs.",t:["embeddings","clustering","Ollama"]},
- {k:"AI tooling",n:"Skill Bot",u:"https://github.com/AOSSIE-Org/SkillBot",s:"Shipped",d:"Self-hosted RAG assistant for open-source communities: repository-aware retrieval, local LLM inference and automated ingestion, set up for 52 AOSSIE repositories.",t:["RAG","ChromaDB","Ollama"]},
- {k:"DevOps",n:"Template-Repo",u:"https://github.com/AOSSIE-Org/Template-Repo",s:"Maintainer",d:"AOSSIE's standard repository template with preconfigured workflows and issue/PR templates, used to bring every project to the same CI/CD baseline.",t:["GitHub Actions","templates","CI/CD"]},
- {k:"AI agents",n:"AI Agent Skills",u:"https://github.com/AOSSIE-Org/Skills",s:"Shipped",d:"Org-wide agent instructions and contribution policies to cut low-quality AI PRs, with AI-disclosure rules. Works with Claude Code, Cursor and Copilot.",t:["AGENTS.md","policy"]},
- {k:"Open source",n:"SocialShareButton",u:"https://github.com/AOSSIE-Org/SocialShareButton",s:"Maintainer",d:"Maintaining the project: features, fixes, PR review and issue triage.",t:["JavaScript","maintainer"]},
-];
-document.getElementById('projectGrid').innerHTML=PROJECTS.map(p=>`<a class="card" href="${p.u}" target="_blank" rel="noopener" style="text-decoration:none"><div class="top"><span class="kind">${p.k}</span><span class="status">${p.s}</span></div><h3>${p.n}</h3><p>${p.d}</p><div class="tags">${p.t.map(x=>`<span>${x}</span>`).join('')}</div><span class="repo">${p.u.replace('https://github.com/','')} ↗</span></a>`).join('');
+<section class="reveal">
+  <div class="sh"><h2><span class="hash">#</span>Experience</h2><a href="/me/about/">Full journey →</a></div>
+  <ul class="xp">
+    <li><div><b>GSoC'26 Contributor &amp; DevOps Lead</b><span>AOSSIE · CI/CD, DevSecOps, contributor tooling</span></div><span class="when">May–Nov 2026</span></li>
+    <li><div><b>LFX Mentee</b><span>Magma (Linux Foundation) · dev environments, 5G core tests, docs</span></div><span class="when">Jan–Apr 2026</span></li>
+    <li><div><b>Blockchain Developer · Rootcamp</b><span>Rootstock Labs · top 20 builders</span></div><span class="when">Jan–Mar 2026</span></li>
+    <li><div><b>Open Source Project Maintainer</b><span>AOSSIE · SocialShareButton, Template-Repo, Skills</span></div><span class="when">Feb 2025 – now</span></li>
+  </ul>
+</section>
 
-// live contribution data written weekly by the workflow
-fetch('data/prs.json',{cache:'no-cache'}).then(r=>r.ok?r.json():[]).then(all=>{
-  const prs=all.filter(p=>p.repo.split('/')[0].toLowerCase()!=='kpj2006');
-  const repos=new Set(prs.map(p=>p.repo)), orgs=new Set(prs.map(p=>p.repo.split('/')[0]));
-  const set=(id,v)=>document.getElementById(id).textContent=v;
-  set('s-prs',prs.length);set('s-repos',repos.size);set('s-orgs',orgs.size);
-  const esc=s=>s.replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
-  const recent=[...prs].sort((a,b)=>b.merged.localeCompare(a.merged)).slice(0,7);
-  document.getElementById('prList').innerHTML=recent.map(p=>`<li><span class="d">${p.merged}</span><a href="${p.url}" target="_blank" rel="noopener">${esc(p.title)}<span class="r">${p.repo}</span></a></li>`).join('')||'<li><span class="d">—</span><span class="muted">No data yet.</span></li>';
-  const cnt={};prs.forEach(p=>cnt[p.repo]=(cnt[p.repo]||0)+1);
-  const top=Object.entries(cnt).sort((a,b)=>b[1]-a[1]).slice(0,6), max=top.length?top[0][1]:1;
-  document.getElementById('bars').innerHTML=top.map(([r,n])=>`<div class="bar"><span title="${r}">${r.split('/')[1]}</span><span class="t"><i style="width:${n/max*100}%"></i></span><span class="c">${n}</span></div>`).join('');
-}).catch(()=>{});
+<section class="reveal">
+  <div class="sh"><h2><span class="hash">#</span>Selected work</h2><a href="/me/projects/">All projects →</a></div>
+  <div class="three">
+    <a class="card" href="https://github.com/StabilityNexus/GitPay" target="_blank" rel="noopener" style="text-decoration:none"><div class="top"><span class="kind">DevOps</span></div><h3>GitPay</h3><p>Pay open-source contributors from a PR comment, inside GitHub Actions.</p><span class="repo">StabilityNexus/GitPay ↗</span></a>
+    <a class="card" href="https://github.com/AOSSIE-Org/PullRequestDashboard" target="_blank" rel="noopener" style="text-decoration:none"><div class="top"><span class="kind">AI tooling</span></div><h3>PR Dashboard</h3><p>Groups PRs by intent and finds conflicts with embeddings and local LLMs.</p><span class="repo">AOSSIE-Org/PullRequestDashboard ↗</span></a>
+    <a class="card" href="https://github.com/AOSSIE-Org/Template-Repo" target="_blank" rel="noopener" style="text-decoration:none"><div class="top"><span class="kind">DevOps</span></div><h3>Template-Repo</h3><p>AOSSIE's standard repo template with ready CI/CD workflows.</p><span class="repo">AOSSIE-Org/Template-Repo ↗</span></a>
+  </div>
+</section>
 
-// theme
-const root=document.documentElement;
-const saved=(()=>{try{return localStorage.getItem('theme')}catch(e){return null}})();
-root.dataset.theme=saved||(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');
-document.getElementById('theme').onclick=()=>{root.dataset.theme=root.dataset.theme==='dark'?'light':'dark';try{localStorage.setItem('theme',root.dataset.theme)}catch(e){}};
-document.getElementById('yr').textContent=new Date().getFullYear();
+<section class="reveal">
+  <div class="sh"><h2><span class="hash">#</span>Skills</h2></div>
+  <div class="skills"><span>GitHub Actions</span><span>Docker</span><span>Linux / Bash</span><span>CodeQL · Gitleaks · OSV</span><span>Python</span><span>TypeScript / Node.js</span><span>Go</span><span>FastAPI</span><span>React / Next.js</span><span>ChromaDB · RAG</span><span>Ollama</span><span>Solidity · Rust</span></div>
+</section>
+<section class="reveal"><div class="contact"><div><h2>Hiring for an internship?</h2><p>Resume, email or a short call — whatever is easiest for you.</p></div>
+<div class="cta" style="margin:0"><a class="btn primary" href="mailto:jaihanumanji2006@gmail.com">Email me</a><a class="btn" href="https://docs.google.com/document/d/1c9CfRKa6iIBsk2vvV6EQX7kZ4jbOnIymQfl7N_JmMT0/edit?usp=sharing" target="_blank" rel="noopener">Resume</a><a class="btn" href="https://calendar.app.google/Wvp7aZNk29KuAJxH6" target="_blank" rel="noopener">Book a call</a></div></div></section>
 
-// reveal on scroll
-const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.08});
-document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
-
-// command palette
-const CMDS=[
- ...[["Now","#now"],["Journey","#journey"],["Start here","#start"],["Building in public","#writing"],["Projects","#projects"],["Merged PRs","#contributions"],["Community","#community"],["Recognition","#recognition"],["About","#about"],["Contact","#contact"]].map(([n,u])=>({n,u,g:"section"})),
- ...PROJECTS.map(p=>({n:p.n,u:p.u,g:"project"})),
- ...SOCIALS.map(([n,u])=>({n,u,g:"social"})),
- {n:"Resume",u:"https://docs.google.com/document/d/1c9CfRKa6iIBsk2vvV6EQX7kZ4jbOnIymQfl7N_JmMT0/edit?usp=sharing",g:"link"},
- {n:"Book a call",u:"https://calendar.app.google/Wvp7aZNk29KuAJxH6",g:"link"},
- {n:"Contributions by domain",u:"https://github.com/kpj2006/me#readme",g:"link"},
- {n:"Toggle dark / light",act:()=>document.getElementById('theme').click(),g:"action"}
-];
-const box=document.getElementById('cmdk'),inp=document.getElementById('cmdInput'),list=document.getElementById('cmdList');let sel=0,cur=[];
-function draw(){const q=inp.value.toLowerCase();cur=CMDS.filter(c=>c.n.toLowerCase().includes(q)||c.g.includes(q));sel=Math.min(sel,Math.max(cur.length-1,0));list.innerHTML=cur.map((c,i)=>`<li class="${i===sel?'sel':''}" data-i="${i}">${c.n}<small>${c.g}</small></li>`).join('')}
-function open(){box.classList.add('open');inp.value='';sel=0;draw();inp.focus()}
-function close(){box.classList.remove('open')}
-function go(c){if(!c)return;close();if(c.act)return c.act();if(c.u.startsWith('#'))location.hash=c.u;else window.open(c.u,'_blank','noopener')}
-document.getElementById('openCmd').onclick=open;
-box.onclick=e=>{if(e.target===box)close();const li=e.target.closest('li');if(li)go(cur[+li.dataset.i])};
-inp.oninput=()=>{sel=0;draw()};
-addEventListener('keydown',e=>{
-  if((e.ctrlKey||e.metaKey)&&e.key.toLowerCase()==='k'){e.preventDefault();box.classList.contains('open')?close():open();return}
-  if(!box.classList.contains('open'))return;
-  if(e.key==='Escape')close();
-  else if(e.key==='ArrowDown'){sel=Math.min(sel+1,cur.length-1);draw();e.preventDefault()}
-  else if(e.key==='ArrowUp'){sel=Math.max(sel-1,0);draw();e.preventDefault()}
-  else if(e.key==='Enter'){go(cur[sel])}
-});
-</script>
+</main>
+<footer id="ftr"></footer>
+<script src="/me/assets/site.js"></script>
 </body>
 </html>
