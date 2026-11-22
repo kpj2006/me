@@ -1,0 +1,168 @@
+# Single source of truth for hand-written entries.
+# Merged PRs are added automatically by scripts/update.py (see .github/workflows/update.yml).
+# Fields: name, role, link (leave "" if no public link yet), summary, tags, status
+# status: shipped | ongoing | planned
+
+domains:
+  ai-ml:
+    title: AI / ML
+    blurb: LLMs for software engineering, AI coding agents, semantic clustering, RAG, small local models.
+    entries:
+      - name: "Research: Intent-level overlap among AI-agent pull requests"
+        role: Independent researcher
+        link: ""
+        summary: >-
+          How many AI-agent PRs overlap in intent with no git conflict, and how well can
+          small local models (3B-8B) catch them? Data: AIDev, AgenticFlict, AOSSIE repos.
+        tags: [research, LLM4SE, embeddings, local-LLMs]
+        status: ongoing
+      - name: PR Dashboard
+        role: Author
+        link: https://github.com/AOSSIE-Org/PullRequestDashboard
+        summary: >-
+          Groups GitHub PRs by intent with sentence-embedding clustering, runs conflict analysis
+          and dependency-aware merge ordering, and uses local LLMs to explain conflicts.
+        tags: [embeddings, clustering, Ollama]
+        status: shipped
+      - name: Skill Bot
+        role: Author
+        link: https://github.com/AOSSIE-Org/SkillBot
+        summary: >-
+          Self-hosted RAG system for open-source communities: repository-aware retrieval,
+          local LLM inference, automated ingestion. Configured for 52 AOSSIE repositories.
+        tags: [RAG, ChromaDB, Ollama]
+        status: shipped
+      - name: Skill Updater
+        role: Author
+        link: ""
+        summary: NLP pipeline (BERTopic) that turns community discussions into documentation updates.
+        tags: [NLP, BERTopic]
+        status: shipped
+      - name: AI Agent Skills
+        role: Author
+        link: https://github.com/AOSSIE-Org/Skills
+        summary: >-
+          Organization-wide agent instructions and contribution policies to reduce low-quality AI PRs,
+          with AI-disclosure rules. Works with Claude Code, Cursor and GitHub Copilot.
+        tags: [AI-agents, policy]
+        status: shipped
+
+  devops:
+    title: DevOps / DevSecOps
+    blurb: CI/CD and repository automation across 300+ AOSSIE repositories (GSoC 2026, DevOps Lead).
+    entries:
+      - name: AOSSIE org-wide CI/CD standardization
+        role: GSoC 2026 contributor & DevOps Lead
+        link: ""
+        summary: Standardized CI/CD and repository automation across 300+ repositories, 215+ merged PRs.
+        tags: [GitHub-Actions, CI/CD]
+        status: shipped
+      - name: DevSecOps and supply-chain security pipeline
+        role: Author
+        link: ""
+        summary: CodeQL SAST, OpenSSF Scorecard, Gitleaks, OSV-Scanner and dependency-review gating.
+        tags: [security, supply-chain]
+        status: shipped
+      - name: GitPay
+        role: Author
+        link: https://github.com/StabilityNexus/GitPay
+        summary: CI/CD-native system for policy-driven, multi-chain contributor payouts from maintainer commands on PRs.
+        tags: [CI/CD, payments]
+        status: shipped
+      - name: Template-Repo
+        role: Maintainer
+        link: https://github.com/AOSSIE-Org/Template-Repo
+        summary: Standard GitHub template with preconfigured workflows and issue/PR templates.
+        tags: [templates]
+        status: shipped
+      - name: AutoInitialIssues
+        role: Maintainer
+        link: ""
+        summary: Generates initial issues to improve contributor onboarding using GitHub workflows.
+        tags: [GitHub-Actions, onboarding]
+        status: shipped
+      - name: EvangeLabs
+        role: Author
+        link: ""
+        summary: Reusable GitHub Actions workflows for open-source projects.
+        tags: [GitHub-Actions]
+        status: shipped
+      - name: "LFX Mentorship: Magma Core (Linux Foundation)"
+        role: LFX mentee, Jan-Apr 2026
+        link: ""
+        summary: Ran 3GPP end-to-end tests of the 5G/LTE core and wrote docs (UERANSIM, srsRAN, Wireshark, Docker).
+        tags: [testing, Docker]
+        status: shipped
+
+  open-source:
+    title: Open-source maintainership
+    blurb: Maintaining AOSSIE projects since Feb 2025.
+    entries:
+      - name: SocialShareButton
+        role: Maintainer
+        link: https://github.com/AOSSIE-Org/SocialShareButton
+        summary: Features, fixes, PR review and issue triage.
+        tags: [maintainer]
+        status: shipped
+
+  web3:
+    title: Web3
+    blurb: Smart contracts and developer tooling across Ethereum, Rootstock, SUI and Ergo.
+    entries:
+      - name: Ergoscript Language Server
+        role: Author
+        link: ""
+        summary: LSP server for ErgoScript with syntax highlighting, diagnostics and editor support.
+        tags: [LSP, tooling]
+        status: shipped
+      - name: TengibleFi
+        role: Author
+        link: ""
+        summary: Cross-chain lending protocol using tokenized NFTs as collateral.
+        tags: [DeFi]
+        status: shipped
+      - name: ZKmail
+        role: Author
+        link: ""
+        summary: Zero-knowledge proof of email ownership without revealing email content.
+        tags: [zero-knowledge]
+        status: shipped
+
+  community:
+    title: Community & leadership
+    blurb: Building developer communities in Jaipur.
+    entries:
+      - name: AAIF Jaipur Chapter (Linux Foundation)
+        role: Organizer
+        link: ""
+        summary: Agentic AI community chapter.
+        tags: [community]
+        status: ongoing
+      - name: Cybros OSDC, LNMIIT
+        role: Coordinator
+        link: ""
+        summary: Open-source wing of the Cybros Coding Club.
+        tags: [community]
+        status: ongoing
+      - name: Gemini Student Ambassador; ASI:ONE Lead, Jaipur
+        role: Ambassador / Lead
+        link: ""
+        summary: ""
+        tags: [ambassador]
+        status: ongoing
+      - name: "Hackathons: Rootcamp I (Rootstock, top 20), SUI x Jaipur"
+        role: Winner
+        link: ""
+        summary: ""
+        tags: [hackathon]
+        status: shipped
+
+# Which domain a merged PR goes to, by repo. First match wins.
+# Keys are regex patterns on "owner/repo". Anything unmatched goes to "open-source".
+pr_routing:
+  - pattern: "(?i)(PullRequestDashboard|SkillBot|/Skills|SkillUpdater|ollama|langchain|transformers|llama|sktime|huggingface)"
+    domain: ai-ml
+  - pattern: "(?i)(Template-Repo|AutoInitialIssues|GitPay|kyverno|devops|magma|scorecard|ossf|kubeflow)"
+    domain: devops
+  - pattern: "(?i)(ergo|rootstock|bitcoin|coinswap|blockchain|StabilityNexus)"
+    domain: web3
