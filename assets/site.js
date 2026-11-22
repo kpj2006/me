@@ -8,8 +8,8 @@ const SOCIALS=[
  ["Email","mailto:jaihanumanji2006@gmail.com","M2 5.5A2.5 2.5 0 0 1 4.5 3h15A2.5 2.5 0 0 1 22 5.5v13a2.5 2.5 0 0 1-2.5 2.5h-15A2.5 2.5 0 0 1 2 18.5v-13Zm2.3.2 7.7 6 7.7-6H4.3Zm15.7 2-7.4 5.8a1 1 0 0 1-1.2 0L4 7.7v10.8c0 .3.2.5.5.5h15c.3 0 .5-.2.5-.5V7.7Z"]
 ];
 const B='/me/';
-const NAV=[["Home",""],["Projects","projects/"],["Open Source","open-source/"],["Talks","talks/"],["Videos","videos/"],["Newsletter","newsletter/"],["Contact","contact/"]];
-const MORE=[["About me","about/"],["People I've met","people/"],["Certificates","certificates/"],["Resume ↗","https://docs.google.com/document/d/1c9CfRKa6iIBsk2vvV6EQX7kZ4jbOnIymQfl7N_JmMT0/edit?usp=sharing"]];
+const NAV=[["Home",""],["Projects","projects/"],["Open Source","open-source/"],["Talks","talks/"],["Videos","videos/"],["Newsletter","newsletter/"],["Work with me","work-with-me/"],["Contact","contact/"]];
+const MORE=[["About me","about/"],["Appearances","appearances/"],["People I've met","people/"],["Certificates","certificates/"],["Uses","uses/"],["Stats","stats/"],["Sponsorship","sponsorship/"],["Misc","misc/"],["Resume ↗","https://docs.google.com/document/d/1c9CfRKa6iIBsk2vvV6EQX7kZ4jbOnIymQfl7N_JmMT0/edit?usp=sharing"]];
 const here=location.pathname.replace(/index\.html$/,'');
 const href=p=>p.startsWith('http')?p:B+p;
 const isOn=p=>p===''?(here===B||here===B.slice(0,-1)):here.startsWith(B+p);
