@@ -1,0 +1,18 @@
+---
+import Base from '../layouts/Base.astro';
+import PageHeader from '../components/PageHeader.astro';
+import { PEOPLE } from '../data/content';
+const colors = ['bg-teal-600', 'bg-amber-600', 'bg-violet-600', 'bg-sky-600', 'bg-rose-600'];
+const ini = (n: string) => n.replace('Dr. ', '').split(' ').slice(0, 2).map((w) => w[0]).join('');
+---
+<Base title="People I've met" description="Mentors and community people Karun Pacholi has worked with.">
+  <PageHeader title="People I've met" text="Mentors, organizers and builders who helped me along the way. Thank you." />
+  <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+    {PEOPLE.map((p, i) => (
+      <div class="card flex gap-3.5">
+        <div class={`grid h-11 w-11 shrink-0 place-items-center rounded-full text-sm font-bold text-white ${colors[i % 5]}`}>{ini(p.name)}</div>
+        <div><b class="block text-zinc-900 dark:text-zinc-50">{p.name}</b><span class="text-sm text-zinc-500">{p.org}</span><span class="mt-1 block text-[13px] text-teal-700 dark:text-teal-300">{p.note}</span></div>
+      </div>
+    ))}
+  </div>
+</Base>

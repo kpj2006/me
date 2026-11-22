@@ -1,0 +1,38 @@
+---
+import Base from '../layouts/Base.astro';
+import PageHeader from '../components/PageHeader.astro';
+import SectionHead from '../components/SectionHead.astro';
+import Icon from '../components/Icon.astro';
+import { SOCIALS, SITE } from '../data/site';
+const field = 'w-full rounded-xl border border-zinc-300 bg-white px-3.5 py-2.5 text-[15px] outline-none focus:border-teal-500 focus:ring-2 focus:ring-teal-500/20 dark:border-zinc-700 dark:bg-zinc-950';
+---
+<Base title="Contact" description="Contact Karun Pacholi.">
+  <PageHeader title="Let's connect" text="Have a question or want to work together? Write here." />
+  <form id="cform" class="card grid gap-4 sm:grid-cols-2">
+    <label class="text-sm font-semibold">Name *<input name="name" required class={`mt-1.5 ${field}`} /></label>
+    <label class="text-sm font-semibold">Email *<input name="email" type="email" required class={`mt-1.5 ${field}`} /></label>
+    <label class="text-sm font-semibold">Company / website<input name="site" class={`mt-1.5 ${field}`} /></label>
+    <label class="text-sm font-semibold">Topic<select name="topic" class={`mt-1.5 ${field}`}><option>Job / internship</option><option>Open-source collaboration</option><option>Talk or workshop</option><option>Community event</option><option>Other</option></select></label>
+    <label class="text-sm font-semibold sm:col-span-2">Message *<textarea name="msg" rows="6" required class={`mt-1.5 ${field}`}></textarea></label>
+    <div class="flex flex-wrap items-center gap-3 sm:col-span-2"><button class="btn btn-primary" type="submit">Send message</button><span class="text-sm text-zinc-500">Opens your email app with the message filled in.</span></div>
+  </form>
+  <section class="py-14">
+    <SectionHead title="Elsewhere" />
+    <div class="grid grid-cols-2 gap-3 sm:grid-cols-4">
+      {SOCIALS.map((s) => (
+        <a href={s.url} target={s.url.startsWith('mailto') ? undefined : '_blank'} rel="noopener" class="card card-hover flex items-center gap-3 p-4">
+          <Icon name={s.icon} class="h-5 w-5 shrink-0 text-teal-600 dark:text-teal-300" />
+          <span class="min-w-0"><b class="block text-sm">{s.name}</b><span class="block truncate text-xs text-zinc-500">{s.handle}</span></span>
+        </a>
+      ))}
+      <a href={SITE.calendar} target="_blank" rel="noopener" class="card card-hover flex items-center gap-3 p-4"><span class="text-lg">📅</span><span><b class="block text-sm">Calendar</b><span class="text-xs text-zinc-500">Book a call</span></span></a>
+    </div>
+  </section>
+  <script is:inline define:vars={{ email: SITE.email }}>
+    document.getElementById('cform').onsubmit = (e) => {
+      e.preventDefault(); const f = new FormData(e.target);
+      const body = `${f.get('msg')}\n\n— ${f.get('name')} (${f.get('email')})${f.get('site') ? '\n' + f.get('site') : ''}`;
+      location.href = `mailto:${email}?subject=${encodeURIComponent('[' + f.get('topic') + '] from ' + f.get('name'))}&body=${encodeURIComponent(body)}`;
+    };
+  </script>
+</Base>

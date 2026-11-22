@@ -1,0 +1,23 @@
+---
+import Base from '../layouts/Base.astro';
+import PageHeader from '../components/PageHeader.astro';
+import { ISSUES } from '../data/content';
+import { SITE } from '../data/site';
+---
+<Base title="Build Log" description="Build Log: a short monthly note on what Karun Pacholi shipped.">
+  <PageHeader title="Build Log" text="A short monthly note: what I shipped, what broke, what I learned. Two minutes to read." />
+  <div class="card mb-8 flex flex-col gap-4 bg-zinc-50 sm:flex-row sm:items-center sm:justify-between dark:bg-zinc-900">
+    <div><div class="font-semibold">Get the next issue</div><div class="text-sm text-zinc-500">Every issue goes out on LinkedIn first.</div></div>
+    <div class="flex flex-wrap gap-2"><a class="btn btn-primary" href={SITE.linkedin} target="_blank" rel="noopener">Follow on LinkedIn</a><a class="btn" href={`mailto:${SITE.email}?subject=Subscribe%20to%20Build%20Log`}>Subscribe by email</a></div>
+  </div>
+  <div class="space-y-4">
+    {ISSUES.map((i) => (
+      <article class="card">
+        <div class="font-mono text-xs font-semibold text-teal-700 dark:text-teal-300">{i.no} · {i.date}</div>
+        <h3 class="mt-1 text-lg font-semibold text-zinc-900 dark:text-zinc-50">{i.title}</h3>
+        <ul class="mt-2 list-disc space-y-1 pl-5 text-[14.5px] text-zinc-600 dark:text-zinc-400">{i.points.map((p) => <li>{p}</li>)}</ul>
+        <a class="link mt-3 inline-block text-sm" href={i.url} target="_blank" rel="noopener">Read more ↗</a>
+      </article>
+    ))}
+  </div>
+</Base>

@@ -1,0 +1,34 @@
+---
+import Base from '../layouts/Base.astro';
+import PageHeader from '../components/PageHeader.astro';
+import ProjectCard from '../components/ProjectCard.astro';
+import WorkWithMe from '../components/WorkWithMe.astro';
+import { PROJECTS } from '../data/projects';
+import { ROLES } from '../data/roles';
+const own = PROJECTS.filter((p) => p.kind !== 'contribution');
+---
+<Base title="Projects" description="Projects by Karun Pacholi across DevOps, backend, AI and Web3.">
+  <PageHeader title="Projects" text="Everything I built or maintain. Filter by domain; every card links to code, a demo or a post." />
+  <div class="mb-6 flex flex-wrap gap-2" id="filters">
+    <button data-f="all" aria-pressed="true" class="fbtn">All · {own.length}</button>
+    {ROLES.filter((r) => r.key !== 'devrel').map((r) => (
+      <button data-f={r.key} aria-pressed="false" class="fbtn">{r.icon} {r.title} · {own.filter((p) => p.domains.includes(r.key)).length}</button>
+    ))}
+  </div>
+  <div class="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+    {own.map((p) => <div class="proj" data-d={p.domains.join(' ')}><ProjectCard p={p} compact /></div>)}
+  </div>
+  <WorkWithMe />
+  <style>
+    @reference "../styles/global.css";
+    .fbtn { @apply rounded-full border border-zinc-200 px-3.5 py-1.5 text-sm font-semibold text-zinc-600 transition hover:border-teal-500 dark:border-zinc-800 dark:text-zinc-400; }
+    .fbtn[aria-pressed='true'] { @apply border-zinc-900 bg-zinc-900 text-white dark:border-zinc-100 dark:bg-zinc-100 dark:text-zinc-900; }
+  </style>
+  <script is:inline>
+    const bs = [...document.querySelectorAll('#filters button')];
+    bs.forEach((b) => (b.onclick = () => {
+      bs.forEach((x) => x.setAttribute('aria-pressed', String(x === b)));
+      document.querySelectorAll('.proj').forEach((c) => (c.hidden = b.dataset.f !== 'all' && !c.dataset.d.split(' ').includes(b.dataset.f)));
+    }));
+  </script>
+</Base>

@@ -1,0 +1,26 @@
+---
+import Base from '../layouts/Base.astro';
+import PageHeader from '../components/PageHeader.astro';
+import SectionHead from '../components/SectionHead.astro';
+import { HELP } from '../data/content';
+import { SITE } from '../data/site';
+import { url } from '../lib/url';
+---
+<Base title="Work with me" description="Hire or collaborate with Karun Pacholi.">
+  <PageHeader title="Work with me" text="Open to internships and full-time roles, plus open-source collaboration, talks and community events." />
+  <section class="pb-12">
+    <SectionHead title="How I can help" />
+    <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+      {HELP.map((h) => <div class="card card-hover"><div class="text-2xl">{h.icon}</div><h3 class="mt-2 font-semibold text-zinc-900 dark:text-zinc-50">{h.title}</h3><p class="mt-1 text-[14.5px] text-zinc-600 dark:text-zinc-400">{h.text}</p></div>)}
+    </div>
+  </section>
+  <section class="pb-12">
+    <SectionHead title="Recognition" />
+    <p class="text-zinc-700 dark:text-zinc-300">Google Summer of Code 2026 (DevOps Lead, AOSSIE) · LFX Mentee 2026 (Magma, Linux Foundation) · Rootcamp I winning project · SUI x Jaipur 3rd place · Google Gemini Student Ambassador · AAIF Community Organizer · GSSoC’26 Mentor</p>
+    <p class="mt-2 text-sm text-zinc-500">Proof for each role is on the <a class="link" href={url('#roles')}>home page</a>.</p>
+  </section>
+  <section class="card flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+    <div><h2 class="text-xl font-bold">Ready to collaborate?</h2><p class="text-zinc-500">Tell me what you’re building.</p></div>
+    <div class="flex flex-wrap gap-2"><a class="btn btn-primary" href={url('contact/')}>Get in touch</a><a class="btn" href={SITE.resume} target="_blank" rel="noopener">Resume</a><a class="btn" href={SITE.calendar} target="_blank" rel="noopener">Book a call</a></div>
+  </section>
+</Base>

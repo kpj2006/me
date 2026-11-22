@@ -1,0 +1,20 @@
+---
+import Base from '../layouts/Base.astro';
+import PageHeader from '../components/PageHeader.astro';
+import { VIDEOS } from '../data/content';
+import { SITE } from '../data/site';
+---
+<Base title="Videos" description="Demos, sessions and pitches by Karun Pacholi.">
+  <PageHeader title="Videos" text={`Project demos, sessions and pitches. <a class="link" href="${SITE.youtube}" target="_blank" rel="noopener">YouTube channel ↗</a>`} />
+  <div class="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+    {VIDEOS.map((v) => (
+      <a href={`https://www.youtube.com/watch?v=${v.id}`} target="_blank" rel="noopener" class="group card card-hover overflow-hidden p-0">
+        <div class="relative aspect-video bg-zinc-100 dark:bg-zinc-800">
+          <img src={`https://i.ytimg.com/vi/${v.id}/hqdefault.jpg`} alt="" loading="lazy" class="h-full w-full object-cover" />
+          <span class="absolute inset-0 m-auto grid h-12 w-12 place-items-center rounded-full bg-black/60 text-white transition group-hover:scale-110 group-hover:bg-teal-600">▶</span>
+        </div>
+        <div class="p-4"><span class="eyebrow">{v.tag}</span><h3 class="mt-1 font-semibold text-zinc-900 dark:text-zinc-50">{v.title}</h3><p class="text-sm text-zinc-500">{v.date}</p></div>
+      </a>
+    ))}
+  </div>
+</Base>

@@ -1,0 +1,38 @@
+---
+import Base from '../layouts/Base.astro';
+import PageHeader from '../components/PageHeader.astro';
+import SectionHead from '../components/SectionHead.astro';
+import { PRS, REPOS, ORGS, BY_REPO, RECENT } from '../lib/prs';
+const top = BY_REPO.slice(0, 10), max = top[0]?.[1] ?? 1;
+---
+<Base title="Open source" description="Merged pull requests by Karun Pacholi.">
+  <PageHeader title="Open source" text="Merged pull requests outside my own account. Rebuilt every Monday by a GitHub Action." />
+  <div class="grid grid-cols-3 gap-3">
+    {[[PRS.length, 'merged PRs'], [REPOS.size, 'repositories'], [ORGS.size, 'organizations']].map(([n, l]) => (
+      <div class="card"><div class="text-3xl font-extrabold tracking-tight text-zinc-900 dark:text-zinc-50">{n}</div><div class="text-sm text-zinc-500">{l}</div></div>
+    ))}
+  </div>
+  <section class="py-14">
+    <SectionHead title="Top repositories" />
+    <div class="space-y-2.5">
+      {top.map(([r, n]) => (
+        <a href={`https://github.com/${r}/pulls?q=is%3Apr+author%3Akpj2006+is%3Amerged`} target="_blank" rel="noopener" class="group grid grid-cols-[minmax(0,14rem)_1fr_2.5rem] items-center gap-3 text-sm">
+          <span class="truncate font-medium group-hover:text-teal-600">{r}</span>
+          <span class="h-2 overflow-hidden rounded-full bg-zinc-100 dark:bg-zinc-800"><span class="block h-full rounded-full bg-gradient-to-r from-teal-500 to-emerald-400" style={`width:${(n / max) * 100}%`}></span></span>
+          <span class="text-right font-mono font-semibold">{n}</span>
+        </a>
+      ))}
+    </div>
+  </section>
+  <section class="pb-10">
+    <SectionHead title="Latest merged PRs" href="https://github.com/kpj2006/me#readme" linkText="By domain" />
+    <ul class="divide-y divide-zinc-100 overflow-hidden rounded-2xl border border-zinc-200 dark:divide-zinc-800 dark:border-zinc-800">
+      {RECENT.slice(0, 15).map((p) => (
+        <li><a href={p.url} target="_blank" rel="noopener" class="grid grid-cols-[6.5rem_1fr] gap-3 px-4 py-3 hover:bg-zinc-50 dark:hover:bg-zinc-900">
+          <span class="font-mono text-xs text-zinc-500">{p.merged}</span>
+          <span><span class="text-[14.5px] text-zinc-900 dark:text-zinc-100">{p.title}</span><span class="block font-mono text-xs text-teal-700 dark:text-teal-300">{p.repo}</span></span>
+        </a></li>
+      ))}
+    </ul>
+  </section>
+</Base>

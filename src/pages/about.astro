@@ -1,0 +1,47 @@
+---
+import Base from '../layouts/Base.astro';
+import PageHeader from '../components/PageHeader.astro';
+import SectionHead from '../components/SectionHead.astro';
+import WorkWithMe from '../components/WorkWithMe.astro';
+import { EXPERIENCE } from '../data/site';
+import { url } from '../lib/url';
+---
+<Base title="About" description="The story of Karun Pacholi.">
+  <PageHeader title="About me" text="The longer story, for anyone who wants it." />
+  <section class="grid gap-8 pb-14 md:grid-cols-[16rem_1fr]">
+    <img src={url('assets/karun-session.jpg')} alt="Karun at a club session" class="aspect-[3/4] w-full max-w-xs rounded-2xl object-cover object-top ring-1 ring-zinc-900/5" loading="lazy" />
+    <div class="space-y-4 text-[16px] leading-relaxed text-zinc-700 dark:text-zinc-300">
+      <p>I'm a B.Tech CSE student at LNMIIT, Jaipur (started 2024). I started open source with AOSSIE and have maintained AOSSIE projects since February 2025.</p>
+      <p>I began in Web3 — hackathons on Rootstock, Sui and Solana, including a Rootcamp I winning project and 3rd place at SUI x Jaipur. In 2026 I was an LFX mentee at Magma, then in GSoC’26 I became AOSSIE’s DevOps Lead.</p>
+      <p>How I work: first learn what the community already solved, then design how the pieces fit, then automate it with CI/CD and agents.</p>
+    </div>
+  </section>
+  <section class="pb-14">
+    <SectionHead title="Journey" />
+    <ol class="relative ml-2 border-l-2 border-zinc-200 dark:border-zinc-800">
+      {EXPERIENCE.map((e, i) => (
+        <li class="relative mb-9 pl-7 last:mb-0">
+          <span class={`absolute -left-[9px] top-1.5 h-4 w-4 rounded-full border-[3px] bg-white dark:bg-zinc-950 ${i === 0 ? 'border-teal-500' : 'border-zinc-300 dark:border-zinc-600'}`}></span>
+          <div class="flex flex-col sm:flex-row sm:items-baseline sm:justify-between"><h3 class="text-lg font-semibold text-zinc-900 dark:text-zinc-50">{e.role}</h3><span class="font-mono text-xs text-zinc-500">{e.when}</span></div>
+          <div class="font-medium text-teal-700 dark:text-teal-300">{e.org}</div>
+          <ul class="mt-2 list-disc space-y-1 pl-5 text-[14.5px] text-zinc-600 dark:text-zinc-400">{e.points.map((p) => <li>{p}</li>)}</ul>
+        </li>
+      ))}
+    </ol>
+  </section>
+  <section class="pb-6">
+    <SectionHead title="Community" href={url('roles/devrel/')} linkText="All DevRel work" />
+    <div class="card overflow-hidden p-0">
+      <div class="p-5"><span class="eyebrow">Hackathon · 24 Oct 2026</span><h3 class="mt-1 text-lg font-semibold">Fetch-A-Thon 3.0 at LNMIIT</h3><p class="text-[14.5px] text-zinc-500">An AI-agent hackathon we hosted with Fetch.ai Innovation Lab.</p></div>
+      <div class="grid grid-cols-2 gap-1.5 p-1.5 sm:grid-cols-[1fr_1.4fr_1.4fr] sm:grid-rows-2">
+        <video class="h-full w-full rounded-xl object-cover sm:row-span-2" src={url('assets/fetchathon/hall.mp4')} autoplay muted loop playsinline poster={url('assets/fetchathon/hall.jpg')}></video>
+        {['hall', 'winners-1', 'hacking', 'winners-2'].map((n) => <img src={url(`assets/fetchathon/${n}.jpg`)} alt="Fetch-A-Thon 3.0" loading="lazy" class="aspect-[4/3] h-full w-full rounded-xl object-cover" />)}
+      </div>
+    </div>
+    <figure class="mt-4 overflow-hidden rounded-2xl border border-zinc-200 dark:border-zinc-800">
+      <img src={url('assets/community-lnmiit.jpg')} alt="Karun with the community at LNMIIT" loading="lazy" class="w-full" />
+      <figcaption class="px-4 py-2 text-sm text-zinc-500">With the community at LNMIIT</figcaption>
+    </figure>
+  </section>
+  <WorkWithMe />
+</Base>

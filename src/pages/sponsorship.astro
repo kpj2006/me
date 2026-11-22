@@ -1,0 +1,26 @@
+---
+import Base from '../layouts/Base.astro';
+import PageHeader from '../components/PageHeader.astro';
+import SectionHead from '../components/SectionHead.astro';
+import { SITE } from '../data/site';
+import { url } from '../lib/url';
+const ways = [
+  { icon: '🤝', title: 'Sponsor directly', text: 'Company or one-time sponsorship — email me.', href: `mailto:${SITE.email}?subject=Sponsorship` },
+  { icon: '⭐', title: 'Star & use', text: 'Star GitPay or Template-Repo and try them in your org.', href: 'https://github.com/StabilityNexus/GitPay' },
+  { icon: '💼', title: 'Hire me', text: 'The best support: a role or a paid project.', href: url('work-with-me/') },
+];
+---
+<Base title="Sponsorship" description="Support Karun Pacholi's open-source work.">
+  <PageHeader title="Sponsorship" text="Support my open-source work on CI/CD, DevSecOps and contributor tooling." />
+  <section class="pb-10 text-zinc-700 dark:text-zinc-300">
+    <p>I want to spend more time building free tools for maintainers. Support helps me:</p>
+    <ul class="mt-2 list-disc space-y-1 pl-5"><li>maintain GitPay, Template-Repo and SocialShareButton</li><li>prototype new contributor-automation tools</li><li>write posts, record demos and run community events in Jaipur</li></ul>
+  </section>
+  <section class="pb-8">
+    <SectionHead title="How to support" />
+    <div class="grid gap-4 sm:grid-cols-3">
+      {ways.map((w) => <a href={w.href} class="card card-hover"><div class="text-2xl">{w.icon}</div><h3 class="mt-2 font-semibold">{w.title}</h3><p class="text-sm text-zinc-500">{w.text}</p></a>)}
+    </div>
+  </section>
+  <p class="text-sm text-zinc-500"><b>No pressure.</b> Reading, sharing and starring the work already helps.</p>
+</Base>

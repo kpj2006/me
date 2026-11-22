@@ -1,0 +1,23 @@
+---
+import Base from '../layouts/Base.astro';
+import PageHeader from '../components/PageHeader.astro';
+import WorkWithMe from '../components/WorkWithMe.astro';
+import { TALKS } from '../data/content';
+---
+<Base title="Talks & events" description="Talks, sessions and events by Karun Pacholi.">
+  <PageHeader title="Talks & events" text={`Sessions I gave, hosted or organized. Want me at your meetup or college? <a class="link" href="mailto:jaihanumanji2006@gmail.com?subject=Talk%20invite">Invite me</a>.`} />
+  <div class="space-y-3">
+    {TALKS.map((t) => (
+      <article class="card card-hover grid gap-2 sm:grid-cols-[7rem_1fr]">
+        <span class="font-mono text-xs text-zinc-500">{t.date}</span>
+        <div>
+          <span class="eyebrow">{t.role}</span>
+          <h3 class="mt-1 text-lg font-semibold text-zinc-900 dark:text-zinc-50">{t.title}</h3>
+          <p class="mt-1 text-[14.5px] text-zinc-600 dark:text-zinc-400">{t.text}</p>
+          <div class="mt-2 flex gap-4">{t.links.map((l) => <a class="link text-sm" href={l.url} target="_blank" rel="noopener">{l.label} ↗</a>)}</div>
+        </div>
+      </article>
+    ))}
+  </div>
+  <WorkWithMe />
+</Base>
