@@ -77,7 +77,7 @@ export const EXPERIENCE = [
     role: 'Blockchain Developer · Rootcamp I',
     org: 'Rootstock Labs',
     when: 'Jan – Mar 2026',
-    points: ['12-week builder program; built PRStake, the winning project.', 'Testing, debugging and security auditing in CI/CD.'],
+    points: ['12-week builder program: finished in the top 20 builders, and PRStake was a winning project.', 'Testing, debugging and security auditing in CI/CD.'],
   },
   {
     role: 'Open Source Project Maintainer',

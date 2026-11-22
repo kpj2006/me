@@ -48,7 +48,7 @@ export const PEOPLE = [
 export const CERTS = [
   { icon: '☀️', title: 'Google Summer of Code 2026', sub: 'Google · contributor at AOSSIE', year: '2026' },
   { icon: '🐧', title: 'LFX Mentorship — Magma', sub: 'Linux Foundation · Jan–Apr 2026', year: '2026' },
-  { icon: '🏗️', title: 'Certified Rootstock Builder', sub: 'Rootcamp I · winning project PRStake', year: '2026' },
+  { icon: '🏗️', title: 'Certified Rootstock Builder', sub: 'Rootcamp I · top 20 builders · PRStake winning project', year: '2026' },
   { icon: '✨', title: 'Gemini Student Ambassador', sub: 'Google · GSA ID 14079', year: '2026' },
   { icon: '◎', title: 'Solana Summer School', sub: 'Solana Foundation · selected', year: '2026' },
   { icon: '🤝', title: 'AAIF Community Organizer', sub: 'Agentic AI Foundation · Jaipur', year: '2026' },
@@ -62,7 +62,7 @@ export const EVENTS = [
   { date: 'May–Nov 2026', title: 'Google Summer of Code 2026', role: 'Contributor · DevOps Lead', text: 'AOSSIE.', url: 'https://github.com/AOSSIE-Org' },
   { date: '2026', title: 'Solana Summer School', role: 'Participant', text: 'Solana Foundation.', url: '' },
   { date: 'Jan–Apr 2026', title: 'LFX Mentorship', role: 'Mentee', text: 'Magma, Linux Foundation.', url: 'https://github.com/magma/magma' },
-  { date: 'Jan–Mar 2026', title: 'Rootstock Rootcamp I', role: '🏆 Winning project', text: 'PRStake, crypto-economic PR gating.', url: 'https://github.com/kpj2006/prstake' },
+  { date: 'Jan–Mar 2026', title: 'Rootstock Rootcamp I', role: '🏆 Top 20 · winning project', text: 'PRStake, crypto-economic PR gating.', url: 'https://github.com/kpj2006/prstake' },
   { date: '', title: 'SUI x Jaipur hackathon', role: '🥉 3rd place', text: 'zkLogin Raffle, a gasless raffle dApp on Sui.', url: 'https://github.com/kpj2006/zklogin-raffle' },
   { date: '2025', title: 'GDG LNMIIT Hackathon', role: 'Participant', text: 'Built a Meesho-themed project.', url: 'https://github.com/kpj2006/Meesho' },
   { date: 'Jan 2025', title: 'LNMHacks 7.0', role: 'Technical assistant & designer', text: 'Helped speakers and fixed technical issues across tracks.', url: '' },
