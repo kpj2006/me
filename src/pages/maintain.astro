@@ -1,0 +1,46 @@
+---
+import Base from '../layouts/Base.astro';
+import PageHeader from '../components/PageHeader.astro';
+import SectionHead from '../components/SectionHead.astro';
+import ProjectCard from '../components/ProjectCard.astro';
+import { PROJECTS } from '../data/projects';
+import { SITE } from '../data/site';
+import { url } from '../lib/url';
+const repos = ['socialsharebutton', 'template-repo', 'autoinitialissues', 'agent-skills'].map((s) => PROJECTS.find((p) => p.slug === s)!);
+const role: Record<string, string> = { socialsharebutton: 'Core maintainer', 'template-repo': 'Co-maintainer', autoinitialissues: 'Co-maintainer', 'agent-skills': 'Co-maintainer' };
+const help = [
+  { icon: '🧹', title: 'Triage the PR flood', text: 'AI tools bring many low-quality PRs. I review, label and close them fast, so real contributors get answers.' },
+  { icon: '🚦', title: 'CI gates', text: 'Checks that stop broken, unsafe or unlinked PRs before a human has to look.' },
+  { icon: '🤖', title: 'AI rules for contributors', text: 'AGENTS.md-style skills and AI-disclosure policies, like the ones I wrote for AOSSIE.' },
+  { icon: '🛡️', title: 'Security scans', text: 'CodeQL, Gitleaks, OSV-Scanner and OpenSSF Scorecard set up in the pipeline.' },
+  { icon: '🧭', title: 'Issue and release hygiene', text: 'Good-first issues, templates, labels and releases that ship the same way every time.' },
+  { icon: '🌱', title: 'Contributor onboarding', text: 'Clear docs and mentoring, as I did for GSSoC’26 contributors.' },
+];
+const ways = [
+  { icon: '💼', title: 'Hire me as a maintainer', text: 'A role, internship or paid contract to look after your repo.', href: url('work-with-me/#contact') },
+  { icon: '✉️', title: 'Email me', text: 'Send your repo link and what it needs.', href: `mailto:${SITE.email}?subject=Open-source maintenance` },
+  { icon: '📅', title: 'Book a call', text: 'Talk through your project in 30 minutes.', href: SITE.calendar },
+];
+---
+<Base title="Hire a maintainer" description="Hire Karun Pacholi to maintain your open-source project in the AI era.">
+  <PageHeader title="Hire a maintainer" text="Need help maintaining your open-source project in the AI era? I review PRs, triage issues and keep CI green." />
+  <section class="pb-12">
+    <SectionHead title="Repos I maintain at AOSSIE" />
+    <p class="muted -mt-3 mb-5">Core maintainer of SocialShareButton, co-maintainer of Template-Repo, AutoInitialIssues and Skills. I can do the same for your project.</p>
+    <div class="grid gap-4 md:grid-cols-2">
+      {repos.map((p) => <ProjectCard p={{ ...p, badge: role[p.slug] }} compact />)}
+    </div>
+  </section>
+  <section class="band py-12">
+    <SectionHead title="What I can do for your project" />
+    <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+      {help.map((h) => <div class="card"><div class="text-2xl">{h.icon}</div><h3 class="mt-2 font-semibold text-ink dark:text-stone-50">{h.title}</h3><p class="mt-1 text-[14.5px] text-muted dark:text-night-muted">{h.text}</p></div>)}
+    </div>
+  </section>
+  <section class="py-12">
+    <SectionHead title="How to work together" />
+    <div class="grid gap-4 sm:grid-cols-3">
+      {ways.map((w) => <a href={w.href} target={w.href.startsWith('http') ? '_blank' : undefined} rel="noopener" class="card card-hover"><div class="text-2xl">{w.icon}</div><h3 class="mt-2 font-semibold">{w.title}</h3><p class="text-sm text-muted dark:text-night-muted">{w.text}</p></a>)}
+    </div>
+  </section>
+</Base>
