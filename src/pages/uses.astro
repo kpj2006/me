@@ -7,7 +7,7 @@ import { USES } from '../data/content';
   <PageHeader title="Uses" text="Hardware, software and tools I use daily. Updated now and then." />
   <div class="grid gap-4 sm:grid-cols-2">
     {USES.map((u) => (
-      <div class="card"><h3 class="font-semibold text-zinc-900 dark:text-zinc-50">{u.title}</h3><ul class="mt-2 list-disc space-y-1 pl-5 text-[14.5px] text-zinc-600 dark:text-zinc-400">{u.items.map((x) => <li>{x}</li>)}</ul></div>
+      <div class="card"><h3 class="font-semibold text-ink dark:text-stone-50">{u.title}</h3><ul class="mt-2 list-disc space-y-1 pl-5 text-[14.5px] text-muted dark:text-muted">{u.items.map((x) => <li>{x}</li>)}</ul></div>
     ))}
   </div>
 </Base>

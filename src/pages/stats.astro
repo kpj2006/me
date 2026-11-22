@@ -12,7 +12,7 @@ const built = new Date().toISOString().slice(0, 10);
   <PageHeader title="Stats" text={`Numbers from my open-source work. Rebuilt from GitHub data every Monday · last build ${built}.`} />
   <div class="grid grid-cols-2 gap-3 sm:grid-cols-4">
     {[[PRS.length, 'merged PRs (other orgs)'], [REPOS.size, 'repositories'], [ORGS.size, 'organizations'], [BY_MONTH.length, 'active months']].map(([n, l]) => (
-      <div class="card"><div class="text-3xl font-extrabold tracking-tight">{n}</div><div class="text-sm text-zinc-500">{l}</div></div>
+      <div class="card"><div class="text-3xl font-extrabold tracking-tight">{n}</div><div class="text-sm text-muted">{l}</div></div>
     ))}
   </div>
   <section class="py-14">
@@ -21,8 +21,8 @@ const built = new Date().toISOString().slice(0, 10);
       {months.map(([k, n]) => (
         <div class="flex h-full flex-1 flex-col items-center justify-end gap-1" title={`${k}: ${n}`}>
           <span class="font-mono text-[11px] font-semibold">{n}</span>
-          <span class="w-full max-w-10 rounded-t-md bg-gradient-to-t from-teal-600 to-emerald-400" style={`height:${(n / mmax) * 100}%`}></span>
-          <span class="font-mono text-[10.5px] text-zinc-500">{k.slice(2).replace('-', '/')}</span>
+          <span class="w-full max-w-10 rounded-t-md bg-gradient-to-t from-brand to-brand-soft" style={`height:${(n / mmax) * 100}%`}></span>
+          <span class="font-mono text-[10.5px] text-muted">{k.slice(2).replace('-', '/')}</span>
         </div>
       ))}
     </div>
@@ -33,7 +33,7 @@ const built = new Date().toISOString().slice(0, 10);
       {BY_ORG.map(([o, n]) => (
         <div class="grid grid-cols-[10rem_1fr_2.5rem] items-center gap-3 text-sm">
           <span class="truncate font-medium">{o}</span>
-          <span class="h-2 overflow-hidden rounded-full bg-zinc-100 dark:bg-zinc-800"><span class="block h-full rounded-full bg-gradient-to-r from-teal-500 to-emerald-400" style={`width:${(n / omax) * 100}%`}></span></span>
+          <span class="h-2 overflow-hidden rounded-full bg-paper dark:bg-night-card"><span class="block h-full rounded-full bg-gradient-to-r from-brand to-brand-soft" style={`width:${(n / omax) * 100}%`}></span></span>
           <span class="text-right font-mono font-semibold">{n}</span>
         </div>
       ))}
@@ -42,9 +42,9 @@ const built = new Date().toISOString().slice(0, 10);
   <section>
     <SectionHead title="Elsewhere" />
     <div class="grid grid-cols-3 gap-3">
-      <div class="card"><div class="text-3xl font-extrabold">1,462</div><div class="text-sm text-zinc-500">LinkedIn followers · Nov 2026</div></div>
-      <div class="card"><div class="text-3xl font-extrabold">{VIDEOS.length}+</div><div class="text-sm text-zinc-500">YouTube videos</div></div>
-      <div class="card"><div class="text-3xl font-extrabold" id="ghf">—</div><div class="text-sm text-zinc-500">GitHub followers</div></div>
+      <div class="card"><div class="text-3xl font-extrabold">1,462</div><div class="text-sm text-muted">LinkedIn followers · Nov 2026</div></div>
+      <div class="card"><div class="text-3xl font-extrabold">{VIDEOS.length}+</div><div class="text-sm text-muted">YouTube videos</div></div>
+      <div class="card"><div class="text-3xl font-extrabold" id="ghf">—</div><div class="text-sm text-muted">GitHub followers</div></div>
     </div>
   </section>
   <script is:inline>fetch('https://api.github.com/users/kpj2006').then((r) => r.json()).then((u) => { if (u.followers != null) document.getElementById('ghf').textContent = u.followers; }).catch(() => {});</script>

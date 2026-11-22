@@ -12,15 +12,15 @@ const ways = [
 ---
 <Base title="Sponsorship" description="Support Karun Pacholi's open-source work.">
   <PageHeader title="Sponsorship" text="Support my open-source work on CI/CD, DevSecOps and contributor tooling." />
-  <section class="pb-10 text-zinc-700 dark:text-zinc-300">
+  <section class="pb-10 text-stone-700 dark:text-stone-300">
     <p>I want to spend more time building free tools for maintainers. Support helps me:</p>
     <ul class="mt-2 list-disc space-y-1 pl-5"><li>maintain GitPay, Template-Repo and SocialShareButton</li><li>prototype new contributor-automation tools</li><li>write posts, record demos and run community events in Jaipur</li></ul>
   </section>
   <section class="pb-8">
     <SectionHead title="How to support" />
     <div class="grid gap-4 sm:grid-cols-3">
-      {ways.map((w) => <a href={w.href} class="card card-hover"><div class="text-2xl">{w.icon}</div><h3 class="mt-2 font-semibold">{w.title}</h3><p class="text-sm text-zinc-500">{w.text}</p></a>)}
+      {ways.map((w) => <a href={w.href} class="card card-hover"><div class="text-2xl">{w.icon}</div><h3 class="mt-2 font-semibold">{w.title}</h3><p class="text-sm text-muted">{w.text}</p></a>)}
     </div>
   </section>
-  <p class="text-sm text-zinc-500"><b>No pressure.</b> Reading, sharing and starring the work already helps.</p>
+  <p class="text-sm text-muted"><b>No pressure.</b> Reading, sharing and starring the work already helps.</p>
 </Base>

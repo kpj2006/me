@@ -21,8 +21,8 @@ const own = PROJECTS.filter((p) => p.kind !== 'contribution');
   <WorkWithMe />
   <style>
     @reference "../styles/global.css";
-    .fbtn { @apply rounded-full border border-zinc-200 px-3.5 py-1.5 text-sm font-semibold text-zinc-600 transition hover:border-teal-500 dark:border-zinc-800 dark:text-zinc-400; }
-    .fbtn[aria-pressed='true'] { @apply border-zinc-900 bg-zinc-900 text-white dark:border-zinc-100 dark:bg-zinc-100 dark:text-zinc-900; }
+    .fbtn { @apply rounded-full border border-line px-3.5 py-1.5 text-sm font-semibold text-muted transition hover:border-brand dark:border-night-line dark:text-muted; }
+    .fbtn[aria-pressed='true'] { @apply border-ink bg-ink text-white dark:border-line dark:bg-paper dark:text-ink; }
   </style>
   <script is:inline>
     const bs = [...document.querySelectorAll('#filters button')];

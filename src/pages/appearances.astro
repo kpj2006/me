@@ -12,8 +12,8 @@ const va = VIDEOS.filter((v) => v.tag === 'Session');
     <div class="space-y-3">
       {EVENTS.map((e) => (
         <article class="card grid gap-2 sm:grid-cols-[7rem_1fr]">
-          <span class="font-mono text-xs text-zinc-500">{e.date}</span>
-          <div><span class="eyebrow">{e.role}</span><h3 class="mt-1 font-semibold text-zinc-900 dark:text-zinc-50">{e.title}</h3><p class="text-[14.5px] text-zinc-600 dark:text-zinc-400">{e.text}</p>{e.url && <a class="link text-sm" href={e.url} target="_blank" rel="noopener">Link ↗</a>}</div>
+          <span class="font-mono text-xs text-muted">{e.date}</span>
+          <div><span class="eyebrow">{e.role}</span><h3 class="mt-1 font-semibold text-ink dark:text-stone-50">{e.title}</h3><p class="text-[14.5px] text-muted dark:text-muted">{e.text}</p>{e.url && <a class="link text-sm" href={e.url} target="_blank" rel="noopener">Link ↗</a>}</div>
         </article>
       ))}
     </div>
@@ -24,7 +24,7 @@ const va = VIDEOS.filter((v) => v.tag === 'Session');
       {va.map((v) => (
         <a href={`https://www.youtube.com/watch?v=${v.id}`} target="_blank" rel="noopener" class="card card-hover overflow-hidden p-0">
           <img src={`https://i.ytimg.com/vi/${v.id}/hqdefault.jpg`} alt="" loading="lazy" class="aspect-video w-full object-cover" />
-          <div class="p-4"><h3 class="font-semibold">{v.title}</h3><p class="text-sm text-zinc-500">{v.date}</p></div>
+          <div class="p-4"><h3 class="font-semibold">{v.title}</h3><p class="text-sm text-muted">{v.date}</p></div>
         </a>
       ))}
     </div>
