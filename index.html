@@ -90,6 +90,33 @@ p{margin:0 0 12px}
 .now li:last-child{border:0}
 .now .k{flex:0 0 92px;font:600 12px "JetBrains Mono",monospace;color:var(--accent2);padding-top:3px;text-transform:uppercase;letter-spacing:.04em}
 @media(max-width:560px){.now li{flex-direction:column;gap:2px}.now .k{flex:none}}
+.tl{position:relative;margin:0;padding:0;list-style:none}
+.tl:before{content:"";position:absolute;left:7px;top:6px;bottom:6px;width:2px;background:var(--line)}
+.tl li{position:relative;padding:0 0 22px 32px}
+.tl li:before{content:"";position:absolute;left:0;top:6px;width:16px;height:16px;border-radius:50%;background:var(--bg);border:3px solid var(--accent)}
+.tl li:nth-child(2):before{border-color:var(--accent2)}
+.tl li:nth-child(3):before{border-color:#7c3aed}
+.tl li:nth-child(4):before{border-color:var(--muted)}
+.tl .when{font:600 12px "JetBrains Mono",monospace;color:var(--muted);letter-spacing:.03em}
+.tl h3{margin:2px 0 2px}
+.tl .org{color:var(--accent);font-weight:600;font-size:14.5px}
+.tl ul{margin:6px 0 0;padding-left:18px;color:var(--muted);font-size:14.5px}
+.tl ul li{padding:0;margin:3px 0}
+.tl ul li:before{display:none}
+.event{background:var(--card);border:1px solid var(--line);border-radius:18px;overflow:hidden;margin-bottom:16px}
+.event .head{padding:18px 20px 6px}
+.event .head .kind{display:inline-block;margin-bottom:4px}
+.gallery{display:grid;grid-template-columns:1fr 1.35fr 1.35fr;grid-template-rows:180px 180px;gap:6px;padding:12px}
+.gallery video,.gallery img{width:100%;height:100%;object-fit:cover;border-radius:10px;display:block}
+.gallery .tall{grid-row:span 2}
+@media(max-width:640px){.gallery{grid-template-columns:1fr 1fr;grid-template-rows:150px 150px 150px}.gallery .tall{grid-row:span 2}}
+.posts{display:grid;gap:12px}
+.post{display:grid;grid-template-columns:110px 1fr;gap:14px;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px 16px;text-decoration:none}
+.post:hover{border-color:var(--accent)}
+.post .d{font:12.5px "JetBrains Mono",monospace;color:var(--muted);padding-top:3px}
+.post h3{font-size:16px}
+.post p{color:var(--muted);font-size:14px;margin:0}
+@media(max-width:560px){.post{grid-template-columns:1fr;gap:2px}}
 .updated{font-size:12.5px;color:var(--muted);margin-top:10px}
 
 .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
@@ -173,7 +200,7 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between}
   <div class="wrap nav">
     <a class="brand" href="#top"><img src="assets/avatar.jpg" alt="">kpj2006</a>
     <nav class="links">
-      <a href="#now">Now</a><a href="#projects">Projects</a><a href="#contributions">Contributions</a><a href="#community">Community</a><a href="#about">About</a><a href="#contact">Contact</a>
+      <a href="#now">Now</a><a href="#journey">Journey</a><a href="#projects">Projects</a><a href="#contributions">Contributions</a><a href="#community">Community</a><a href="#about">About</a><a href="#contact">Contact</a>
     </nav>
     <span class="spacer"></span>
     <button class="iconbtn" id="openCmd" aria-label="Search">⌕ <kbd>Ctrl K</kbd></button>
@@ -189,6 +216,8 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between}
       <div class="creds">
         <span class="cred"><b>GSoC 2026</b> · AOSSIE</span>
         <span class="cred"><b>DevOps Lead</b> · AOSSIE</span>
+        <span class="cred"><b>LFX'26</b> · Magma</span>
+        <span class="cred"><b>GSSoC'26</b> Mentor</span>
         <span class="cred">Organizer · AAIF Jaipur</span>
         <span class="cred">Gemini Student Ambassador</span>
       </div>
@@ -228,6 +257,35 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between}
     </div>
   </section>
 
+
+  <section id="journey" class="reveal">
+    <div class="sh"><h2><span class="hash">#</span>Journey</h2><a href="https://www.linkedin.com/in/kpj2006/" target="_blank" rel="noopener">LinkedIn →</a></div>
+    <ol class="tl">
+      <li><div class="when">MAY 2026 – PRESENT</div><h3>GSoC'26 Contributor &amp; DevOps Lead</h3><div class="org">AOSSIE · Google Summer of Code</div>
+        <ul>
+          <li>Org-wide CI/CD, repository automation and DevSecOps checks (CodeQL, OpenSSF Scorecard, Gitleaks, OSV-Scanner).</li>
+          <li>Built <a href="https://github.com/StabilityNexus/GitPay" target="_blank" rel="noopener">GitPay</a>: contributor payouts as a GitHub Action, triggered by maintainer PR comments.</li>
+          <li>Built <a href="https://github.com/AOSSIE-Org/SkillBot" target="_blank" rel="noopener">Skill Bot</a>, Skill Updater and <a href="https://github.com/AOSSIE-Org/PullRequestDashboard" target="_blank" rel="noopener">PR Dashboard</a> for maintainers.</li>
+        </ul></li>
+      <li><div class="when">JAN 2026 – APR 2026</div><h3>LFX Mentee</h3><div class="org">Magma · Linux Foundation</div>
+        <ul>
+          <li>Built reproducible Magma dev environments across operating systems with Vagrant, VirtualBox, Linux, Bash and Docker.</li>
+          <li>Ran 3GPP end-to-end tests of the 5G/LTE core (UERANSIM, srsRAN, Wireshark).</li>
+          <li>Wrote setup, workflow, troubleshooting and onboarding docs.</li>
+        </ul></li>
+      <li><div class="when">JAN 2026 – MAR 2026</div><h3>Blockchain Developer · Rootcamp</h3><div class="org">Rootstock Labs</div>
+        <ul>
+          <li>Selected for a 12-week Builder Rootcamp; finished in the top 20 builders.</li>
+          <li>Testing, debugging and security auditing in CI/CD pipelines; shipped a solution on Rootstock.</li>
+        </ul></li>
+      <li><div class="when">FEB 2025 – PRESENT</div><h3>Open Source Project Maintainer</h3><div class="org">AOSSIE</div>
+        <ul>
+          <li>Core maintainer of <a href="https://github.com/AOSSIE-Org/SocialShareButton" target="_blank" rel="noopener">SocialShareButton</a>; co-maintainer of <a href="https://github.com/AOSSIE-Org/Template-Repo" target="_blank" rel="noopener">Template-Repo</a>, AutoInitialIssues and <a href="https://github.com/AOSSIE-Org/Skills" target="_blank" rel="noopener">Skills</a>.</li>
+          <li>PR review, issue triage and CI/CD for contributors, including GSSoC'26 contributors.</li>
+        </ul></li>
+    </ol>
+  </section>
+
   <section id="start" class="reveal">
     <div class="sh"><h2><span class="hash">#</span>Start here</h2></div>
     <div class="paths">
@@ -264,15 +322,37 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between}
     <p class="updated mono">auto-updated every Monday by a GitHub Action</p>
   </section>
 
+
+  <section id="writing" class="reveal">
+    <div class="sh"><h2><span class="hash">#</span>Building in public</h2><a href="https://www.linkedin.com/in/kpj2006/recent-activity/all/" target="_blank" rel="noopener">All posts →</a></div>
+    <div class="posts">
+      <a class="post" href="https://www.linkedin.com/feed/update/urn:li:activity:7522430543284645888/" target="_blank" rel="noopener"><span class="d">Oct 2026</span><div><span class="kind">Launch</span><h3>Introducing GitPay v1.1.0</h3><p>Contributor payouts inside GitHub Actions: maintainers pay from a PR comment, with authorization policies and non-custodial execution.</p></div></a>
+      <a class="post" href="https://www.linkedin.com/feed/update/urn:li:activity:7520479036943384577/" target="_blank" rel="noopener"><span class="d">Oct 2026</span><div><span class="kind">Community</span><h3>Fetch-A-Thon 3.0 came to LNMIIT</h3><p>Recap of the AI agent hackathon we hosted in Jaipur on 24 October.</p></div></a>
+      <a class="post" href="https://www.linkedin.com/feed/update/urn:li:activity:7496770465722445824/" target="_blank" rel="noopener"><span class="d">Aug 2026</span><div><span class="kind">Deep-dive</span><h3>Week 1 of XOps (now GitPay)</h3><p>Why settlement is the last manual step in the delivery pipeline, and why I shipped it as a GitHub Action instead of a hosted service.</p></div></a>
+    </div>
+  </section>
+
   <section id="community" class="reveal">
     <div class="sh"><h2><span class="hash">#</span>Community</h2></div>
+    <div class="event">
+      <div class="head"><span class="kind">Hackathon · 24 Oct 2026</span><h3>Fetch-A-Thon 3.0 at LNMIIT, Jaipur</h3>
+        <p class="muted" style="font-size:14.5px">Cybros – LNMIIT hosted the Jaipur campus of Fetch-A-Thon 3.0, a nationwide AI agent hackathon with Fetch.ai Innovation Lab, run on the same day across six campuses with a ₹1,00,000 prize pool. Before it, we ran the session "Exploring Autonomous AI with Fetch.ai". <a href="https://www.linkedin.com/feed/update/urn:li:activity:7520479036943384577/" target="_blank" rel="noopener">Recap post ↗</a></p></div>
+      <div class="gallery">
+        <video class="tall" src="assets/fetchathon/hall.mp4" autoplay muted loop playsinline poster="assets/fetchathon/hall.jpg" aria-label="Students hacking in the LNMIIT lecture hall"></video>
+        <img src="assets/fetchathon/hall.jpg" alt="Full lecture hall during Fetch-A-Thon 3.0" loading="lazy">
+        <img src="assets/fetchathon/winners-1.jpg" alt="Prize winners with the organizers" loading="lazy">
+        <img src="assets/fetchathon/hacking.jpg" alt="Participants building at Fetch-A-Thon" loading="lazy">
+        <img src="assets/fetchathon/winners-2.jpg" alt="Prize winners with the organizers" loading="lazy">
+      </div>
+    </div>
     <div class="community">
       <figure><img src="assets/community-lnmiit.jpg" alt="Karun with organizers and a full lecture hall of students at LNMIIT" loading="lazy"><figcaption>With the community at LNMIIT, Jaipur</figcaption></figure>
       <div class="clist">
         <div class="citem"><b>AAIF Jaipur Chapter</b><span>Organizer · Agentic AI Foundation, Linux Foundation</span></div>
         <div class="citem"><b><a href="https://github.com/Cybros-OSDC" target="_blank" rel="noopener">Cybros OSDC</a></b><span>Coordinator · open-source wing of Cybros Coding Club, LNMIIT</span></div>
+        <div class="citem"><b>ASI:ONE Community Lead, Jaipur</b><span>Since Oct 2026 · agentic AI meetups and workshops</span></div>
+        <div class="citem"><b>GSSoC'26 Mentor</b><span>GirlScript Summer of Code</span></div>
         <div class="citem"><b>Gemini Student Ambassador</b><span>Google</span></div>
-        <div class="citem"><b>ASI:ONE Community Lead</b><span>Jaipur</span></div>
       </div>
     </div>
   </section>
@@ -282,6 +362,9 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between}
     <div class="badges">
       <div class="badge"><span class="ic">☀️</span><div>Google Summer of Code 2026<small>Contributor · AOSSIE</small></div></div>
       <div class="badge"><span class="ic">⚙️</span><div>DevOps Lead<small>AOSSIE · May–Nov 2026</small></div></div>
+      <div class="badge"><span class="ic">🐧</span><div>LFX Mentee 2026<small>Magma · Linux Foundation</small></div></div>
+      <div class="badge"><span class="ic">🧑‍🏫</span><div>GSSoC 2026 Mentor<small>GirlScript Summer of Code</small></div></div>
+      <div class="badge"><span class="ic">◎</span><div>Solana Summer School<small>Solana Foundation · selected 2026</small></div></div>
       <div class="badge"><span class="ic">🏗️</span><div>Top 20 builders, Rootcamp I<small>Rootstock · 2026</small></div></div>
     </div>
   </section>
@@ -292,6 +375,7 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between}
       <img src="assets/karun-session.jpg" alt="Karun at a club session" loading="lazy">
       <div>
         <p>I'm a Computer Science student at LNMIIT, Jaipur (B.Tech, started 2024). I started in open source with AOSSIE in 2025 and have been maintaining AOSSIE projects since February 2025.</p>
+        <p>Before GSoC, I was an LFX mentee at Magma (Linux Foundation) and a Rootstock Rootcamp builder.</p>
         <p>In GSoC 2026 I joined AOSSIE as a contributor and became its DevOps Lead. I brought the DevOps side to AOSSIE: shared templates, reusable GitHub Actions, and security checks like CodeQL, OpenSSF Scorecard, Gitleaks and OSV-Scanner across the org.</p>
         <p>My way of working: first find everything the community has already solved, then design how the pieces connect, then automate it with CI/CD and agents. I like tools that make maintainers' lives easier.</p>
         <p class="muted">Started with Web3 (Rootstock, SUI, Ergo). Now focused on DevOps, platform engineering and AI tooling for developers.</p>
@@ -365,7 +449,7 @@ document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
 
 // command palette
 const CMDS=[
- ...[["Now","#now"],["Start here","#start"],["Projects","#projects"],["Merged PRs","#contributions"],["Community","#community"],["Recognition","#recognition"],["About","#about"],["Contact","#contact"]].map(([n,u])=>({n,u,g:"section"})),
+ ...[["Now","#now"],["Journey","#journey"],["Start here","#start"],["Building in public","#writing"],["Projects","#projects"],["Merged PRs","#contributions"],["Community","#community"],["Recognition","#recognition"],["About","#about"],["Contact","#contact"]].map(([n,u])=>({n,u,g:"section"})),
  ...PROJECTS.map(p=>({n:p.n,u:p.u,g:"project"})),
  ...SOCIALS.map(([n,u])=>({n,u,g:"social"})),
  {n:"Resume",u:"https://docs.google.com/document/d/1c9CfRKa6iIBsk2vvV6EQX7kZ4jbOnIymQfl7N_JmMT0/edit?usp=sharing",g:"link"},
