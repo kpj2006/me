@@ -1,7 +1,7 @@
 ---
 const { title, text, eyebrow } = Astro.props;
 ---
-<header class="pb-6 pt-14 sm:pt-20">
+<header class="band mb-10 pb-10 pt-14 sm:pt-20">
   {eyebrow && <p class="eyebrow mb-3">{eyebrow}</p>}
   <h1 class="text-4xl font-extrabold tracking-tight text-ink sm:text-5xl dark:text-stone-50">{title}</h1>
   {text && <p class="mt-4 max-w-2xl text-lg leading-relaxed text-muted dark:text-muted" set:html={text} />}
