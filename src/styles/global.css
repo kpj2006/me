@@ -12,18 +12,18 @@
   --font-sans: "Inter Variable", ui-sans-serif, system-ui, sans-serif;
   --font-serif: "Spectral", Georgia, serif;
   --font-mono: "JetBrains Mono", ui-monospace, monospace;
-  /* warm neutrals like santoshyadav.dev */
-  --color-ink: #1f1b19;
-  --color-paper: #fbf9f6;
+  /* Tailwind stone palette, same as santoshyadav.dev: base white / stone-900, bands stone-50 / stone-950, cards white / stone-800 */
+  --color-ink: #292524;
+  --color-paper: #ffffff;
   --color-card: #ffffff;
-  --color-line: #e7e2dc;
-  --color-muted: #6b625b;
-  --color-night: #0f0d0c;
-  --color-night-band: #1c1918;
-  --color-night-card: #272321;
-  --color-night-line: #3a3431;
-  --color-band: #f3efe9;
-  --color-night-muted: #a8a09a;
+  --color-line: #e7e5e4;
+  --color-muted: #78716c;
+  --color-night: #1c1917;
+  --color-night-band: #0c0a09;
+  --color-night-card: #292524;
+  --color-night-line: #44403c;
+  --color-band: #fafaf9;
+  --color-night-muted: #a8a29e;
   --color-brand: #2f6b4f;
   --color-brand-soft: #8fc9a3;
 }
@@ -40,8 +40,8 @@
   .container-x { @apply mx-auto w-full max-w-[68rem] px-5 sm:px-6; }
   .h-section { @apply font-serif text-[1.85rem] font-semibold tracking-tight text-ink dark:text-stone-50; }
   .card { @apply rounded-md border border-line bg-card p-5 transition duration-200 dark:border-night-line dark:bg-night-card; }
-  .card-hover { @apply hover:-translate-y-0.5 hover:border-brand/60 hover:shadow-lg hover:shadow-black/5 dark:hover:border-brand-soft/40; }
-  .pill { @apply inline-flex items-center gap-1.5 rounded border border-line bg-paper px-2 py-0.5 font-mono text-[11.5px] text-muted dark:border-night-line dark:bg-night dark:text-night-muted; }
+  .card-hover { @apply hover:-translate-y-0.5 hover:border-brand/60 hover:bg-stone-50 hover:shadow-lg hover:shadow-black/5 dark:hover:border-brand-soft/40 dark:hover:bg-stone-800; }
+  .pill { @apply inline-flex items-center gap-1.5 rounded border border-line bg-stone-100 px-2 py-0.5 font-mono text-[11.5px] text-stone-600 dark:border-night-line dark:bg-stone-900 dark:text-night-muted; }
   .btn { @apply inline-flex items-center gap-2 rounded-md border border-ink/25 px-5 py-2.5 text-[15px] font-semibold text-ink transition hover:border-brand hover:text-brand dark:border-stone-500 dark:text-stone-100 dark:hover:border-brand-soft dark:hover:text-brand-soft; }
   .btn-primary { @apply border-brand bg-brand text-white hover:bg-[#285c44] hover:text-white dark:border-brand dark:text-white dark:hover:text-white; }
   .link { @apply font-medium text-brand underline decoration-brand/30 hover:decoration-brand dark:text-brand-soft dark:decoration-brand-soft/30; }
