@@ -1,6 +1,6 @@
 // Every project and outside contribution, tagged by domain.
 // A project can live in several domains; `did` is what I personally built.
-export type Link = { label: 'Code' | 'Live' | 'Video' | 'Post' | 'PR' | 'Docs'; url: string };
+export type Link = { label: 'Code' | 'Live' | 'Video' | 'Post' | 'PR' | 'Docs' | 'Page'; url: string };
 export type Project = {
   slug: string;
   name: string;
@@ -31,11 +31,19 @@ export const PROJECTS: Project[] = [
     links: [{ label: 'Code', url: gh('StabilityNexus/GitPay') }, { label: 'Video', url: yt('qWbDJNzwTUg') }, { label: 'Post', url: 'https://www.linkedin.com/feed/update/urn:li:activity:7522430543284645888/' }],
   },
   {
+    slug: 'socialsharebutton', name: 'SocialShareButton', badge: 'Core maintainer',
+    summary: 'Lightweight social share button library used across AOSSIE web projects.',
+    did: ['Review and merge PRs, triage issues and keep CI/CD green.', "Guided GSSoC'26 contributors from first issue to merged PR."],
+    stack: ['JavaScript', 'GitHub Actions', 'Code review'],
+    domains: ['maintainer'],
+    links: [{ label: 'Code', url: gh('AOSSIE-Org/SocialShareButton') }],
+  },
+  {
     slug: 'template-repo', name: 'Template-Repo',
     summary: "AOSSIE's standard repository template: CI/CD workflows, issue/PR templates and security checks for every new project.",
     did: ['Designed the org-wide CI/CD baseline used to bootstrap new AOSSIE repos.', 'Added SAST and supply-chain scans (CodeQL, Scorecard, Gitleaks, OSV-Scanner, dependency review).'],
     stack: ['GitHub Actions', 'YAML', 'CodeQL', 'OpenSSF Scorecard'],
-    domains: ['devops', 'devsecops'],
+    domains: ['devops', 'devsecops', 'maintainer'],
     links: [{ label: 'Code', url: gh('AOSSIE-Org/Template-Repo') }],
   },
   {
@@ -51,7 +59,7 @@ export const PROJECTS: Project[] = [
     summary: 'GitHub Action that creates starter issues for new repos, so contributors can begin on day one.',
     did: ['Wrote the first version of the Action that generates issues from predefined templates.'],
     stack: ['GitHub Actions', 'JavaScript'],
-    domains: ['devops'],
+    domains: ['devops', 'maintainer'],
     links: [{ label: 'Code', url: gh('AOSSIE-Org/AutoInitialIssues') }, { label: 'PR', url: gh('AOSSIE-Org/AutoInitialIssues/pull/1') }],
   },
   {
@@ -165,7 +173,7 @@ export const PROJECTS: Project[] = [
     summary: 'Org-wide agent instructions and AI-disclosure rules to cut low-quality AI PRs.',
     did: ['AGENTS.md-style skills that work with Claude Code, Cursor and Copilot.'],
     stack: ['AGENTS.md', 'Policy'],
-    domains: ['ai', 'fde'],
+    domains: ['ai', 'fde', 'maintainer'],
     links: [{ label: 'Code', url: gh('AOSSIE-Org/Skills') }],
   },
   {

@@ -77,10 +77,10 @@ export const HELP = [
 
 export const USES = [
   { title: 'Desk setup', items: [
-    'Laptop: 13th Gen Intel Core i7-13620H, NVIDIA GeForce RTX 4060 (8 GB), 16 GB RAM, 1 TB SSD, Windows + WSL',
+    'Laptop: HP OMEN — Intel Core i7-13620H, NVIDIA GeForce RTX 4060 (8 GB), 16 GB RAM, 1 TB SSD, 144 Hz display, Windows + WSL',
     'Monitor: Dell 24 Plus (S2425HSM)',
     'Keyboard: <a class="link" href="https://rapoo.in/keyboards/rapoo-e9350l/" target="_blank" rel="noopener">Rapoo E9350L wireless</a>',
-    'Mouse: M120 wireless mouse',
+    'Mouse: HP M120 wireless mouse',
     'Medium-size desk mat',
   ] },
   { title: 'Editors & AI', items: ['VS Code, Cursor and Antigravity', 'GitHub Copilot, Gemini CLI and Claude', 'Ollama for local LLMs on the RTX 4060'] },
@@ -89,13 +89,32 @@ export const USES = [
   { title: 'Everyday', items: ['Discord — where most of my open-source work happens', 'WakaTime for coding time', 'Google Workspace and Notion'] },
 ];
 
-export const SKILL_GROUPS = [
-  { domain: 'DevOps', icon: '⚙️', key: 'devops', skills: ['GitHub Actions', 'Docker', 'Kubernetes', 'Linux', 'Bash', 'nginx', 'Vagrant'] },
-  { domain: 'DevSecOps', icon: '🛡️', key: 'devsecops', skills: ['CodeQL', 'Gitleaks', 'OSV-Scanner', 'OpenSSF Scorecard'] },
-  { domain: 'SDE / Backend', icon: '🧩', key: 'backend', skills: ['Python', 'TypeScript', 'Node.js', 'Go', 'C++', 'Django', 'FastAPI', 'PostgreSQL', 'MongoDB'] },
-  { domain: 'Full Stack', icon: '🖥️', key: 'fullstack', skills: ['React', 'Next.js', 'Vite', 'Express'] },
-  { domain: 'AI / MLOps', icon: '🤖', key: 'ai', skills: ['ChromaDB', 'RAG', 'Ollama', 'Sentence Transformers', 'BERTopic', 'MCP'] },
-  { domain: 'Web3', icon: '⛓️', key: 'web3', skills: ['Solidity', 'Solana', 'Sui', 'Hedera', 'Ethereum', 'x402'] },
-];
+// Skills shown under each domain on /expertise (keys match ROLES).
+export const SKILLS_BY: Record<string, string[]> = {
+  devops: ['GitHub Actions', 'Docker', 'Kubernetes', 'Linux', 'Bash', 'nginx', 'Vagrant', 'YAML'],
+  devsecops: ['CodeQL', 'Gitleaks', 'OSV-Scanner', 'OpenSSF Scorecard'],
+  maintainer: ['Code review', 'Issue triage', 'GitHub Actions', 'GitHub Projects', 'AGENTS.md', 'Mentoring'],
+  backend: ['Python', 'TypeScript', 'Node.js', 'Go', 'C++', 'Django', 'FastAPI', 'PostgreSQL', 'MongoDB'],
+  fullstack: ['React', 'Next.js', 'Vite', 'Express', 'TypeScript'],
+  ai: ['RAG', 'ChromaDB', 'Ollama', 'Sentence Transformers', 'BERTopic', 'MCP', 'Gemini'],
+  mlops: ['Python', 'ChromaDB', 'GitHub Actions', 'Docker'],
+  web3: ['Solidity', 'ERC-20', 'ERC-223', 'ERC-4626', 'ERC-721', 'ERC-2535 Diamond', 'Ethers.js v6', 'Viem', 'Foundry', 'Hardhat', 'Rust', 'Move (Sui)', 'Ethereum', 'Solana', 'Sui', 'Hedera', 'Rootstock', 'x402', 'React', 'Next.js', 'Vite'],
+  fde: ['Python', 'TypeScript', 'GitHub Actions', 'Discord API'],
+  devrel: ['Talks', 'Workshops', 'Hackathons', 'Writing', 'YouTube'],
+  design: ['Figma', 'Posters', 'Event branding', 'Social media creatives', 'Merch design'],
+};
 
-export const SKILLS = ['GitHub Actions', 'Docker', 'Linux / Bash', 'CodeQL · Gitleaks · OSV', 'Python', 'TypeScript / Node.js', 'Go', 'C++', 'Django', 'FastAPI', 'React / Next.js', 'PostgreSQL', 'ChromaDB · RAG', 'Ollama', 'Solidity', 'Solana · Sui'];
+// Graphic design work, from github.com/kpj2006/Figma
+export const DESIGNS = [
+  { img: 'lnmhacks-7-poster', title: 'LNMHacks 7.0 poster', sub: 'Pixel-art campaign' },
+  { img: 'lnmhacks-7-countdown', title: 'LNMHacks 7.0 countdown', sub: 'Social media' },
+  { img: 'lnmhacks-7-mentors', title: 'Mentors of LNMHacks 7.0', sub: 'Speaker cards' },
+  { img: 'lnmhacks-8-header', title: 'LNMHacks 8.0 header', sub: 'X / Twitter banner' },
+  { img: 'lnmhacks-logo', title: 'LNM Hacks logo', sub: 'Brand mark' },
+  { img: 'decipher', title: 'Decipher', sub: 'Cipher club event poster' },
+  { img: 'nss-banner', title: 'NSS LNMIIT banner', sub: 'National Service Scheme' },
+  { img: 'plantation-drive', title: 'Plantation drive', sub: 'NSS event poster' },
+  { img: 'youth-day', title: 'International Youth Day', sub: 'NSS event poster' },
+  { img: 'aspiring-engineers', title: 'Aspiring Engineers', sub: 'Webinar poster' },
+  { img: 'asme-jacket', title: 'ASME jacket', sub: 'Merch design' },
+];

@@ -8,6 +8,8 @@ export const ROLES: Role[] = [
     items: ['gitpay', 'template-repo', 'no-dues-portal', 'template-family', 'content-freshness-gate', 'autoinitialissues', 'magma', 'issuesnap', 'pr-feedback-action', 'polyglot', 'gitpay-quickstart', 'openvino-env'] },
   { key: 'devsecops', title: 'DevSecOps', icon: '🛡️', pitch: 'I put security gates in the pipeline, not after it.',
     items: ['devsecops-pipeline', 'gitpay', 'template-repo', 'ard-trust'] },
+  { key: 'maintainer', title: 'Open Source Maintainer', icon: '🧭', pitch: 'I keep open-source repos healthy: review PRs, triage issues and run CI/CD.',
+    items: ['socialsharebutton', 'template-repo', 'autoinitialissues', 'agent-skills'] },
   { key: 'backend', title: 'SDE / Backend', icon: '🧩', pitch: 'Backend systems with clear boundaries, typed errors and tests.',
     items: ['gitpay', 'no-dues-portal', 'course-allotment', 'router402', 'ergoscript-lsp', 'polyglot', 'discord-auth', 'uniswap-decoder', 'gist-as-db', 'cp'] },
   { key: 'fullstack', title: 'Full Stack', icon: '🖥️', pitch: 'From the database to the UI, deployed.',
@@ -21,7 +23,7 @@ export const ROLES: Role[] = [
   { key: 'fde', title: 'Forward Deployed', icon: '🚀', pitch: 'I sit with users, find the real problem, and ship the fix into their workflow.',
     items: ['gitpay', 'no-dues-portal', 'skillbot', 'pragati', 'goalwatch', 'pr-feedback-action', 'issuesnap', 'agent-skills', 'discord-auth', 'openvino-env'] },
   { key: 'devrel', title: 'DevRel', icon: '🎤', pitch: 'I teach, write and run events for developers.',
-    items: ['fetchathon', 'gemini', 'aaif', 'asi', 'swytchcode', 'gssoc', 'cybros', 'buildinpublic', 'gsoc-proposal'] },
+    items: ['fetchathon', 'gemini', 'aaif', 'asi', 'swytchcode', 'cybros'] },
 ];
 
 // DevRel / volunteering blocks (not code projects)
@@ -36,7 +38,8 @@ export const COMMUNITY: Project[] = [
     did: ['Started the chapter and its speaker/company network.'], stack: ['Community', 'Agentic AI'], domains: ['devrel'],
     links: [{ label: 'Post', url: 'https://www.linkedin.com/feed/update/urn:li:activity:7484794478403268609/' }] },
   { slug: 'asi', name: 'ASI:ONE Community Lead · Jaipur', summary: 'Growing the agentic and decentralized AI community in Jaipur since Oct 2026.',
-    did: ['Meetups, workshops and ecosystem partner connections.'], stack: ['Community'], domains: ['devrel'], links: [] },
+    did: ['Meetups, workshops and ecosystem partner connections.'], stack: ['Community', 'Agentic AI'], domains: ['devrel'],
+    links: [{ label: 'Page', url: 'https://www.linkedin.com/company/asi-one-community-jaipur/' }] },
   { slug: 'swytchcode', name: 'Swytchcode developer community', summary: 'Hands-on with Swytchcode’s CLI and API-integration platform; shared it with developers.',
     did: ['Ran a first demo integration and wrote about it.'], stack: ['APIs', 'CLI'], domains: ['devrel'],
     links: [{ label: 'Post', url: 'https://www.linkedin.com/feed/update/urn:li:activity:7484273791628406784/' }] },

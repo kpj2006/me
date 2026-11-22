@@ -28,13 +28,12 @@ export const SOCIALS = [
 
 export const NAV = [
   { label: 'Home', href: '' },
-  { label: 'Projects', href: 'projects/' },
+  { label: 'Expertise', href: 'expertise/' },
   { label: 'Open Source', href: 'open-source/' },
   { label: 'Talks', href: 'talks/' },
   { label: 'Videos', href: 'videos/' },
   { label: 'Newsletter', href: 'newsletter/' },
   { label: 'Work with me', href: 'work-with-me/' },
-  { label: 'Contact', href: 'contact/' },
 ];
 
 export const MORE = [
@@ -44,7 +43,6 @@ export const MORE = [
   { label: 'Uses', href: 'uses/' },
   { label: 'Stats', href: 'stats/' },
   { label: 'Sponsorship', href: 'sponsorship/' },
-  { label: 'Misc', href: 'misc/' },
 ];
 
 export const FACTS = [
