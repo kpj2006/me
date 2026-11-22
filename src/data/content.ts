@@ -1,12 +1,10 @@
 const yt = (id: string) => `https://www.youtube.com/watch?v=${id}`;
 
 export const TALKS = [
-  { date: 'Oct 2026', role: 'Organizer', title: 'Fetch-A-Thon 3.0 — Jaipur campus', text: 'National AI-agent hackathon with Fetch.ai Innovation Lab, hosted by Cybros at LNMIIT. ₹1,00,000 prize pool.', links: [{ label: 'Recap post', url: 'https://www.linkedin.com/feed/update/urn:li:activity:7520479036943384577/' }] },
-  { date: 'Sep 2026', role: 'Organizer', title: 'Exploring Autonomous AI with Fetch.ai', text: 'Session on AI agents, autonomous systems and decentralized AI for LNMIIT students.', links: [{ label: 'Watch', url: yt('oZPpCTzGrgw') }] },
-  { date: 'Sep 2026', role: 'Speaker', title: 'Cybros OSDC intro', text: 'Introducing the open-source club at LNMIIT, with Sushmit Sharma.', links: [{ label: 'Watch', url: yt('1f1UBNwXgM0') }] },
-  { date: 'Sep 2026', role: 'Pitch', title: 'Router402 — x402 AI router', text: 'Pay-per-call AI inference settled in USDC over x402.', links: [{ label: 'Watch', url: yt('nPGxVFmqcp0') }] },
-  { date: 'Jul 2026', role: 'Session', title: 'Everything About Open Source in 1 Hour', text: 'First Cybros OSDC session: open-source programs (GSoC, LFX and more), foundations and careers.', links: [{ label: 'Watch', url: yt('6dBKYvTGn3M') }] },
-  { date: 'Apr 2026', role: 'Pitch', title: 'PRStake — Rootcamp I', text: 'Winning pitch: crypto-economic PR gating on Rootstock.', links: [{ label: 'Watch', url: yt('XkVcxlGLISo') }] },
+  { date: 'Oct 2026', role: 'Organizer', img: 'assets/fetchathon/hall.jpg', title: 'Fetch-A-Thon 3.0 — Jaipur campus', text: 'National AI-agent hackathon with Fetch.ai Innovation Lab, hosted by Cybros at LNMIIT. ₹1,00,000 prize pool.', links: [{ label: 'Recap post', url: 'https://www.linkedin.com/feed/update/urn:li:activity:7520479036943384577/' }] },
+  { date: 'Sep 2026', role: 'Organizer', img: 'https://i.ytimg.com/vi/oZPpCTzGrgw/hqdefault.jpg', title: 'Exploring Autonomous AI with Fetch.ai', text: 'Session on AI agents, autonomous systems and decentralized AI for LNMIIT students.', links: [{ label: 'Watch', url: yt('oZPpCTzGrgw') }] },
+  { date: 'Sep 2026', role: 'Speaker', img: 'https://i.ytimg.com/vi/1f1UBNwXgM0/hqdefault.jpg', title: 'Cybros OSDC intro', text: 'Introducing the open-source club at LNMIIT, with Sushmit Sharma.', links: [{ label: 'Watch', url: yt('1f1UBNwXgM0') }] },
+    { date: 'Jul 2026', role: 'Speaker', img: 'https://i.ytimg.com/vi/6dBKYvTGn3M/hqdefault.jpg', title: 'Everything About Open Source in 1 Hour', text: 'First Cybros OSDC session: open-source programs (GSoC, LFX and more), foundations and careers.', links: [{ label: 'Watch', url: yt('6dBKYvTGn3M') }] },
 ];
 
 export const VIDEOS = [
@@ -46,12 +44,12 @@ export const PEOPLE = [
 ];
 
 export const CERTS = [
-  { icon: '☀️', title: 'Google Summer of Code 2026', sub: 'Google · contributor at AOSSIE', year: '2026' },
-  { icon: '🐧', title: 'LFX Mentorship — Magma', sub: 'Linux Foundation · Jan–Apr 2026', year: '2026' },
+  { logo: 'GSoC', icon: '☀️', title: 'Google Summer of Code 2026', sub: 'Google · contributor at AOSSIE', year: '2026' },
+  { logo: 'Linux Foundation', icon: '🐧', title: 'LFX Mentorship — Magma', sub: 'Linux Foundation · Jan–Apr 2026', year: '2026' },
   { icon: '🏗️', title: 'Certified Rootstock Builder', sub: 'Rootcamp I · top 20 builders · PRStake winning project', year: '2026' },
-  { icon: '✨', title: 'Gemini Student Ambassador', sub: 'Google · GSA ID 14079', year: '2026' },
-  { icon: '◎', title: 'Solana Summer School', sub: 'Solana Foundation · selected', year: '2026' },
-  { icon: '🤝', title: 'AAIF Community Organizer', sub: 'Agentic AI Foundation · Jaipur', year: '2026' },
+  { logo: 'Gemini', icon: '✨', title: 'Gemini Student Ambassador', sub: 'Google · GSA ID 14079', year: '2026' },
+  { logo: 'Solana', icon: '◎', title: 'Solana Summer School', sub: 'Solana Foundation · selected', year: '2026' },
+  { logo: 'Linux Foundation', icon: '🤝', title: 'AAIF Community Organizer', sub: 'Agentic AI Foundation · Jaipur', year: '2026' },
   { icon: '🧑‍🏫', title: 'GSSoC’26 Mentor', sub: 'GirlScript Summer of Code', year: '2026' },
   { icon: '⚖️', title: 'Apprentice of the Stable Order', sub: 'Stability Nexus', year: '2026' },
   { icon: '🎓', title: 'UHI Alumnus (UHI 8)', sub: 'UHI', year: '' },
@@ -78,11 +76,26 @@ export const HELP = [
 ];
 
 export const USES = [
-  { title: 'Machine', items: ['Windows laptop with WSL for Linux work', 'VirtualBox + Vagrant for reproducible VMs'] },
-  { title: 'Editors & AI', items: ['VS Code, Cursor and Antigravity', 'GitHub Copilot, Gemini CLI and Claude', 'Ollama for local LLMs'] },
+  { title: 'Desk setup', items: [
+    'Laptop: 13th Gen Intel Core i7-13620H, NVIDIA GeForce RTX 4060 (8 GB), 16 GB RAM, 1 TB SSD, Windows + WSL',
+    'Monitor: Dell 24 Plus (S2425HSM)',
+    'Keyboard: <a class="link" href="https://rapoo.in/keyboards/rapoo-e9350l/" target="_blank" rel="noopener">Rapoo E9350L wireless</a>',
+    'Mouse: M120 wireless mouse',
+    'Medium-size desk mat',
+  ] },
+  { title: 'Editors & AI', items: ['VS Code, Cursor and Antigravity', 'GitHub Copilot, Gemini CLI and Claude', 'Ollama for local LLMs on the RTX 4060'] },
   { title: 'Languages & toolchains', items: ['Python (Anaconda), Node.js and Bun, Go, C++', 'Foundry for Solidity, Sui CLI', 'Expo and Android SDK for mobile'] },
-  { title: 'DevOps & infra', items: ['GitHub Actions, Docker', 'Kubernetes', 'Railway and Vercel for quick deploys'] },
+  { title: 'DevOps & infra', items: ['GitHub Actions, Docker', 'VirtualBox + Vagrant for reproducible VMs', 'Kubernetes; Railway and Vercel for quick deploys'] },
   { title: 'Everyday', items: ['Discord — where most of my open-source work happens', 'WakaTime for coding time', 'Google Workspace and Notion'] },
+];
+
+export const SKILL_GROUPS = [
+  { domain: 'DevOps', icon: '⚙️', key: 'devops', skills: ['GitHub Actions', 'Docker', 'Kubernetes', 'Linux', 'Bash', 'nginx', 'Vagrant'] },
+  { domain: 'DevSecOps', icon: '🛡️', key: 'devsecops', skills: ['CodeQL', 'Gitleaks', 'OSV-Scanner', 'OpenSSF Scorecard'] },
+  { domain: 'SDE / Backend', icon: '🧩', key: 'backend', skills: ['Python', 'TypeScript', 'Node.js', 'Go', 'C++', 'Django', 'FastAPI', 'PostgreSQL', 'MongoDB'] },
+  { domain: 'Full Stack', icon: '🖥️', key: 'fullstack', skills: ['React', 'Next.js', 'Vite', 'Express'] },
+  { domain: 'AI / MLOps', icon: '🤖', key: 'ai', skills: ['ChromaDB', 'RAG', 'Ollama', 'Sentence Transformers', 'BERTopic', 'MCP'] },
+  { domain: 'Web3', icon: '⛓️', key: 'web3', skills: ['Solidity', 'Solana', 'Sui', 'Hedera', 'Ethereum', 'x402'] },
 ];
 
 export const SKILLS = ['GitHub Actions', 'Docker', 'Linux / Bash', 'CodeQL · Gitleaks · OSV', 'Python', 'TypeScript / Node.js', 'Go', 'C++', 'Django', 'FastAPI', 'React / Next.js', 'PostgreSQL', 'ChromaDB · RAG', 'Ollama', 'Solidity', 'Solana · Sui'];

@@ -39,7 +39,6 @@ export const NAV = [
 
 export const MORE = [
   { label: 'About me', href: 'about/' },
-  { label: 'Appearances', href: 'appearances/' },
   { label: "People I've met", href: 'people/' },
   { label: 'Certificates', href: 'certificates/' },
   { label: 'Uses', href: 'uses/' },
