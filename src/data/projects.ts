@@ -1,0 +1,333 @@
+// Every project and outside contribution, tagged by domain.
+// A project can live in several domains; `did` is what I personally built.
+export type Link = { label: 'Code' | 'Live' | 'Video' | 'Post' | 'PR' | 'Docs'; url: string };
+export type Project = {
+  slug: string;
+  name: string;
+  summary: string;
+  did: string[];
+  stack: string[];
+  domains: string[];
+  links: Link[];
+  badge?: string;
+  kind?: 'project' | 'contribution' | 'program';
+};
+
+const gh = (r: string) => `https://github.com/${r}`;
+const yt = (id: string) => `https://www.youtube.com/watch?v=${id}`;
+
+export const PROJECTS: Project[] = [
+  // ---------- DevOps / DevSecOps ----------
+  {
+    slug: 'gitpay', name: 'GitPay', badge: 'v1.1.0 released',
+    summary: 'Pay open-source contributors in USDC from a PR comment — inside GitHub Actions, no server to run.',
+    did: [
+      'Shipped as a versioned GitHub Action, so each adopter runs it in their own CI at zero infra cost.',
+      'Chain-agnostic TypeScript core with idempotency keys, typed error taxonomy and a mock driver; 90 tests green in CI.',
+      'Driver registry refuses custodial drivers and drivers without replay protection; policy checks block non-maintainers.',
+    ],
+    stack: ['TypeScript', 'GitHub Actions', 'x402', 'USDC', 'Safe'],
+    domains: ['devops', 'devsecops', 'backend', 'web3', 'fde'],
+    links: [{ label: 'Code', url: gh('StabilityNexus/GitPay') }, { label: 'Video', url: yt('qWbDJNzwTUg') }, { label: 'Post', url: 'https://www.linkedin.com/feed/update/urn:li:activity:7522430543284645888/' }],
+  },
+  {
+    slug: 'template-repo', name: 'Template-Repo',
+    summary: "AOSSIE's standard repository template: CI/CD workflows, issue/PR templates and security checks for every new project.",
+    did: ['Designed the org-wide CI/CD baseline used to bootstrap new AOSSIE repos.', 'Added SAST and supply-chain scans (CodeQL, Scorecard, Gitleaks, OSV-Scanner, dependency review).'],
+    stack: ['GitHub Actions', 'YAML', 'CodeQL', 'OpenSSF Scorecard'],
+    domains: ['devops', 'devsecops'],
+    links: [{ label: 'Code', url: gh('AOSSIE-Org/Template-Repo') }],
+  },
+  {
+    slug: 'devsecops-pipeline', name: 'Org-wide DevSecOps pipeline',
+    summary: 'Security gates in CI across AOSSIE repositories, not after release.',
+    did: ['CodeQL SAST, OpenSSF Scorecard, Gitleaks secret scanning, OSV-Scanner and dependency-review gating.', 'Fixed findings at the source, e.g. pinned a patched minimatch so the OSV scan passes.'],
+    stack: ['CodeQL', 'Gitleaks', 'OSV-Scanner', 'Scorecard'],
+    domains: ['devsecops'],
+    links: [{ label: 'Code', url: gh('AOSSIE-Org/Template-Repo') }, { label: 'PR', url: gh('StabilityNexus/GitPay/pulls?q=is%3Apr+is%3Amerged+OSV') }],
+  },
+  {
+    slug: 'autoinitialissues', name: 'AutoInitialIssues',
+    summary: 'GitHub Action that creates starter issues for new repos, so contributors can begin on day one.',
+    did: ['Wrote the first version of the Action that generates issues from predefined templates.'],
+    stack: ['GitHub Actions', 'JavaScript'],
+    domains: ['devops'],
+    links: [{ label: 'Code', url: gh('AOSSIE-Org/AutoInitialIssues') }, { label: 'PR', url: gh('AOSSIE-Org/AutoInitialIssues/pull/1') }],
+  },
+  {
+    slug: 'gitpay-quickstart', name: 'gitpay-quickstart',
+    summary: 'The smallest GitPay adopter: one workflow file, three inputs, no secrets — a /send comment runs a dry-run payout.',
+    did: ['Wrote the reference adopter repo and its workflow.'],
+    stack: ['GitHub Actions'],
+    domains: ['devops', 'fde'],
+    links: [{ label: 'Code', url: gh('kpj2006/gitpay-quickstart') }],
+  },
+  {
+    slug: 'magma', name: 'LFX Mentorship · Magma', kind: 'program', badge: 'Linux Foundation',
+    summary: 'Open-source mobile core network (5G/LTE).',
+    did: ['Reproducible dev environments across OSes with Vagrant, VirtualBox, Bash and Docker.', 'Ran 3GPP end-to-end tests with UERANSIM, srsRAN and Wireshark; wrote setup docs.'],
+    stack: ['Vagrant', 'VirtualBox', 'Docker', 'Bash', 'Linux'],
+    domains: ['devops'],
+    links: [{ label: 'Code', url: gh('magma/magma') }],
+  },
+  // ---------- Full stack / Backend ----------
+  {
+    slug: 'no-dues-portal', name: 'LNMIIT No-Dues Portal',
+    summary: "Digitizes LNMIIT's student clearance: every section approves or rejects, then the student downloads a No-Dues certificate.",
+    did: [
+      'Django approval engine with per-exit-type dependency graphs; Kahn’s algorithm validates them at startup (no cycles, no missing sections).',
+      'React 18 + TypeScript + Vite SPA with a typed API client; same-origin via Vite proxy / nginx, so no CORS.',
+      'Docker Compose stack: PostgreSQL, gunicorn and nginx; Railway deploy guide and a Locust load test for exam-week traffic.',
+    ],
+    stack: ['Django', 'React', 'TypeScript', 'PostgreSQL', 'Docker', 'nginx', 'Locust'],
+    domains: ['fullstack', 'backend', 'devops', 'fde'],
+    links: [{ label: 'Code', url: gh('manashatwar/LNMIIT-NO-DUES-PORTAL/tree/patch-1') }],
+  },
+  {
+    slug: 'pragati', name: 'PRAGATI',
+    summary: 'Agentic prototype of an industrial approval & compliance orchestrator, inspired by India’s NSWS.',
+    did: ['Applicant and department workspaces with a dependency-aware approval roadmap.'],
+    stack: ['JavaScript', 'Agents'],
+    domains: ['fullstack', 'fde', 'ai'],
+    links: [{ label: 'Code', url: gh('kpj2006/Pragati') }, { label: 'Live', url: 'https://pragati-green.vercel.app' }],
+  },
+  {
+    slug: 'assetflow', name: 'AssetFlow',
+    summary: 'Enterprise asset management merged with legacy inventory tracking.',
+    did: ['React dashboard + Express server with a dual-database design (PostgreSQL in Docker).'],
+    stack: ['React', 'Express', 'PostgreSQL', 'Docker'],
+    domains: ['fullstack'],
+    links: [{ label: 'Code', url: gh('kpj2006/aktr') }, { label: 'Video', url: yt('KlIk03S4c3w') }],
+  },
+  {
+    slug: 'devwatch', name: 'DevWatch',
+    summary: 'Follow any public GitHub user and track their push activity without following them on GitHub.',
+    did: ['GitHub-style UI and activity feed over the GitHub API.'],
+    stack: ['JavaScript', 'GitHub API'],
+    domains: ['fullstack'],
+    links: [{ label: 'Code', url: gh('kpj2006/Devwatch') }],
+  },
+  {
+    slug: 'discord-auth', name: 'Discord auth template',
+    summary: 'Verify users with Discord OAuth and stable account IDs instead of changeable usernames.',
+    did: ['Reusable template and GitHub Action link flow for client workflows.'],
+    stack: ['OAuth', 'Discord API'],
+    domains: ['backend', 'fde'],
+    links: [{ label: 'Code', url: gh('kpj2006/discord-auth-template') }, { label: 'Live', url: 'https://kpj2006.github.io/discord-auth-template/' }, { label: 'Video', url: yt('IEjfEC7U_r8') }],
+  },
+  {
+    slug: 'gist-as-db', name: 'gist-as-db',
+    summary: 'Use a GitHub Gist as a tiny zero-cost database.',
+    did: ['Script for read/write of JSON state in a Gist.'],
+    stack: ['JavaScript', 'GitHub API'],
+    domains: ['backend'],
+    links: [{ label: 'Code', url: gh('kpj2006/gist-as-db') }],
+  },
+  {
+    slug: 'cp', name: 'Competitive programming',
+    summary: 'My DSA practice across platforms.',
+    did: ['Solutions in C++.'],
+    stack: ['C++', 'DSA'],
+    domains: ['backend'],
+    links: [{ label: 'Code', url: gh('kpj2006/competitive_programming') }],
+  },
+  // ---------- AI / MLOps ----------
+  {
+    slug: 'skillbot', name: 'Skill Bot',
+    summary: 'Self-hosted RAG assistant on Discord that answers contributor questions from real repo data — set up for 52 AOSSIE repos.',
+    did: [
+      'Retrieval with Sentence Transformers + ChromaDB; local inference with Ollama, no paid LLM API.',
+      'Deterministic slot-check gate: vague questions get a clarifying question instead of a confident guess.',
+      'Maintainers @mention it in any channel; it answers in a thread with the message as context.',
+    ],
+    stack: ['Python', 'discord.py', 'ChromaDB', 'Ollama', 'RAG'],
+    domains: ['ai', 'mlops', 'fde'],
+    links: [{ label: 'Code', url: gh('AOSSIE-Org/SkillBot') }, { label: 'Code', url: gh('kpj2006/aossie-skillbot') }, { label: 'Video', url: 'https://www.youtube.com/watch?v=vqRAfOL3Hgw' }],
+  },
+  {
+    slug: 'pr-dashboard', name: 'PR Dashboard',
+    summary: 'Groups pull requests by intent, finds overlaps and conflicts, and suggests a merge order.',
+    did: ['Sentence-embedding clustering + conflict analysis; local LLMs explain conflicts.', 'Base for my research on intent-level overlap between AI-agent PRs (3B–8B local models).'],
+    stack: ['Python', 'Embeddings', 'GitHub CLI', 'Ollama'],
+    domains: ['ai', 'fullstack'],
+    links: [{ label: 'Code', url: gh('AOSSIE-Org/PullRequestDashboard') }, { label: 'Video', url: 'https://youtu.be/h5Vv0vE19X4' }],
+  },
+  {
+    slug: 'skill-updater', name: 'Skill Updater',
+    summary: 'Turns Discord discussions into documentation updates automatically.',
+    did: ['BERTopic + embeddings score which skill files a conversation affects, then apply structured edits.'],
+    stack: ['Python', 'BERTopic', 'Embeddings'],
+    domains: ['ai', 'mlops'],
+    links: [{ label: 'Code', url: gh('kpj2006/skill-updater') }, { label: 'Video', url: yt('xMHPiydEukE') }],
+  },
+  {
+    slug: 'agent-skills', name: 'AI Agent Skills',
+    summary: 'Org-wide agent instructions and AI-disclosure rules to cut low-quality AI PRs.',
+    did: ['AGENTS.md-style skills that work with Claude Code, Cursor and Copilot.'],
+    stack: ['AGENTS.md', 'Policy'],
+    domains: ['ai', 'fde'],
+    links: [{ label: 'Code', url: gh('AOSSIE-Org/Skills') }],
+  },
+  {
+    slug: 'rag-assistant', name: 'RAG Assistant',
+    summary: 'Command-line RAG Q&A over PDFs, built only with open-source tools.',
+    did: ['PDF ingestion, chunking, embeddings and retrieval pipeline.'],
+    stack: ['Python', 'RAG'],
+    domains: ['ai'],
+    links: [{ label: 'Code', url: gh('kpj2006/rag_assistant') }, { label: 'Video', url: 'https://youtu.be/PZ1t8eVozJ4' }],
+  },
+  {
+    slug: 'oobe-agent', name: 'OOBE Research Agent',
+    summary: 'Autonomous research agent: fetches new arXiv papers, summarizes, de-duplicates and publishes on a schedule.',
+    did: ['Cron pipeline with tiered extraction (arXiv → ar5iv → PDF), embeddings-based duplicate detection.'],
+    stack: ['TypeScript', 'Embeddings', 'Cron'],
+    domains: ['ai', 'mlops'],
+    links: [{ label: 'Code', url: gh('kpj2006/Scientific-Paper-Visual-Abstract-Agent') }],
+  },
+  {
+    slug: 'gsoc-proposal', name: 'GSoC Proposal Assistant',
+    summary: 'Agent skill that helps students draft GSoC proposals tailored to each organization.',
+    did: ['Prompted skill files that open straight in Claude and other assistants.'],
+    stack: ['Agent skills', 'Prompting'],
+    domains: ['ai', 'devrel'],
+    links: [{ label: 'Code', url: gh('kpj2006/GSoC-Proposal-Assistant') }],
+  },
+  {
+    slug: 'ard-catalog', name: 'ARD publisher catalog',
+    summary: 'Live Agentic Resource Discovery catalog on GitHub Pages with a did:web identity.',
+    did: ['Published ai-catalog.json and validated it with the official ARD conformance tool.'],
+    stack: ['ARD', 'did:web', 'GitHub Pages'],
+    domains: ['ai'],
+    links: [{ label: 'Code', url: gh('kpj2006/kpj2006.github.io') }, { label: 'Live', url: 'https://kpj2006.github.io/.well-known/ai-catalog.json' }],
+  },
+  {
+    slug: 'kleos', name: 'KleosAI',
+    summary: 'AI financial companion that finds the silent money leaks in student spending.',
+    did: ['Built the app and pitch.'],
+    stack: ['JavaScript', 'AI'],
+    domains: ['ai'],
+    links: [{ label: 'Code', url: gh('kpj2006/KleosAI') }, { label: 'Video', url: yt('7IrDzYVHM6w') }],
+  },
+  // ---------- Web3 ----------
+  {
+    slug: 'prstake', name: 'PRStake', badge: '🏆 Winner · Rootcamp I',
+    summary: 'Crypto-economic PR gating: contributors stake once to open PRs, adding accountability to open source.',
+    did: ['Smart contract on Rootstock testnet + Next.js frontend.'],
+    stack: ['Smart contracts', 'Rootstock', 'Next.js'],
+    domains: ['web3'],
+    links: [{ label: 'Code', url: gh('kpj2006/prstake') }, { label: 'Live', url: 'https://prstake.vercel.app' }, { label: 'Video', url: yt('XkVcxlGLISo') }],
+  },
+  {
+    slug: 'zklogin-raffle', name: 'zkLogin Raffle', badge: '🥉 3rd · SUI x Jaipur',
+    summary: 'Gasless raffle dApp on Sui: sign in with Google/Facebook via zkLogin, no SUI tokens needed.',
+    did: ['Sponsored (gasless) transactions and zkLogin auth flow.'],
+    stack: ['Sui', 'zkLogin', 'TypeScript'],
+    domains: ['web3'],
+    links: [{ label: 'Code', url: gh('kpj2006/zklogin-raffle') }],
+  },
+  {
+    slug: 'router402', name: 'Router402',
+    summary: 'OpenRouter-compatible, pay-per-call AI inference gateway; every request settles in USDC on Hedera over x402.',
+    did: ['Wallet-as-identity sessions, per-request metering and settlement.'],
+    stack: ['TypeScript', 'x402', 'Hedera', 'USDC'],
+    domains: ['web3', 'backend', 'ai'],
+    links: [{ label: 'Code', url: gh('kpj2006/x402router') }, { label: 'Video', url: yt('nPGxVFmqcp0') }],
+  },
+  {
+    slug: 'ard-trust', name: 'ard-trust (AIRD)',
+    summary: 'Attestation layer for MCP skills and ARD catalog entries, anchored on Solana — prove who vouched for a skill.',
+    did: ['One-command CLI to deploy and attest a skill.'],
+    stack: ['TypeScript', 'Solana', 'MCP'],
+    domains: ['web3', 'devsecops', 'ai'],
+    links: [{ label: 'Code', url: gh('kpj2006/AIRD') }],
+  },
+  {
+    slug: 'tangiblefi', name: 'TangibleFi',
+    summary: 'Cross-chain lending: tokenized NFTs as collateral to borrow USDT/USDC/DAI, with automated EMI repayments.',
+    did: ['Non-custodial protocol and web app.'],
+    stack: ['TypeScript', 'DeFi', 'Cross-chain'],
+    domains: ['web3'],
+    links: [{ label: 'Code', url: gh('kpj2006/TangibleFi') }, { label: 'Live', url: 'https://tangible-fi.vercel.app' }],
+  },
+  {
+    slug: 'zkmail', name: 'ZKMail',
+    summary: 'Privacy-preserving email on Solana: prove email ownership with zero-knowledge proofs, without revealing content.',
+    did: ['ZK proof flow and Solana integration.'],
+    stack: ['Solana', 'ZK proofs', 'TypeScript'],
+    domains: ['web3'],
+    links: [{ label: 'Code', url: gh('kpj2006/ZKmail') }, { label: 'Video', url: 'https://youtu.be/VFoWcNIByE4' }],
+  },
+  {
+    slug: 'lendflow', name: 'LendFlow',
+    summary: 'DeFi lending protocol with dynamic order-book matching.',
+    did: ['Solidity contracts (Hardhat) and Next.js frontend.'],
+    stack: ['Solidity', 'Hardhat', 'Next.js'],
+    domains: ['web3'],
+    links: [{ label: 'Code', url: gh('kpj2006/LendFlow') }],
+  },
+  {
+    slug: 'rugs-fun', name: 'rugs.fun',
+    summary: 'Real-time multiplayer on-chain crash game: ride the multiplier, cash out before it rugs.',
+    did: ['Wallet integration and real-time WebSocket game events.'],
+    stack: ['TypeScript', 'WebSockets', 'Solana'],
+    domains: ['web3', 'fullstack'],
+    links: [{ label: 'Code', url: gh('kpj2006/luck.fun') }],
+  },
+  {
+    slug: 'shadowmarkets', name: 'ShadowMarkets',
+    summary: 'Prediction markets settled by a custom oracle over private evidence (GitHub repos, Discord).',
+    did: ['Custom oracle flow and automated market agents.'],
+    stack: ['TypeScript', 'Oracles', 'Agents'],
+    domains: ['web3', 'ai'],
+    links: [{ label: 'Code', url: gh('kpj2006/ShadowMarkets') }, { label: 'Video', url: 'https://youtu.be/gqsJsEjfq34' }],
+  },
+  {
+    slug: 'fluxapi', name: 'FluxAPI',
+    summary: 'Marketplace for AI APIs with Solana payments — monetize or discover APIs.',
+    did: ['Next.js app with Solana payment integration.'],
+    stack: ['Next.js', 'Solana', 'TypeScript'],
+    domains: ['web3', 'fullstack'],
+    links: [{ label: 'Code', url: gh('kpj2006/FluxAPI') }, { label: 'Video', url: 'https://youtu.be/BVBDyQLtCY4' }],
+  },
+  {
+    slug: 'ergoscript-lsp', name: 'ErgoScript Language Server',
+    summary: 'LSP server for ErgoScript: syntax highlighting, diagnostics and editor support.',
+    did: ['Implemented the language server.'],
+    stack: ['TypeScript', 'LSP', 'Ergo'],
+    domains: ['web3', 'backend'],
+    links: [{ label: 'Code', url: gh('kpj2006/ergoscript-lsp') }],
+  },
+  // ---------- Outside contributions ----------
+  {
+    slug: 'flowise', name: 'FlowiseAI/Flowise', kind: 'contribution',
+    summary: "Improved 'Strip New Lines' for Gemini/Vertex embeddings.",
+    did: ['Merged PR #5010.'], stack: ['TypeScript', 'Embeddings'], domains: ['ai'],
+    links: [{ label: 'PR', url: gh('FlowiseAI/Flowise/pull/5010') }],
+  },
+  {
+    slug: 'uniswap-decoder', name: 'uniswap-universal-router-decoder', kind: 'contribution',
+    summary: 'Moved integration tests from Ganache to Anvil (3 merged PRs).',
+    did: ['Merged PRs #119, #120, #121.'], stack: ['Python', 'Anvil', 'Ethereum'], domains: ['backend', 'web3'],
+    links: [{ label: 'PR', url: gh('Elnaril/uniswap-universal-router-decoder/pull/120') }],
+  },
+  {
+    slug: 'ember-bootstrap', name: 'ember-bootstrap', kind: 'contribution',
+    summary: 'Deprecated include/exclude config options; fixed compatibility docs.',
+    did: ['Merged PR #2206 and a docs PR.'], stack: ['Ember.js', 'JavaScript'], domains: ['fullstack'],
+    links: [{ label: 'PR', url: gh('ember-bootstrap/ember-bootstrap/pull/2206') }],
+  },
+  {
+    slug: 'research-gap', name: 'EvangeLabs/Research-gap', kind: 'contribution',
+    summary: 'Local research-gap analysis pipeline over arXiv papers.',
+    did: ['Merged PR #1.'], stack: ['Python', 'LLM'], domains: ['mlops', 'ai'],
+    links: [{ label: 'PR', url: gh('EvangeLabs/Research-gap/pull/1') }],
+  },
+  {
+    slug: 'openvino-env', name: 'OpenVINO env capture', kind: 'contribution',
+    summary: 'Tool that captures a contributor’s OS environment for an OpenVINO issue report.',
+    did: ['Built for an OpenVINO toolkit issue.'], stack: ['JavaScript'], domains: ['fde', 'devops'],
+    links: [{ label: 'Code', url: gh('kpj2006/Contributor-OS-env-capture') }],
+  },
+];
+
+export const bySlug = (s: string) => PROJECTS.find((p) => p.slug === s)!;
