@@ -2,7 +2,6 @@
 import Base from '../../layouts/Base.astro';
 import PageHeader from '../../components/PageHeader.astro';
 import ProjectCard from '../../components/ProjectCard.astro';
-import WorkWithMe from '../../components/WorkWithMe.astro';
 import { ROLES, COMMUNITY } from '../../data/roles';
 import { PROJECTS } from '../../data/projects';
 import { url } from '../../lib/url';
@@ -31,5 +30,4 @@ const contribs = items.filter((p) => p.kind === 'contribution');
       <div class="grid gap-4 md:grid-cols-2">{contribs.map((p) => <ProjectCard p={p} />)}</div>
     </section>
   )}
-  <WorkWithMe />
 </Base>
