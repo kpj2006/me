@@ -13,6 +13,7 @@ export const SITE = {
   linkedin: 'https://www.linkedin.com/in/kpj2006/',
   github: 'https://github.com/kpj2006',
   youtube: 'https://www.youtube.com/channel/UC1jB0sHS3HeekQmmk4utdNA',
+  coffee: 'https://buymeacoffee.com/kpj2006',
 };
 
 export const SOCIALS = [
