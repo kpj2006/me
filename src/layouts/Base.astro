@@ -50,18 +50,18 @@ const cmds = [
         ))}
         <div class="group relative">
           <button class="whitespace-nowrap rounded-lg px-2.5 py-1.5 text-muted hover:text-ink dark:text-muted dark:hover:text-stone-100">More ▾</button>
-          <div class="invisible absolute right-0 top-full w-52 rounded-xl border border-line bg-card p-1.5 opacity-0 shadow-xl transition group-focus-within:visible group-focus-within:opacity-100 group-hover:visible group-hover:opacity-100 dark:border-night-line dark:bg-night-card">
+          <div class="invisible absolute right-0 top-full w-52 rounded-md border border-line bg-card p-1.5 opacity-0 shadow-xl transition group-focus-within:visible group-focus-within:opacity-100 group-hover:visible group-hover:opacity-100 dark:border-night-line dark:bg-night-card">
             {MORE.map((n) => <a href={url(n.href)} class="block rounded-lg px-3 py-2 text-stone-700 hover:bg-paper dark:text-stone-300 dark:hover:bg-night-card">{n.label}</a>)}
             <a href={SITE.resume} target="_blank" rel="noopener" class="block rounded-lg px-3 py-2 text-stone-700 hover:bg-paper dark:text-stone-300 dark:hover:bg-night-card">Resume ↗</a>
           </div>
         </div>
       </nav>
       <div class="ml-auto flex shrink-0 items-center gap-2 xl:ml-3">
-        <button id="openCmd" class="flex h-9 items-center gap-2 rounded-xl border border-line px-2.5 text-muted hover:border-brand dark:border-night-line dark:text-muted" aria-label="Search">
+        <button id="openCmd" class="flex h-9 items-center gap-2 rounded-md border border-line px-2.5 text-muted hover:border-brand dark:border-night-line dark:text-muted" aria-label="Search">
           <Icon name="search" class="h-4 w-4" />
         </button>
-        <button id="theme" class="grid h-9 w-9 place-items-center rounded-xl border border-line text-muted hover:border-brand dark:border-night-line dark:text-stone-300" aria-label="Toggle theme"><Icon name="moon" /></button>
-        <button id="burger" class="grid h-9 w-9 place-items-center rounded-xl border border-line text-muted xl:hidden dark:border-night-line dark:text-stone-300" aria-label="Menu"><Icon name="menu" /></button>
+        <button id="theme" class="grid h-9 w-9 place-items-center rounded-md border border-line text-muted hover:border-brand dark:border-night-line dark:text-stone-300" aria-label="Toggle theme"><Icon name="moon" /></button>
+        <button id="burger" class="grid h-9 w-9 place-items-center rounded-md border border-line text-muted xl:hidden dark:border-night-line dark:text-stone-300" aria-label="Menu"><Icon name="menu" /></button>
       </div>
     </div>
     <div id="mobileNav" class="hidden border-t border-line px-5 py-3 xl:hidden dark:border-night-line">
@@ -81,7 +81,7 @@ const cmds = [
   </footer>
 
   <div id="cmdk" class="fixed inset-0 z-50 hidden items-start justify-center bg-black/50 px-4 pt-[12vh] backdrop-blur-sm">
-    <div class="w-full max-w-lg overflow-hidden rounded-2xl border border-line bg-card shadow-2xl dark:border-night-line dark:bg-night-card">
+    <div class="w-full max-w-lg overflow-hidden rounded-md border border-line bg-card shadow-2xl dark:border-night-line dark:bg-night-card">
       <input id="cmdInput" placeholder="Go to a page, role or link…" autocomplete="off" class="w-full border-b border-line bg-transparent px-5 py-4 text-base outline-none dark:border-night-line" />
       <ul id="cmdList" class="max-h-[50vh] overflow-auto p-2"></ul>
     </div>
