@@ -5,6 +5,7 @@ import SectionHead from '../components/SectionHead.astro';
 import { SITE } from '../data/site';
 import { url } from '../lib/url';
 const ways = [
+  { icon: '☕', title: 'Buy me a coffee', text: 'One-time or monthly support on Buy Me a Coffee.', href: SITE.coffee },
   { icon: '🤝', title: 'Sponsor directly', text: 'Company or one-time sponsorship — email me.', href: `mailto:${SITE.email}?subject=Sponsorship` },
   { icon: '⭐', title: 'Star & use', text: 'Star GitPay or Template-Repo and try them in your org.', href: 'https://github.com/StabilityNexus/GitPay' },
   { icon: '💼', title: 'Hire me', text: 'The best support: a role or a paid project.', href: url('work-with-me/') },
@@ -18,8 +19,8 @@ const ways = [
   </section>
   <section class="pb-8">
     <SectionHead title="How to support" />
-    <div class="grid gap-4 sm:grid-cols-3">
-      {ways.map((w) => <a href={w.href} class="card card-hover"><div class="text-2xl">{w.icon}</div><h3 class="mt-2 font-semibold">{w.title}</h3><p class="text-sm text-muted">{w.text}</p></a>)}
+    <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+      {ways.map((w) => <a href={w.href} target={w.href.startsWith("http") ? "_blank" : undefined} rel="noopener" class="card card-hover"><div class="text-2xl">{w.icon}</div><h3 class="mt-2 font-semibold">{w.title}</h3><p class="text-sm text-muted">{w.text}</p></a>)}
     </div>
   </section>
   <p class="text-sm text-muted"><b>No pressure.</b> Reading, sharing and starring the work already helps.</p>

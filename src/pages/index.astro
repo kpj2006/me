@@ -2,6 +2,7 @@
 import Base from '../layouts/Base.astro';
 import Icon from '../components/Icon.astro';
 import Recognition from '../components/Recognition.astro';
+import BrandIcon from '../components/BrandIcon.astro';
 import ProjectCard from '../components/ProjectCard.astro';
 import SectionHead from '../components/SectionHead.astro';
 import WorkWithMe from '../components/WorkWithMe.astro';
@@ -33,6 +34,7 @@ const featured = ['gitpay', 'no-dues-portal', 'skillbot'].map(get);
         <a href={url('work-with-me/')} class="btn btn-primary">Work with me <Icon name="arrow" class="h-4 w-4" /></a>
         <a href={url('contact/')} class="btn">Get in touch</a>
         <a href={SITE.resume} target="_blank" rel="noopener" class="btn">Resume</a>
+        <a href={SITE.coffee} target="_blank" rel="noopener" class="btn border-amber-400/60 hover:border-amber-500 hover:text-amber-600 dark:hover:text-amber-300"><BrandIcon name="Buy Me a Coffee" class="h-4 w-4" />Buy me a coffee</a>
       </div>
       <p class="mt-5 text-[13px] text-muted dark:text-night-muted"><kbd class="rounded border border-line px-1.5 py-0.5 font-mono text-[11px] dark:border-night-line">Ctrl K</kbd> opens the command center</p>
     </div>
