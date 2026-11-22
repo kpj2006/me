@@ -17,17 +17,17 @@ const contribs = items.filter((p) => p.kind === 'contribution');
   <PageHeader eyebrow={`${role.icon} Role`} title={role.title} text={role.pitch}>
     <div class="mt-6 flex flex-wrap gap-2">
       {ROLES.map((r) => (
-        <a href={url(`roles/${r.key}/`)} class={`rounded-full border px-3 py-1 text-[13px] font-semibold transition ${r.key === role.key ? 'border-zinc-900 bg-zinc-900 text-white dark:border-zinc-100 dark:bg-zinc-100 dark:text-zinc-900' : 'border-zinc-200 text-zinc-600 hover:border-teal-500 dark:border-zinc-800 dark:text-zinc-400'}`}>{r.title}</a>
+        <a href={url(`roles/${r.key}/`)} class={`rounded-full border px-3 py-1 text-[13px] font-semibold transition ${r.key === role.key ? 'border-ink bg-ink text-white dark:border-line dark:bg-paper dark:text-ink' : 'border-line text-muted hover:border-brand dark:border-night-line dark:text-muted'}`}>{r.title}</a>
       ))}
     </div>
   </PageHeader>
   <section class="pb-10">
-    <h2 class="mb-5 text-sm font-semibold uppercase tracking-wider text-zinc-500">{role.key === 'devrel' ? 'Community & volunteering' : 'Projects'} · {projects.length}</h2>
+    <h2 class="mb-5 text-sm font-semibold uppercase tracking-wider text-muted">{role.key === 'devrel' ? 'Community & volunteering' : 'Projects'} · {projects.length}</h2>
     <div class="grid gap-4 md:grid-cols-2">{projects.map((p) => <ProjectCard p={p} />)}</div>
   </section>
   {contribs.length > 0 && (
     <section class="pb-6">
-      <h2 class="mb-5 text-sm font-semibold uppercase tracking-wider text-zinc-500">Merged in other projects · {contribs.length}</h2>
+      <h2 class="mb-5 text-sm font-semibold uppercase tracking-wider text-muted">Merged in other projects · {contribs.length}</h2>
       <div class="grid gap-4 md:grid-cols-2">{contribs.map((p) => <ProjectCard p={p} />)}</div>
     </section>
   )}
