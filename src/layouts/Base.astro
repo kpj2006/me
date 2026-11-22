@@ -74,8 +74,15 @@ const cmds = [
   <main class="container-x"><slot /></main>
 
   <footer class="mt-10 border-t border-line dark:border-night-line">
-    <div class="container-x flex flex-col gap-5 py-8 sm:flex-row sm:items-center sm:justify-between">
-      <div class="text-sm text-muted">© {new Date().getFullYear()} Karun Pacholi · Built with Astro · <a class="hover:text-brand" href="https://github.com/kpj2006/me" target="_blank" rel="noopener">source</a> · <a class="hover:text-brand" href={SITE.coffee} target="_blank" rel="noopener">☕ Buy me a coffee</a></div>
+    <div class="container-x flex flex-col gap-4 border-b border-line py-8 sm:flex-row sm:items-center sm:justify-between dark:border-night-line">
+      <div>
+        <p class="font-serif text-xl font-semibold text-ink dark:text-stone-50">Work with me</p>
+        <p class="muted text-[15px]">Hiring, open-source collaboration, talks or community events.</p>
+      </div>
+      <a href={url('work-with-me/')} class="btn btn-primary shrink-0">Work with me <Icon name="arrow" class="h-4 w-4" /></a>
+    </div>
+    <div class="container-x flex flex-col gap-5 py-6 sm:flex-row sm:items-center sm:justify-between">
+      <div class="text-sm text-muted">© {new Date().getFullYear()} Karun Pacholi · Built with Astro · <a class="hover:text-brand" href="https://github.com/kpj2006/me" target="_blank" rel="noopener">source</a> · <a class="hover:text-brand" href={url('work-with-me/')}>Work with me</a></div>
       <Socials size="sm" />
     </div>
   </footer>
