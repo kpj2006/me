@@ -1,0 +1,35 @@
+---
+import Base from '../../layouts/Base.astro';
+import PageHeader from '../../components/PageHeader.astro';
+import ProjectCard from '../../components/ProjectCard.astro';
+import WorkWithMe from '../../components/WorkWithMe.astro';
+import { ROLES, COMMUNITY } from '../../data/roles';
+import { PROJECTS } from '../../data/projects';
+import { url } from '../../lib/url';
+export function getStaticPaths() { return ROLES.map((r) => ({ params: { slug: r.key }, props: { role: r } })); }
+const { role } = Astro.props;
+const all = [...PROJECTS, ...COMMUNITY];
+const items = role.items.map((s) => all.find((p) => p.slug === s)!);
+const projects = items.filter((p) => p.kind !== 'contribution');
+const contribs = items.filter((p) => p.kind === 'contribution');
+---
+<Base title={`${role.title} work`} description={`${role.title}: ${role.pitch}`}>
+  <PageHeader eyebrow={`${role.icon} Role`} title={role.title} text={role.pitch}>
+    <div class="mt-6 flex flex-wrap gap-2">
+      {ROLES.map((r) => (
+        <a href={url(`roles/${r.key}/`)} class={`rounded-full border px-3 py-1 text-[13px] font-semibold transition ${r.key === role.key ? 'border-zinc-900 bg-zinc-900 text-white dark:border-zinc-100 dark:bg-zinc-100 dark:text-zinc-900' : 'border-zinc-200 text-zinc-600 hover:border-teal-500 dark:border-zinc-800 dark:text-zinc-400'}`}>{r.title}</a>
+      ))}
+    </div>
+  </PageHeader>
+  <section class="pb-10">
+    <h2 class="mb-5 text-sm font-semibold uppercase tracking-wider text-zinc-500">{role.key === 'devrel' ? 'Community & volunteering' : 'Projects'} · {projects.length}</h2>
+    <div class="grid gap-4 md:grid-cols-2">{projects.map((p) => <ProjectCard p={p} />)}</div>
+  </section>
+  {contribs.length > 0 && (
+    <section class="pb-6">
+      <h2 class="mb-5 text-sm font-semibold uppercase tracking-wider text-zinc-500">Merged in other projects · {contribs.length}</h2>
+      <div class="grid gap-4 md:grid-cols-2">{contribs.map((p) => <ProjectCard p={p} />)}</div>
+    </section>
+  )}
+  <WorkWithMe />
+</Base>
