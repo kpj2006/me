@@ -9,8 +9,8 @@ const MAP: Record<string, string> = {
   Ollama: 'siOllama', ChromaDB: 'siChromadb', 'discord.py': 'siDiscord', Discord: 'siDiscord', 'Discord API': 'siDiscord', Telegram: 'siTelegram',
   Solidity: 'siSolidity', Solana: 'siSolana', Sui: 'siSui', Hedera: 'siHedera', Ethereum: 'siEthereum', Hardhat: 'siHardhat',
   'Google Sheets API': 'siGooglesheets', Locust: 'siLocust', YAML: 'siYaml', OAuth: 'siAuth0', 'Fetch.ai uAgents': 'siFetchai',
-  Gemini: 'siGooglegemini', 'Buy Me a Coffee': 'siBuymeacoffee', Google: 'siGoogle', GSoC: 'siGooglesummerofcode', 'Linux Foundation': 'siLinuxfoundation', YouTube: 'siYoutube',
-  CodeQL: 'siGithub', 'OpenSSF Scorecard': 'siOpenssf', Gitleaks: 'siGit', 'OSV-Scanner': 'siGoogle', MCP: 'siModelcontextprotocol', 'AGENTS.md': 'siMarkdown',
+  Gemini: 'siGooglegemini', Figma: 'siFigma', 'Buy Me a Coffee': 'siBuymeacoffee', Google: 'siGoogle', GSoC: 'siGooglesummerofcode', 'Linux Foundation': 'siLinuxfoundation', YouTube: 'siYoutube',
+  CodeQL: 'siGithub', 'OpenSSF Scorecard': 'siOpenssf', Gitleaks: 'siGit', 'OSV-Scanner': 'siGoogle', MCP: 'siModelcontextprotocol', 'Sentence Transformers': 'siHuggingface', BERTopic: 'siPython', RAG: 'siLangchain', 'AGENTS.md': 'siMarkdown',
 };
 export type Brand = { path: string; hex: string; title: string };
 export const brand = (name: string): Brand | undefined => {
