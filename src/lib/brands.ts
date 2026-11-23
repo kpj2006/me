@@ -11,7 +11,7 @@ const MAP: Record<string, string> = {
   'Google Sheets API': 'siGooglesheets', Locust: 'siLocust', YAML: 'siYaml', OAuth: 'siAuth0', 'Fetch.ai uAgents': 'siFetchai',
   Gemini: 'siGooglegemini', Figma: 'siFigma', 'Buy Me a Coffee': 'siBuymeacoffee', Google: 'siGoogle', GSoC: 'siGooglesummerofcode', 'Linux Foundation': 'siLinuxfoundation', YouTube: 'siYoutube',
   CodeQL: 'siGithub', 'OpenSSF Scorecard': 'siOpenssf', Gitleaks: 'siGit', 'OSV-Scanner': 'siGoogle', MCP: 'siModelcontextprotocol', 'Sentence Transformers': 'siHuggingface', BERTopic: 'siPython', RAG: 'siLangchain', 'AGENTS.md': 'siMarkdown',
-  Rust: 'siRust', 'Ethers.js v6': 'siEthers', 'ERC-20': 'siEthereum', 'ERC-223': 'siEthereum', 'ERC-4626': 'siEthereum', 'ERC-721': 'siEthereum', 'ERC-2535 Diamond': 'siEthereum',
+  Rust: 'siRust', PyTorch: 'siPytorch', 'scikit-learn': 'siScikitlearn', 'Kali Linux': 'siKalilinux', Wireshark: 'siWireshark', 'C++ ': 'siCplusplus', 'Ethers.js v6': 'siEthers', 'ERC-20': 'siEthereum', 'ERC-223': 'siEthereum', 'ERC-4626': 'siEthereum', 'ERC-721': 'siEthereum', 'ERC-2535 Diamond': 'siEthereum',
   'Move (Sui)': 'siSui', Inkscape: 'siInkscape', Git: 'siGit', 'GitHub Projects': 'siGithub', 'Code review': 'siGithub', Markdown: 'siMarkdown', FastAPI: 'siFastapi', 'Hugging Face': 'siHuggingface', LangChain: 'siLangchain', Vercel: 'siVercel', Railway: 'siRailway', 'LinkedIn': 'siLinkedin',
 };
 export type Brand = { path: string; hex: string; title: string };
