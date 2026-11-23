@@ -1,0 +1,30 @@
+---
+import { ROLE_MAP } from '../data/content';
+import { url } from '../lib/url';
+const chip = 'inline-flex items-center gap-1.5 rounded-full px-2.5 py-1 text-[13px] font-medium';
+---
+<div class="card divide-y divide-line p-0 dark:divide-night-line">
+  {ROLE_MAP.map((g) => {
+    const done = g.roles.filter((r) => r.href);
+    const later = g.roles.filter((r) => !r.href);
+    return (
+      <div class="px-5 py-5">
+        <h3 class="font-serif text-lg font-semibold text-ink dark:text-stone-50">{g.group}</h3>
+        {done.length > 0 && (
+          <div class="mt-3 flex flex-wrap gap-2">
+            {done.map((r) => <a href={url(r.href!)} class={`${chip} border border-brand/40 bg-brand/10 text-brand hover:bg-brand/20 dark:border-brand-soft/40 dark:bg-brand-soft/10 dark:text-brand-soft`}>{r.icon} {r.name}</a>)}
+          </div>
+        )}
+        {later.length > 0 && (
+          <>
+            <p class="mt-3 font-mono text-[11.5px] uppercase tracking-wider text-muted dark:text-night-muted">{g.later ?? 'Planned to explore in future'}</p>
+            <div class="mt-2 flex flex-wrap gap-2">
+              {later.map((r) => <span title={g.later ?? 'Planned to explore in future'} class={`${chip} border border-dashed border-line text-muted dark:border-night-line dark:text-night-muted`}>{r.icon} {r.name}</span>)}
+            </div>
+          </>
+        )}
+      </div>
+    );
+  })}
+</div>
+<p class="muted mt-3 text-sm"><span class="font-semibold text-brand dark:text-brand-soft">Green</span> roles have real work behind them — click to see it. Dashed roles are planned to explore in future.</p>
