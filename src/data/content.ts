@@ -118,3 +118,45 @@ export const DESIGNS = [
   { img: 'aspiring-engineers', title: 'Aspiring Engineers', sub: 'Webinar poster' },
   { img: 'asme-jacket', title: 'ASME jacket', sub: 'Merch design' },
 ];
+
+// Broad role map. `done` roles link to work; the rest are planned.
+export type MapRole = { name: string; icon: string; href?: string };
+export const ROLE_MAP: { group: string; later?: string; roles: MapRole[] }[] = [
+  { group: 'Core Software & Infrastructure', roles: [
+    { name: 'DevOps', icon: '⚙️', href: 'roles/devops/' }, { name: 'DevSecOps', icon: '🛡️', href: 'roles/devsecops/' },
+    { name: 'SDE / Backend', icon: '🧩', href: 'roles/backend/' }, { name: 'Full Stack', icon: '🖥️', href: 'roles/fullstack/' },
+    { name: 'Platform Engineer', icon: '🏗️' }, { name: 'Cloud Engineer', icon: '☁️' }, { name: 'Site Reliability Engineer', icon: '📟' },
+    { name: 'Infrastructure Engineer', icon: '🧱' }, { name: 'Distributed Systems Engineer', icon: '🔗' }, { name: 'Systems Engineer', icon: '🖧' },
+    { name: 'Database Engineer', icon: '🗄️' }, { name: 'Mobile Engineer', icon: '📱' }, { name: 'Product Engineer', icon: '🛠️' },
+    { name: 'Software Architect', icon: '🏛️' }, { name: 'Performance Engineer', icon: '⚡' } ] },
+  { group: 'AI, Machine Learning & Data', roles: [
+    { name: 'Agentic AI Engineer', icon: '🤖', href: 'roles/ai/' }, { name: 'AI Engineer', icon: '🧠', href: 'roles/ai/' },
+    { name: 'MLOps Engineer', icon: '🔁', href: 'roles/mlops/' }, { name: 'Generative AI Engineer', icon: '✨' },
+    { name: 'AI Research Engineer', icon: '🔬' }, { name: 'Applied Scientist', icon: '🧪' }, { name: 'Data Scientist', icon: '📊' },
+    { name: 'Data Engineer', icon: '🚰' }, { name: 'Data Architect', icon: '🏛️' } ] },
+  { group: 'Cybersecurity & Security Research', later: 'Planned to start in 2030', roles: [
+    { name: 'Application Security Engineer', icon: '🔐' }, { name: 'Product Security Engineer', icon: '🛡️' }, { name: 'Cloud Security Engineer', icon: '☁️' },
+    { name: 'Security Researcher', icon: '🔍' }, { name: 'Penetration Tester', icon: '🎯' }, { name: 'Red Team Engineer', icon: '🚩' },
+    { name: 'Threat Intelligence Analyst', icon: '🕵️' }, { name: 'Incident Response Engineer', icon: '🚨' }, { name: 'Security Architect', icon: '🏰' },
+    { name: 'Security Operations Engineer', icon: '📡' } ] },
+  { group: 'Web3, Blockchain & Cryptography', roles: [
+    { name: 'Web3', icon: '⛓️', href: 'roles/web3/' }, { name: 'Smart Contract Engineer', icon: '📜', href: 'roles/web3/' },
+    { name: 'Protocol Engineer', icon: '🔗' }, { name: 'Blockchain Infrastructure Engineer', icon: '🧱' }, { name: 'Blockchain Security Engineer', icon: '🔒' },
+    { name: 'Zero-Knowledge Engineer', icon: '🫥' }, { name: 'Cryptography Engineer', icon: '🔑' }, { name: 'DeFi Engineer', icon: '💰' } ] },
+  { group: 'Product, Solutions & Developer Ecosystem', roles: [
+    { name: 'Open Source Maintainer', icon: '🧭', href: 'roles/maintainer/' }, { name: 'DevRel', icon: '🎤', href: 'roles/devrel/' },
+    { name: 'Forward Deployed Engineer', icon: '🚀', href: 'roles/fde/' }, { name: 'Developer Experience Engineer', icon: '🧰' },
+    { name: 'Solutions Engineer', icon: '🤝' }, { name: 'Solutions Architect', icon: '📐' }, { name: 'Technical Product Manager', icon: '📦' },
+    { name: 'Technical Program Manager', icon: '📋' }, { name: 'Founding Engineer', icon: '🌱' }, { name: 'Technical Consultant', icon: '💡' } ] },
+  { group: 'Design', roles: [ { name: 'Graphic Designer', icon: '🎨', href: 'expertise/#design' } ] },
+  { group: 'Emerging & Specialized Engineering', roles: [
+    { name: 'Network Engineer', icon: '🌐' }, { name: 'Edge Computing Engineer', icon: '🛰️' }, { name: 'IoT Engineer', icon: '📶' },
+    { name: 'Embedded Systems Engineer', icon: '🔌' }, { name: 'FPGA Engineer', icon: '🧮' }, { name: 'Quantum Computing Engineer', icon: '⚛️' } ] },
+];
+
+// Domains I have not started yet, shown at the end of /expertise.
+export const FUTURE = [
+  { key: 'cs', title: 'CS Fundamentals', icon: '📚', note: 'Updated soon', pitch: 'Data structures and algorithms, operating systems, databases, networks and OOP. I study these every week.', skills: ['DSA', 'Operating Systems', 'DBMS', 'Computer Networks', 'OOP', 'C++'] },
+  { key: 'coreml', title: 'Core ML', icon: '🧠', note: 'Planned to start in 2030', pitch: 'Machine learning from the ground up: math, classic models, deep learning and research.', skills: ['Linear algebra', 'Probability', 'scikit-learn', 'PyTorch', 'Deep learning'] },
+  { key: 'cybersec', title: 'Cybersecurity', icon: '🔐', note: 'Planned to start in 2030', pitch: 'Security beyond CI scans: application security, pentesting and security research.', skills: ['Web security', 'Network security', 'Kali Linux', 'Wireshark', 'CTFs', 'Threat modeling'] },
+];
