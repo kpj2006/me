@@ -28,12 +28,9 @@ const featured = ['gitpay', 'no-dues-portal', 'skillbot'].map(get);
           <a href={s.url} target={s.url.startsWith('mailto') ? undefined : '_blank'} rel="noopener" aria-label={s.name} class="transition hover:text-brand dark:hover:text-brand-soft"><Icon name={s.icon} class="h-[18px] w-[18px]" /></a>
         ))}
       </div>
-      <p class="mt-5 max-w-[34rem] text-[1.05rem] leading-relaxed text-stone-700 dark:text-stone-300">LFX'26 mentee at Magma, Gemini Student Ambassador and AAIF Jaipur organizer — open to SDE, DevOps, AI and Web3 roles.</p>
       <div class="mt-7 flex flex-wrap gap-3">
         <a href={url('work-with-me/')} class="btn btn-primary">Work with me <Icon name="arrow" class="h-4 w-4" /></a>
-        <a href={`mailto:${SITE.email}`} class="btn">Get in touch</a>
         <a href={SITE.resume} target="_blank" rel="noopener" class="btn">Resume</a>
-        <a href={SITE.coffee} target="_blank" rel="noopener" class="btn border-amber-400/60 hover:border-amber-500 hover:text-amber-600 dark:hover:text-amber-300"><BrandIcon name="Buy Me a Coffee" class="h-4 w-4" />Buy me a coffee</a>
       </div>
       <p class="mt-5 text-[13px] text-muted dark:text-night-muted"><kbd class="rounded border border-line px-1.5 py-0.5 font-mono text-[11px] dark:border-night-line">Ctrl K</kbd> opens the command center</p>
     </div>
