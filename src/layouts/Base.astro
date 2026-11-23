@@ -5,10 +5,16 @@ import Socials from '../components/Socials.astro';
 import { NAV, MORE, SITE, SOCIALS } from '../data/site';
 import { url } from '../lib/url';
 import { ROLES } from '../data/roles';
+import { graph, SAME_AS } from '../lib/seo';
 interface Props { title?: string; description?: string }
 const { title, description = `${SITE.name} — ${SITE.tagline}` } = Astro.props;
 const fullTitle = title ? `${title} — ${SITE.name}` : `${SITE.name} — Software engineer (DevOps, Backend, AI, Web3)`;
 const path = Astro.url.pathname;
+const canonical = new URL(path, Astro.site).href;
+const isProfile = path === url('') || path === url('about/');
+const ld = JSON.stringify(graph(canonical, fullTitle, isProfile));
+const gsv = import.meta.env.PUBLIC_GOOGLE_SITE_VERIFICATION;
+const bsv = import.meta.env.PUBLIC_BING_SITE_VERIFICATION;
 const isActive = (href: string) => (href === '' ? path === url('') : path.startsWith(url(href)));
 const cmds = [
   ...NAV.map((n) => ({ n: n.label, u: url(n.href), g: 'page' })),
@@ -27,12 +33,34 @@ const cmds = [
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>{fullTitle}</title>
   <meta name="description" content={description} />
+  <meta name="author" content="Karun Pacholi" />
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
+  <meta name="theme-color" content="#2f6b4f" />
+  <link rel="canonical" href={canonical} />
+  <meta property="og:type" content={isProfile ? 'profile' : 'website'} />
+  <meta property="og:site_name" content="Karun Pacholi" />
+  <meta property="og:locale" content="en_IN" />
+  <meta property="og:url" content={canonical} />
   <meta property="og:title" content={fullTitle} />
   <meta property="og:description" content={description} />
   <meta property="og:image" content={new URL(url('assets/karun-lake.jpg'), Astro.site).href} />
+  <meta property="og:image:alt" content="Karun Pacholi" />
+  {isProfile && <meta property="profile:first_name" content="Karun" />}
+  {isProfile && <meta property="profile:last_name" content="Pacholi" />}
+  {isProfile && <meta property="profile:username" content="kpj2006" />}
   <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:creator" content="@_kpj2006" />
+  <meta name="twitter:title" content={fullTitle} />
+  <meta name="twitter:description" content={description} />
+  <meta name="twitter:image" content={new URL(url('assets/karun-lake.jpg'), Astro.site).href} />
+  {gsv && <meta name="google-site-verification" content={gsv} />}
+  {bsv && <meta name="msvalidate.01" content={bsv} />}
   <link rel="icon" href={url('assets/avatar.jpg')} />
-  <link rel="canonical" href={new URL(path, Astro.site).href} />
+  <link rel="apple-touch-icon" href={url('assets/avatar.jpg')} />
+  <link rel="sitemap" href={url('sitemap-index.xml')} />
+  <link rel="alternate" type="text/plain" title="LLM-friendly summary" href={url('llms.txt')} />
+  {SAME_AS.map((u) => <link rel="me" href={u} />)}
+  <script type="application/ld+json" set:html={ld} />
   <script is:inline>
     try { const t = localStorage.getItem('theme') || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'); if (t === 'dark') document.documentElement.classList.add('dark'); } catch (e) {}
   </script>
