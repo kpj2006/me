@@ -13,7 +13,7 @@ const path = Astro.url.pathname;
 const canonical = new URL(path, Astro.site).href;
 const isProfile = path === url('') || path === url('about/');
 const ld = JSON.stringify(graph(canonical, fullTitle, isProfile));
-const gsv = import.meta.env.PUBLIC_GOOGLE_SITE_VERIFICATION;
+const gsv = import.meta.env.PUBLIC_GOOGLE_SITE_VERIFICATION || 'IVHIize0SNZyZ91Q_31RJhYvTvoK1SE7zcNj0OGE8hQ';
 const bsv = import.meta.env.PUBLIC_BING_SITE_VERIFICATION;
 const isActive = (href: string) => (href === '' ? path === url('') : path.startsWith(url(href)));
 const cmds = [
