@@ -12,7 +12,7 @@ const items = role.items.map((s) => all.find((p) => p.slug === s)!);
 const projects = items.filter((p) => p.kind !== 'contribution');
 const contribs = items.filter((p) => p.kind === 'contribution');
 ---
-<Base title={`${role.title} work`} description={`${role.title}: ${role.pitch}`}>
+<Base title={`${role.title} work`} description={`Karun Pacholi — ${role.title} work and projects. ${role.pitch}`}>
   <PageHeader eyebrow={`${role.icon} Role`} title={role.title} text={role.pitch}>
     <div class="mt-6 flex flex-wrap gap-2">
       {ROLES.map((r) => (
