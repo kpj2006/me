@@ -5,7 +5,9 @@ import ProjectCard from '../components/ProjectCard.astro';
 import BrandIcon from '../components/BrandIcon.astro';
 import { PROJECTS } from '../data/projects';
 import { ROLES, COMMUNITY } from '../data/roles';
-import { SKILLS_BY, DESIGNS } from '../data/content';
+import { SKILLS_BY, DESIGNS, FUTURE } from '../data/content';
+import RoleMap from '../components/RoleMap.astro';
+import SectionHead from '../components/SectionHead.astro';
 import { url } from '../lib/url';
 const all = [...PROJECTS, ...COMMUNITY];
 const get = (s: string) => all.find((p) => p.slug === s)!;
@@ -13,14 +15,21 @@ const domains = [
   ...ROLES.map((r) => ({ key: r.key, title: r.title, icon: r.icon, pitch: r.pitch, items: r.items.map(get), more: `roles/${r.key}/` })),
   { key: 'design', title: 'Graphic Design', icon: '🎨', pitch: 'Posters, banners and merch for college clubs and events, made in Figma.', items: [], more: '' },
 ];
+const chips = [...domains, ...FUTURE];
 const SHOW = 6;
 ---
 <Base title="Expertise" description="Karun Pacholi's skills and projects, by domain: DevOps, DevSecOps, open-source maintenance, backend, full stack, AI, MLOps, Web3, DevRel and graphic design.">
   <PageHeader title="Expertise" text="My skills and the work behind them, one domain at a time. Every card links to code, a demo or a post.">
     <nav class="mt-6 flex flex-wrap gap-2" aria-label="Domains">
-      {domains.map((d) => <a href={`#${d.key}`} class="rounded-full border border-line px-3 py-1 text-[13px] font-semibold text-muted transition hover:border-brand hover:text-ink dark:border-night-line dark:hover:text-stone-100">{d.icon} {d.title}</a>)}
+      {chips.map((d) => <a href={`#${d.key}`} class="rounded-full border border-line px-3 py-1 text-[13px] font-semibold text-muted transition hover:border-brand hover:text-ink dark:border-night-line dark:hover:text-stone-100">{d.icon} {d.title}</a>)}
     </nav>
   </PageHeader>
+
+  <section id="map" class="scroll-mt-20 pb-12">
+    <SectionHead title="Role map" />
+    <p class="muted -mt-3 mb-5">The roles I have worked in, and the ones I want to explore next.</p>
+    <RoleMap />
+  </section>
 
   {domains.map((d, i) => (
     <section id={d.key} class={`scroll-mt-20 py-12 ${i % 2 ? 'band' : ''}`}>
@@ -48,6 +57,17 @@ const SHOW = 6;
           {d.items.slice(0, SHOW).map((p) => <ProjectCard p={p} compact />)}
         </div>
       )}
+    </section>
+  ))}
+
+  {FUTURE.map((d, i) => (
+    <section id={d.key} class={`scroll-mt-20 py-12 ${(domains.length + i) % 2 ? 'band' : ''}`}>
+      <div class="mb-4 flex flex-wrap items-center gap-3">
+        <h2 class="font-serif text-[1.9rem] font-semibold text-ink dark:text-stone-50"><span class="mr-2">{d.icon}</span>{d.title}</h2>
+        <span class="rounded-full border border-dashed border-brand/50 px-3 py-0.5 text-[12.5px] font-semibold text-brand dark:border-brand-soft/50 dark:text-brand-soft">{d.note}</span>
+      </div>
+      <p class="max-w-2xl text-[1.05rem] text-stone-700 dark:text-stone-300">{d.pitch}</p>
+      <div class="mt-4 flex flex-wrap gap-1.5">{d.skills.map((k) => <span class="pill text-[12.5px]"><BrandIcon name={k} />{k}</span>)}</div>
     </section>
   ))}
 </Base>

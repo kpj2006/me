@@ -9,6 +9,7 @@ import { SITE, EXPERIENCE, SOCIALS } from '../data/site';
 import { ROLES, COMMUNITY } from '../data/roles';
 import { PROJECTS } from '../data/projects';
 import { PRS, REPOS, ORGS } from '../lib/prs';
+import { DESIGNS } from '../data/content';
 import { url } from '../lib/url';
 
 const all = [...PROJECTS, ...COMMUNITY];
@@ -67,6 +68,10 @@ const featured = ['gitpay', 'no-dues-portal', 'skillbot'].map(get);
           <span class="mr-1">{r.icon}</span>{r.title}
         </button>
       ))}
+      <button data-role="design" role="tab" aria-selected="false"
+        class="role-tab rounded-full border border-line px-3.5 py-1.5 text-sm font-semibold text-muted transition hover:border-brand hover:text-ink aria-selected:border-ink aria-selected:bg-ink aria-selected:text-white dark:border-night-line dark:text-muted dark:aria-selected:border-line dark:aria-selected:bg-paper dark:aria-selected:text-ink">
+        <span class="mr-1">🎨</span>Graphic Design
+      </button>
     </div>
     {ROLES.map((r, i) => (
       <div id={`role-${r.key}`} class="role-panel" hidden={i !== 0}>
@@ -79,6 +84,20 @@ const featured = ['gitpay', 'no-dues-portal', 'skillbot'].map(get);
         </div>
       </div>
     ))}
+    <div id="role-design" class="role-panel" hidden>
+      <div class="mb-5 flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">
+        <p class="text-lg font-medium text-ink dark:text-stone-200">Posters, banners and merch for college clubs and events, made in Figma.</p>
+        <a href={url('expertise/#design')} class="link shrink-0 text-sm">All {DESIGNS.length} designs →</a>
+      </div>
+      <div class="grid gap-5 md:grid-cols-3">
+        {DESIGNS.slice(0, 3).map((x) => (
+          <a href={url('expertise/#design')} class="card card-hover overflow-hidden p-2">
+            <div class="aspect-[4/5] overflow-hidden rounded-sm bg-paper dark:bg-night"><img src={url(`assets/design/${x.img}.jpg`)} alt={x.title} loading="lazy" class="h-full w-full object-cover object-top" /></div>
+            <div class="px-2 pb-1 pt-3"><b class="block font-serif text-lg text-ink dark:text-stone-50">{x.title}</b><span class="muted text-[13px]">{x.sub}</span></div>
+          </a>
+        ))}
+      </div>
+    </div>
   </section>
 
   <!-- Experience -->
