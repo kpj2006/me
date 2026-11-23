@@ -2,20 +2,51 @@
 import Base from '../layouts/Base.astro';
 import PageHeader from '../components/PageHeader.astro';
 import SectionHead from '../components/SectionHead.astro';
+import BrandIcon from '../components/BrandIcon.astro';
 import { PRS, REPOS, ORGS, BY_MONTH, BY_ORG } from '../lib/prs';
+import { GITHUB as G } from '../lib/github';
 import { VIDEOS } from '../data/content';
 const months = BY_MONTH.slice(-14), mmax = Math.max(...months.map((m) => m[1]));
 const omax = BY_ORG[0]?.[1] ?? 1;
-const built = new Date().toISOString().slice(0, 10);
+const updated = (G.updated ?? new Date().toISOString()).slice(0, 10);
+const fmt = (n?: number) => (n == null ? '—' : n.toLocaleString('en-IN'));
+const top = [
+  [PRS.length, 'merged PRs in other orgs'], [REPOS.size, 'repositories contributed to'], [ORGS.size, 'organizations'], [G.year?.contributions, 'contributions, last 12 months'],
+] as [number | undefined, string][];
+const year = G.year ? ([
+  [G.year.commits, 'commits'], [G.year.prs, 'pull requests'], [G.year.reviews, 'PR reviews'], [G.year.issues, 'issues opened'],
+] as [number, string][]) : [];
+const profile = ([
+  [G.followers, 'GitHub followers'], [G.public_repos, 'public repos'], [G.stars, 'stars on my repos'], [G.prs_opened_all_time, 'PRs opened, all time'],
+] as [number | undefined, string][]).filter(([n]) => n != null);
+// contribution heatmap: weeks as columns
+const cal = G.calendar ?? [];
+const cmax = Math.max(1, ...cal.map((d) => d[1]));
+const level = (n: number) => (n === 0 ? 0 : Math.min(4, Math.ceil((n / cmax) * 4)));
+const pad = cal.length ? new Date(cal[0][0]).getUTCDay() : 0;
 ---
-<Base title="Stats" description="Open-source stats for Karun Pacholi.">
-  <PageHeader title="Stats" text={`Numbers from my open-source work. Rebuilt from GitHub data every Monday · last build ${built}.`} />
-  <div class="grid grid-cols-2 gap-3 sm:grid-cols-4">
-    {[[PRS.length, 'merged PRs (other orgs)'], [REPOS.size, 'repositories'], [ORGS.size, 'organizations'], [BY_MONTH.length, 'active months']].map(([n, l]) => (
-      <div class="card"><div class="text-3xl font-extrabold tracking-tight">{n}</div><div class="text-sm text-muted">{l}</div></div>
-    ))}
+<Base title="Stats" description="Karun Pacholi's open-source stats: merged pull requests, organizations, GitHub contributions and activity. Updated automatically every day.">
+  <PageHeader title="Stats" text={`Numbers from my open-source work. Updated automatically every day by GitHub Actions · last update ${updated}.`} />
+  <div class="mb-14 grid grid-cols-2 gap-3 sm:grid-cols-4">
+    {top.map(([n, l]) => <div class="card"><div class="font-serif text-3xl font-semibold">{fmt(n)}</div><div class="text-sm text-muted dark:text-night-muted">{l}</div></div>)}
   </div>
-  <section class="py-14">
+
+  {cal.length > 0 && (
+    <section class="pb-14">
+      <SectionHead title="GitHub activity, last 12 months" />
+      <div class="card overflow-x-auto">
+        <div class="grid grid-flow-col grid-rows-7 gap-[3px]" style="width:max-content">
+          {Array.from({ length: pad }).map(() => <span class="h-[11px] w-[11px]"></span>)}
+          {cal.map(([d, n]) => <span title={`${d}: ${n}`} class={`h-[11px] w-[11px] rounded-[2px] ${['bg-stone-200 dark:bg-stone-800', 'bg-brand/30', 'bg-brand/55', 'bg-brand/80', 'bg-brand'][level(n)]}`}></span>)}
+        </div>
+        <div class="mt-4 grid grid-cols-2 gap-3 sm:grid-cols-4">
+          {year.map(([n, l]) => <div><div class="font-serif text-2xl font-semibold">{fmt(n)}</div><div class="text-[13px] text-muted dark:text-night-muted">{l}</div></div>)}
+        </div>
+      </div>
+    </section>
+  )}
+
+  <section class="pb-14">
     <SectionHead title="Merged PRs per month" />
     <div class="card flex h-64 items-end gap-2">
       {months.map(([k, n]) => (
@@ -32,20 +63,26 @@ const built = new Date().toISOString().slice(0, 10);
     <div class="space-y-2.5">
       {BY_ORG.map(([o, n]) => (
         <div class="grid grid-cols-[10rem_1fr_2.5rem] items-center gap-3 text-sm">
-          <span class="truncate font-medium">{o}</span>
-          <span class="h-2 overflow-hidden rounded-full bg-paper dark:bg-night-card"><span class="block h-full rounded-full bg-gradient-to-r from-brand to-brand-soft" style={`width:${(n / omax) * 100}%`}></span></span>
+          <a href={`https://github.com/${o}`} target="_blank" rel="noopener" class="truncate font-medium hover:text-brand">{o}</a>
+          <span class="h-2 overflow-hidden rounded-full bg-stone-100 dark:bg-night-card"><span class="block h-full rounded-full bg-gradient-to-r from-brand to-brand-soft" style={`width:${(n / omax) * 100}%`}></span></span>
           <span class="text-right font-mono font-semibold">{n}</span>
         </div>
       ))}
     </div>
   </section>
+  {G.languages && G.languages.length > 0 && (
+    <section class="pb-14">
+      <SectionHead title="Languages in my repos" />
+      <div class="flex flex-wrap gap-2">{G.languages.map(([l, n]) => <span class="pill text-[12.5px]"><BrandIcon name={l} />{l} · {n}</span>)}</div>
+    </section>
+  )}
   <section>
-    <SectionHead title="Elsewhere" />
-    <div class="grid grid-cols-3 gap-3">
-      <div class="card"><div class="text-3xl font-extrabold">1,462</div><div class="text-sm text-muted">LinkedIn followers · Nov 2026</div></div>
-      <div class="card"><div class="text-3xl font-extrabold">{VIDEOS.length}+</div><div class="text-sm text-muted">YouTube videos</div></div>
-      <div class="card"><div class="text-3xl font-extrabold" id="ghf">—</div><div class="text-sm text-muted">GitHub followers</div></div>
+    <SectionHead title="Profile" />
+    <div class="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-6">
+      {profile.map(([n, l]) => <div class="card"><div class="font-serif text-2xl font-semibold">{fmt(n)}</div><div class="text-[13px] text-muted dark:text-night-muted">{l}</div></div>)}
+      <div class="card"><div class="font-serif text-2xl font-semibold">{VIDEOS.length}+</div><div class="text-[13px] text-muted dark:text-night-muted">YouTube videos</div></div>
+      <div class="card"><div class="font-serif text-2xl font-semibold">1,462</div><div class="text-[13px] text-muted dark:text-night-muted">LinkedIn followers · Nov 2026</div></div>
     </div>
+    <p class="muted mt-3 text-sm">GitHub numbers update by themselves every day. LinkedIn has no free API, so that one is updated by hand.</p>
   </section>
-  <script is:inline>fetch('https://api.github.com/users/kpj2006').then((r) => r.json()).then((u) => { if (u.followers != null) document.getElementById('ghf').textContent = u.followers; }).catch(() => {});</script>
 </Base>
