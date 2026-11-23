@@ -34,7 +34,13 @@ jobs:
           mkdir -p public
           cp -r assets public/assets
           cp -r data public/data
-      - run: npm run build
+      - name: Build
+        env:
+          # Optional: set these as repository variables after verifying the site
+          # in Google Search Console / Bing Webmaster Tools (HTML tag method).
+          PUBLIC_GOOGLE_SITE_VERIFICATION: ${{ vars.GOOGLE_SITE_VERIFICATION }}
+          PUBLIC_BING_SITE_VERIFICATION: ${{ vars.BING_SITE_VERIFICATION }}
+        run: npm run build
       - uses: actions/upload-pages-artifact@v3
         with:
           path: dist
@@ -48,3 +54,21 @@ jobs:
     steps:
       - id: deployment
         uses: actions/deploy-pages@v4
+      # Tell Bing, Yandex and other IndexNow engines (Bing also feeds ChatGPT and Copilot search) about new pages.
+      - name: Ping IndexNow
+        continue-on-error: true
+        env:
+          EVENT: ${{ github.event_name }}
+        run: |
+          KEY=4b5baf206e54ee65d9e1e479b396256d
+          BASE=https://kpj2006.github.io/me
+          sleep 30
+          if [ "$EVENT" = "workflow_run" ]; then
+            URLS="\"$BASE/\",\"$BASE/stats/\",\"$BASE/llms.txt\""
+          else
+            URLS=$(curl -s "$BASE/sitemap-0.xml" | grep -o '<loc>[^<]*' | sed 's/<loc>//' | sed 's/.*/"&"/' | paste -sd, -)
+            URLS="$URLS,\"$BASE/llms.txt\",\"$BASE/llms-full.txt\""
+          fi
+          curl -s -o /dev/null -w "IndexNow: %{http_code}\n" -X POST https://api.indexnow.org/indexnow \
+            -H "Content-Type: application/json; charset=utf-8" \
+            -d "{\"host\":\"kpj2006.github.io\",\"key\":\"$KEY\",\"keyLocation\":\"$BASE/$KEY.txt\",\"urlList\":[$URLS]}"

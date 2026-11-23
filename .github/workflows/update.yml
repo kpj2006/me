@@ -1,8 +1,10 @@
 name: Update contributions
 
+# Free on public repos. Runs every day, so the Stats page and README stay fresh
+# without anyone pressing a button. The Deploy workflow rebuilds the site after it.
 on:
   schedule:
-    - cron: "17 3 * * 1" # every Monday 03:17 UTC
+    - cron: "17 2 * * *" # every day 02:17 UTC (07:47 IST)
   workflow_dispatch:
   push:
     paths: ["data/contributions.yml", "scripts/**"]
@@ -23,15 +25,20 @@ jobs:
         with:
           python-version: "3.12"
       - run: pip install pyyaml==6.0.2
-      - name: Fetch merged PRs and render
+      - name: Fetch merged PRs and render README
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GH_USER: kpj2006
         run: python scripts/update.py
+      - name: Fetch GitHub profile stats (followers, stars, contributions)
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_USER: kpj2006
+        run: python scripts/stats.py
       - name: Commit if changed
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add README.md domains data/prs.json
-          git diff --cached --quiet || git commit -m "chore: update contributions"
+          git add README.md domains data/prs.json data/github.json
+          git diff --cached --quiet || git commit -m "chore: update contributions and stats"
           git push
