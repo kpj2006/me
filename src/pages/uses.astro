@@ -8,7 +8,7 @@ const slug = (t: string) => t.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(
 <Base title="Uses" description="What Karun Pacholi uses day to day: HP OMEN laptop, Dell monitor, WSL, Docker, VS Code, Cursor, Claude, Ollama, PostgreSQL, Figma and more.">
   <PageHeader title="Uses" text="Updated occasionally; this is what I actually use day to day." />
   <div class="mx-auto max-w-3xl">
-    <figure class="card mb-10 overflow-hidden p-2"><img src={url('assets/setup.jpg')} alt="Karun's desk: HP OMEN laptop on a stand, Dell 24 Plus monitor, Samsung phone, Intex earbuds, Rapoo keyboard and HP mouse" class="w-full rounded-sm" loading="lazy" /><figcaption class="muted px-2 pt-2 text-sm">My desk in Jaipur.</figcaption></figure>
+    <figure class="card mb-10 overflow-hidden p-2"><img src={url('assets/setup.jpg')} alt="Karun's desk: HP OMEN laptop on a stand, Dell 24 Plus monitor, Samsung Galaxy S24 FE, Intex Air Studs Alpha earbuds, Rapoo keyboard and HP mouse" class="w-full rounded-sm" loading="lazy" /><figcaption class="muted px-2 pt-2 text-sm">My desk.</figcaption></figure>
     <nav class="mb-10 flex flex-wrap gap-2">
       {USES.map((u) => <a href={`#${slug(u.title)}`} class="rounded-full border border-line px-3 py-1 text-[13px] font-semibold text-muted hover:border-brand hover:text-ink dark:border-night-line dark:hover:text-stone-100">{u.title}</a>)}
     </nav>
