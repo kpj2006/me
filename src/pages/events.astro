@@ -1,0 +1,49 @@
+---
+import Base from '../layouts/Base.astro';
+import PageHeader from '../components/PageHeader.astro';
+import SectionHead from '../components/SectionHead.astro';
+import ProjectCard from '../components/ProjectCard.astro';
+import { COMMUNITY } from '../data/roles';
+import { SITE } from '../data/site';
+import { url } from '../lib/url';
+const done = ['fetchathon', 'aaif', 'asi', 'gemini', 'cybros'].map((s) => COMMUNITY.find((p) => p.slug === s)!);
+const help = [
+  { icon: '🏁', title: 'Hackathons', text: 'Campus or city rounds end to end: theme, judges, mentors, prizes and the day itself — like Fetch-A-Thon 3.0.' },
+  { icon: '🤝', title: 'Meetups and community chapters', text: 'Start and grow a local chapter, as I do for AAIF and ASI:ONE.' },
+  { icon: '🎤', title: 'Talks and workshops', text: 'Hands-on sessions on open source, DevOps, AI agents and Web3.' },
+  { icon: '🚀', title: 'Developer launches', text: 'Bring your tool or API to students and early developers, with a demo they can follow.' },
+  { icon: '🌱', title: 'Open-source drives', text: 'First-PR events and mentoring, from my GSSoC’26 mentor and maintainer work.' },
+  { icon: '📣', title: 'Promotion and recap', text: 'Posts, photos and videos before and after the event, so it keeps reaching people.' },
+];
+const ways = [
+  { icon: '✉️', title: 'Email me', text: 'Share the event idea, city and date.', href: `mailto:${SITE.email}?subject=Dev event in India` },
+  { icon: '📅', title: 'Book a call', text: 'Plan it together in 30 minutes.', href: SITE.calendar },
+  { icon: '💬', title: 'Contact form', text: 'Pick "Community event" as the topic.', href: url('work-with-me/#contact') },
+];
+---
+<Base title="Organize a dev event" description="Want to organize a developer event in India? Karun Pacholi runs hackathons, meetups and workshops: Fetch-A-Thon 3.0, AAIF and ASI:ONE communities, Gemini sessions.">
+  <PageHeader title="Organize a dev event" text="Want to run a hackathon, meetup or workshop for developers in India? I can plan and host it with you." />
+  <section class="pb-12">
+    <SectionHead title="Events and communities I run" />
+    <p class="muted -mt-3 mb-5">Organizer of Fetch-A-Thon 3.0, AAIF community organizer, ASI:ONE community lead and Gemini Student Ambassador. I can do the same for your event.</p>
+    <div class="grid gap-4 md:grid-cols-2">{done.map((p) => <ProjectCard p={p} compact />)}</div>
+  </section>
+  <section class="pb-12">
+    <SectionHead title="From Fetch-A-Thon 3.0" />
+    <div class="grid grid-cols-2 gap-3 sm:grid-cols-4">
+      {['hall', 'winners-1', 'hacking', 'winners-2'].map((n) => <img src={url(`assets/fetchathon/${n}.jpg`)} alt="Fetch-A-Thon 3.0" loading="lazy" class="aspect-[4/3] w-full rounded-md object-cover" />)}
+    </div>
+  </section>
+  <section class="band py-12">
+    <SectionHead title="What I can do for your event" />
+    <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+      {help.map((h) => <div class="card"><div class="text-2xl">{h.icon}</div><h3 class="mt-2 font-semibold text-ink dark:text-stone-50">{h.title}</h3><p class="mt-1 text-[14.5px] text-muted dark:text-night-muted">{h.text}</p></div>)}
+    </div>
+  </section>
+  <section class="py-12">
+    <SectionHead title="How to work together" />
+    <div class="grid gap-4 sm:grid-cols-3">
+      {ways.map((w) => <a href={w.href} target={w.href.startsWith('http') ? '_blank' : undefined} rel="noopener" class="card card-hover"><div class="text-2xl">{w.icon}</div><h3 class="mt-2 font-semibold">{w.title}</h3><p class="text-sm text-muted dark:text-night-muted">{w.text}</p></a>)}
+    </div>
+  </section>
+</Base>
