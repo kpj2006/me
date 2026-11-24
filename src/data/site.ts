@@ -6,7 +6,7 @@ export const SITE = {
   tagline: 'Software engineer across DevOps, backend, AI and Web3.',
   intro:
     'I build CI/CD and security pipelines, backend services, LLM tools and on-chain apps — and ship them to real users in open source.',
-  location: 'Jaipur, India',
+  location: 'India',
   email: 'jaihanumanji2006@gmail.com',
   resume: 'https://docs.google.com/document/d/1c9CfRKa6iIBsk2vvV6EQX7kZ4jbOnIymQfl7N_JmMT0/edit?usp=sharing',
   calendar: 'https://calendar.app.google/Wvp7aZNk29KuAJxH6',

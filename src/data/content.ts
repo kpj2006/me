@@ -1,7 +1,7 @@
 const yt = (id: string) => `https://www.youtube.com/watch?v=${id}`;
 
 export const TALKS = [
-  { date: 'Oct 2026', role: 'Organizer', img: 'assets/fetchathon/hall.jpg', title: 'Fetch-A-Thon 3.0 — Jaipur campus', text: 'National AI-agent hackathon with Fetch.ai Innovation Lab, hosted by Cybros at LNMIIT. ₹1,00,000 prize pool.', links: [{ label: 'Recap post', url: 'https://www.linkedin.com/feed/update/urn:li:activity:7520479036943384577/' }] },
+  { date: 'Oct 2026', role: 'Organizer', img: 'assets/fetchathon/hall.jpg', title: 'Fetch-A-Thon 3.0 — LNMIIT campus round', text: 'National AI-agent hackathon with Fetch.ai Innovation Lab, hosted by Cybros at LNMIIT. ₹1,00,000 prize pool.', links: [{ label: 'Recap post', url: 'https://www.linkedin.com/feed/update/urn:li:activity:7520479036943384577/' }] },
   { date: 'Sep 2026', role: 'Organizer', img: 'https://i.ytimg.com/vi/oZPpCTzGrgw/hqdefault.jpg', title: 'Exploring Autonomous AI with Fetch.ai', text: 'Session on AI agents, autonomous systems and decentralized AI for LNMIIT students.', links: [{ label: 'Watch', url: yt('oZPpCTzGrgw') }] },
   { date: 'Sep 2026', role: 'Speaker', img: 'https://i.ytimg.com/vi/1f1UBNwXgM0/hqdefault.jpg', title: 'Cybros OSDC intro', text: 'Introducing the open-source club at LNMIIT, with Sushmit Sharma.', links: [{ label: 'Watch', url: yt('1f1UBNwXgM0') }] },
     { date: 'Jul 2026', role: 'Speaker', img: 'https://i.ytimg.com/vi/6dBKYvTGn3M/hqdefault.jpg', title: 'Everything About Open Source in 1 Hour', text: 'First Cybros OSDC session: open-source programs (GSoC, LFX and more), foundations and careers.', links: [{ label: 'Watch', url: yt('6dBKYvTGn3M') }] },
@@ -27,7 +27,7 @@ export const ISSUES = [
   { no: '#4', date: 'Oct 2026', title: 'GitPay v1.1.0 and Fetch-A-Thon', points: ['Released GitPay v1.1.0: maintainers pay contributors from a PR comment.', 'Hosted Fetch-A-Thon 3.0, an AI-agent hackathon, at LNMIIT on 24 Oct.'], url: 'https://www.linkedin.com/feed/update/urn:li:activity:7522430543284645888/' },
   { no: '#3', date: 'Sep 2026', title: 'First real payment on-chain', points: ['XOps (now GitPay) sent a real Safe → contributor payment on Sepolia.', 'Duplicate payments and non-maintainer triggers are rejected. 90 tests pass in CI.', 'Lesson: passing tests ≠ working workflow — a live run found a config bug.'], url: 'https://www.linkedin.com/in/kpj2006/recent-activity/all/' },
   { no: '#2', date: 'Aug 2026', title: 'Why payouts should be a GitHub Action', points: ['Settlement is the last manual step in the delivery pipeline.', 'A versioned Action, not a service: no server and no cost for the org.'], url: 'https://www.linkedin.com/feed/update/urn:li:activity:7496770465722445824/' },
-  { no: '#1', date: 'Jun–Jul 2026', title: 'Skill Bot and PR Dashboard', points: ['Skill Bot asks a clarifying question instead of guessing when a message is vague.', 'Skill Bot can be @mentioned in any Discord channel and answers in a thread.', 'Became AAIF Community Organizer for Jaipur.'], url: 'https://www.linkedin.com/in/kpj2006/recent-activity/all/' },
+  { no: '#1', date: 'Jun–Jul 2026', title: 'Skill Bot and PR Dashboard', points: ['Skill Bot asks a clarifying question instead of guessing when a message is vague.', 'Skill Bot can be @mentioned in any Discord channel and answers in a thread.', 'Became an AAIF Community Organizer.'], url: 'https://www.linkedin.com/in/kpj2006/recent-activity/all/' },
 ];
 
 export const PEOPLE = [
@@ -39,7 +39,7 @@ export const PEOPLE = [
   { name: 'Sushmit Sharma', org: 'Cybros · LNMIIT', note: 'Co-presented the Cybros OSDC intro' },
   { name: 'Rahul Parundekar', org: 'Agentic AI Foundation', note: 'AAIF chapter program' },
   { name: 'Ijeoma Onwuka', org: 'Agentic AI Foundation', note: 'AAIF chapter program' },
-  { name: 'Demetrios Brinkmann', org: 'Linux Foundation', note: 'AAIF Jaipur onboarding' },
+  { name: 'Demetrios Brinkmann', org: 'Linux Foundation', note: 'AAIF chapter onboarding' },
   { name: 'Saurabh Mishra', org: 'AAIF Pune chapter', note: 'Fellow chapter organizer' },
 ];
 
@@ -49,14 +49,14 @@ export const CERTS = [
   { icon: '🏗️', title: 'Certified Rootstock Builder', sub: 'Rootcamp I · top 20 builders · PRStake winning project', year: '2026' },
   { logo: 'Gemini', icon: '✨', title: 'Gemini Student Ambassador', sub: 'Google · GSA ID 14079', year: '2026' },
   { logo: 'Solana', icon: '◎', title: 'Solana Summer School', sub: 'Solana Foundation · selected', year: '2026' },
-  { logo: 'Linux Foundation', icon: '🤝', title: 'AAIF Community Organizer', sub: 'Agentic AI Foundation · Jaipur', year: '2026' },
+  { logo: 'Linux Foundation', icon: '🤝', title: 'AAIF Community Organizer', sub: 'Agentic AI Foundation', year: '2026' },
   { icon: '🧑‍🏫', title: 'GSSoC’26 Mentor', sub: 'GirlScript Summer of Code', year: '2026' },
   { icon: '⚖️', title: 'Apprentice of the Stable Order', sub: 'Stability Nexus', year: '2026' },
   { icon: '🎓', title: 'UHI Alumnus (UHI 8)', sub: 'UHI', year: '' },
 ];
 
 export const EVENTS = [
-  { date: 'Oct 2026', title: 'Fetch-A-Thon 3.0 · Jaipur campus', role: 'Organizer', text: 'AI-agent hackathon with Fetch.ai Innovation Lab at LNMIIT.', url: 'https://www.linkedin.com/feed/update/urn:li:activity:7520479036943384577/' },
+  { date: 'Oct 2026', title: 'Fetch-A-Thon 3.0 · LNMIIT campus round', role: 'Organizer', text: 'AI-agent hackathon with Fetch.ai Innovation Lab at LNMIIT.', url: 'https://www.linkedin.com/feed/update/urn:li:activity:7520479036943384577/' },
   { date: 'May–Nov 2026', title: 'Google Summer of Code 2026', role: 'Contributor · DevOps Lead', text: 'AOSSIE.', url: 'https://github.com/AOSSIE-Org' },
   { date: '2026', title: 'Solana Summer School', role: 'Participant', text: 'Solana Foundation.', url: '' },
   { date: 'Jan–Apr 2026', title: 'LFX Mentorship', role: 'Mentee', text: 'Magma, Linux Foundation.', url: 'https://github.com/magma/magma' },
@@ -85,8 +85,8 @@ export const USES: { title: string; items: Use[] }[] = [
     ['Mouse', 'HP M120 wireless mouse'],
     ['Desk mat', 'Medium size, black'],
     ['Laptop stand', 'Keeps the OMEN raised next to the monitor'],
-    ['Phone', 'Samsung Galaxy on a desk stand'],
-    ['Earbuds', 'Intex TWS for calls and music'],
+    ['Phone', 'Samsung Galaxy S24 FE on a desk stand'],
+    ['Earbuds', 'Intex Air Studs Alpha (true wireless) for calls and music'],
     ['Extra screen', 'spacedesk and Second screen turn my phone or tablet into a third display'],
   ] },
   { title: 'Dev Machines', items: [
