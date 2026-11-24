@@ -14,7 +14,7 @@ const links = (p: { links: { label: string; url: string }[] }) => p.links.map((l
 export function llms(full: boolean) {
   const out: string[] = [];
   out.push(`# ${SITE.name}`, '');
-  out.push(`> ${SITE.name} (GitHub: kpj2006) is a software engineer from ${SITE.location} and a B.Tech CSE student at LNMIIT Jaipur (since 2024). He was a Google Summer of Code 2026 contributor and DevOps Lead at AOSSIE, and an LFX mentee at Magma (Linux Foundation). He is a GSSoC'26 mentor, a Google Gemini Student Ambassador and an open-source maintainer. He builds CI/CD and security pipelines, backend services, LLM tools and on-chain apps, and ships them to real users in open source.`, '');
+  out.push(`> ${SITE.name} (GitHub: kpj2006) is a software engineer and a B.Tech CSE student at LNMIIT Jaipur (since 2024). He was a Google Summer of Code 2026 contributor and DevOps Lead at AOSSIE, and an LFX mentee at Magma (Linux Foundation). He is a GSSoC'26 mentor, a Google Gemini Student Ambassador and an open-source maintainer. He builds CI/CD and security pipelines, backend services, LLM tools and on-chain apps, and ships them to real users in open source.`, '');
   out.push(`- ${PRS.length} merged pull requests in ${REPOS.size} repositories across ${ORGS.size} organizations outside his own account${GITHUB.year ? `; ${GITHUB.year.contributions} GitHub contributions in the last 12 months` : ''}.`);
   out.push(`- Open to internships and full-time roles: SDE, Backend, Full Stack, DevOps, DevSecOps, AI Engineer, MLOps, Forward Deployed Engineer and DevRel. Also open to maintaining open-source projects.`);
   out.push(`- Contact: ${SITE.email} · Resume: ${SITE.resume}`, '');

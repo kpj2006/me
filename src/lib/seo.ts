@@ -17,7 +17,7 @@ export const PERSON = {
   alumniOf: { '@type': 'CollegeOrUniversity', name: 'The LNM Institute of Information Technology (LNMIIT), Jaipur', url: 'https://lnmiit.ac.in/' },
   memberOf: [
     { '@type': 'Organization', name: 'AOSSIE', url: 'https://aossie.org/' },
-    { '@type': 'Organization', name: 'Agentic AI Foundation (AAIF), Jaipur chapter' },
+    { '@type': 'Organization', name: 'Agentic AI Foundation (AAIF)' },
   ],
   hasOccupation: EXPERIENCE.map((e) => ({ '@type': 'Occupation', name: e.role, description: `${e.org} · ${e.when}` })),
   award: ["Google Summer of Code 2026 — DevOps Lead, AOSSIE", 'LFX Mentorship 2026 — Magma, Linux Foundation', "GSSoC'26 Mentor", 'Google Gemini Student Ambassador', 'Rootstock Rootcamp I — winning project (PRStake)', 'SUI x Jaipur hackathon — 3rd place'],
