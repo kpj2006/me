@@ -3,13 +3,24 @@ import Base from '../layouts/Base.astro';
 import PageHeader from '../components/PageHeader.astro';
 import { USES } from '../data/content';
 import { url } from '../lib/url';
+const slug = (t: string) => t.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/-$/, '');
 ---
-<Base title="Uses" description="Tools Karun Pacholi uses daily.">
-  <PageHeader title="Uses" text="Hardware, software and tools I use daily. Updated now and then." />
-  <figure class="card mb-6 overflow-hidden p-2"><img src={url('assets/setup.jpg')} alt="Karun's desk: HP OMEN laptop, Dell 24 Plus monitor, Rapoo keyboard and HP mouse" class="w-full rounded-sm" loading="lazy" /><figcaption class="muted px-2 pt-2 text-sm">My desk in Jaipur.</figcaption></figure>
-  <div class="grid gap-4 sm:grid-cols-2">
+<Base title="Uses" description="What Karun Pacholi uses day to day: HP OMEN laptop, Dell monitor, WSL, Docker, VS Code, Cursor, Claude, Ollama, PostgreSQL, Figma and more.">
+  <PageHeader title="Uses" text="Updated occasionally; this is what I actually use day to day." />
+  <div class="mx-auto max-w-3xl">
+    <figure class="card mb-10 overflow-hidden p-2"><img src={url('assets/setup.jpg')} alt="Karun's desk: HP OMEN laptop on a stand, Dell 24 Plus monitor, Samsung phone, Intex earbuds, Rapoo keyboard and HP mouse" class="w-full rounded-sm" loading="lazy" /><figcaption class="muted px-2 pt-2 text-sm">My desk in Jaipur.</figcaption></figure>
+    <nav class="mb-10 flex flex-wrap gap-2">
+      {USES.map((u) => <a href={`#${slug(u.title)}`} class="rounded-full border border-line px-3 py-1 text-[13px] font-semibold text-muted hover:border-brand hover:text-ink dark:border-night-line dark:hover:text-stone-100">{u.title}</a>)}
+    </nav>
     {USES.map((u) => (
-      <div class="card"><h3 class="font-semibold text-ink dark:text-stone-50">{u.title}</h3><ul class="mt-2 list-disc space-y-1 pl-5 text-[14.5px] text-muted dark:text-muted">{u.items.map((x) => <li set:html={x} />)}</ul></div>
+      <section id={slug(u.title)} class="scroll-mt-20 pb-9">
+        <h2 class="mb-3 font-serif text-[1.6rem] font-semibold text-ink dark:text-stone-50">{u.title}<a href={`#${slug(u.title)}`} class="ml-1.5 text-brand/60 no-underline hover:text-brand">#</a></h2>
+        <ul class="list-disc space-y-1.5 pl-5 text-[16px] leading-relaxed text-stone-700 marker:text-brand dark:text-stone-300 dark:marker:text-brand-soft">
+          {u.items.map(([name, what, link]) => (
+            <li><b class="font-semibold text-ink dark:text-stone-100">{link ? <a class="link" href={link} target="_blank" rel="noopener">{name}</a> : name}</b>: {what}</li>
+          ))}
+        </ul>
+      </section>
     ))}
   </div>
 </Base>
