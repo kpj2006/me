@@ -13,11 +13,10 @@ export const PERSON = {
   image: abs('assets/karun-lake.jpg'),
   jobTitle: 'Software Engineer (DevOps, Backend, AI, Web3)',
   description: `${SITE.tagline} ${SITE.intro}`,
-  homeLocation: { '@type': 'Place', name: SITE.location },
   alumniOf: { '@type': 'CollegeOrUniversity', name: 'The LNM Institute of Information Technology (LNMIIT), Jaipur', url: 'https://lnmiit.ac.in/' },
   memberOf: [
     { '@type': 'Organization', name: 'AOSSIE', url: 'https://aossie.org/' },
-    { '@type': 'Organization', name: 'Agentic AI Foundation (AAIF)' },
+    { '@type': 'Organization', name: 'Agentic AI Foundation (AAIF), Jaipur chapter' },
   ],
   hasOccupation: EXPERIENCE.map((e) => ({ '@type': 'Occupation', name: e.role, description: `${e.org} · ${e.when}` })),
   award: ["Google Summer of Code 2026 — DevOps Lead, AOSSIE", 'LFX Mentorship 2026 — Magma, Linux Foundation', "GSSoC'26 Mentor", 'Google Gemini Student Ambassador', 'Rootstock Rootcamp I — winning project (PRStake)', 'SUI x Jaipur hackathon — 3rd place'],
