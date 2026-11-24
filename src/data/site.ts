@@ -42,7 +42,8 @@ export const MORE = [
   { label: 'Certificates', href: 'certificates/' },
   { label: 'Uses', href: 'uses/' },
   { label: 'Stats', href: 'stats/' },
-  { label: 'Hire a maintainer', href: 'maintain/' },
+  { label: 'Hire me as a maintainer', href: 'maintain/' },
+  { label: 'Organize a dev event', href: 'events/' },
 ];
 
 export const FACTS = [

@@ -28,16 +28,16 @@ export const ROLES: Role[] = [
 
 // DevRel / volunteering blocks (not code projects)
 export const COMMUNITY: Project[] = [
-  { slug: 'fetchathon', name: 'Fetch-A-Thon 3.0 · LNMIIT', badge: 'Organizer', summary: 'National AI-agent hackathon with Fetch.ai Innovation Lab, hosted by Cybros at LNMIIT on 24 Oct 2026. ₹1,00,000 prize pool.',
+  { slug: 'fetchathon', name: 'Fetch-A-Thon 3.0 · Jaipur', badge: 'Organizer', summary: 'National AI-agent hackathon with Fetch.ai Innovation Lab, hosted by Cybros at LNMIIT on 24 Oct 2026. ₹1,00,000 prize pool.',
     did: ['Ran the campus round and the pre-event “Exploring Autonomous AI with Fetch.ai” session.'], stack: ['Hackathon', 'AI agents'], domains: ['devrel'],
     links: [{ label: 'Post', url: 'https://www.linkedin.com/feed/update/urn:li:activity:7520479036943384577/' }, { label: 'Video', url: 'https://www.youtube.com/watch?v=oZPpCTzGrgw' }] },
   { slug: 'gemini', name: 'Google Gemini Student Ambassador', badge: 'GSA ID 14079', summary: 'Represent Gemini on campus: workshops and AI adoption among students.',
     did: ['Campus sessions and Gemini usage drives.'], stack: ['Google', 'Gemini'], domains: ['devrel'],
     links: [{ label: 'Docs', url: 'https://grow.google/intl/ALL_in/ai-skills/' }] },
-  { slug: 'aaif', name: 'AAIF Community Organizer', badge: 'Linux Foundation', summary: 'Building a local chapter of the Agentic AI Foundation: vendor-neutral, builder-first agentic AI events.',
+  { slug: 'aaif', name: 'AAIF Community Organizer · Jaipur', badge: 'Linux Foundation', summary: 'Building the Jaipur chapter of the Agentic AI Foundation: vendor-neutral, builder-first agentic AI events.',
     did: ['Started the chapter and its speaker/company network.'], stack: ['Community', 'Agentic AI'], domains: ['devrel'],
     links: [{ label: 'Post', url: 'https://www.linkedin.com/feed/update/urn:li:activity:7484794478403268609/' }] },
-  { slug: 'asi', name: 'ASI:ONE Community Lead', summary: 'Growing the agentic and decentralized AI community since Oct 2026.',
+  { slug: 'asi', name: 'ASI:ONE Community Lead · Jaipur', summary: 'Growing the agentic and decentralized AI community in Jaipur since Oct 2026.',
     did: ['Meetups, workshops and ecosystem partner connections.'], stack: ['Community', 'Agentic AI'], domains: ['devrel'],
     links: [{ label: 'Page', url: 'https://www.linkedin.com/company/asi-one-community-jaipur/' }] },
   { slug: 'swytchcode', name: 'Swytchcode developer community', summary: 'Hands-on with Swytchcode’s CLI and API-integration platform; shared it with developers.',
