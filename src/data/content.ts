@@ -75,18 +75,92 @@ export const HELP = [
   { icon: '🎤', title: 'Talks, workshops & hackathons', text: 'Sessions on open source, DevOps and AI agents; I organized a national AI-agent hackathon campus round.' },
 ];
 
-export const USES = [
-  { title: 'Desk setup', items: [
-    'Laptop: HP OMEN — Intel Core i7-13620H, NVIDIA GeForce RTX 4060 (8 GB), 16 GB RAM, 1 TB SSD, 144 Hz display, Windows + WSL',
-    'Monitor: Dell 24 Plus (S2425HSM)',
-    'Keyboard: <a class="link" href="https://rapoo.in/keyboards/rapoo-e9350l/" target="_blank" rel="noopener">Rapoo E9350L wireless</a>',
-    'Mouse: HP M120 wireless mouse',
-    'Medium-size desk mat',
+// Uses page, written like kakkoyun.me/uses. Each item: [name, what I use it for, link?]
+export type Use = [string, string, string?];
+export const USES: { title: string; items: Use[] }[] = [
+  { title: 'Hardware / Desk', items: [
+    ['Laptop', 'HP OMEN — Intel Core i7-13620H, NVIDIA GeForce RTX 4060 (8 GB), 16 GB RAM, 1 TB SSD, 144 Hz display'],
+    ['Monitor', 'Dell 24 Plus (S2425HSM)'],
+    ['Keyboard', 'Rapoo E9350L wireless', 'https://rapoo.in/keyboards/rapoo-e9350l/'],
+    ['Mouse', 'HP M120 wireless mouse'],
+    ['Desk mat', 'Medium size, black'],
+    ['Laptop stand', 'Keeps the OMEN raised next to the monitor'],
+    ['Phone', 'Samsung Galaxy on a desk stand'],
+    ['Earbuds', 'Intex TWS for calls and music'],
+    ['Extra screen', 'spacedesk and Second screen turn my phone or tablet into a third display'],
   ] },
-  { title: 'Editors & AI', items: ['VS Code, Cursor and Antigravity', 'GitHub Copilot, Gemini CLI and Claude', 'Ollama for local LLMs on the RTX 4060'] },
-  { title: 'Languages & toolchains', items: ['Python (Anaconda), Node.js and Bun, Go, C++', 'Foundry for Solidity, Sui CLI', 'Expo and Android SDK for mobile'] },
-  { title: 'DevOps & infra', items: ['GitHub Actions, Docker', 'VirtualBox + Vagrant for reproducible VMs', 'Kubernetes; Railway and Vercel for quick deploys'] },
-  { title: 'Everyday', items: ['Discord — where most of my open-source work happens', 'WakaTime for coding time', 'Google Workspace and Notion'] },
+  { title: 'Dev Machines', items: [
+    ['Windows 11', 'Main OS on the OMEN'],
+    ['WSL', 'Ubuntu 22.04 and Alpine Linux for Linux-first work'],
+    ['Docker Desktop', 'Containers for reproducible toolchains'],
+    ['kind', 'Local Kubernetes clusters'],
+    ['VirtualBox + Vagrant', 'Reproducible VMs (used a lot during LFX Magma)'],
+  ] },
+  { title: 'Terminal / CLI', items: [
+    ['Windows Terminal + PowerShell 7', 'Daily shell, themed with Oh My Posh'],
+    ['Warp', 'AI terminal for longer sessions'],
+    ['git, GitHub CLI, GitHub Desktop', 'Version control and PRs from the terminal'],
+    ['act', 'Run GitHub Actions locally before pushing'],
+    ['bat, Volta, Pandoc', 'Better cat, Node version manager, doc conversion'],
+    ['AWS CLI, Google Cloud SDK', 'Cloud work from the terminal'],
+  ] },
+  { title: 'Editors & AI', items: [
+    ['VS Code', 'Main editor'],
+    ['Cursor and Antigravity IDE', 'Agentic coding'],
+    ['Claude', 'Claude desktop and Claude Code for most writing and coding help'],
+    ['GitHub Copilot, Microsoft Copilot, Google AI Studio, IBM Bob', 'Second opinions and quick prototypes'],
+    ['Perplexity', 'Research with sources'],
+    ['Ollama', 'Local LLMs on the RTX 4060'],
+    ['Visual Studio + Build Tools', 'C++ and .NET builds on Windows'],
+  ] },
+  { title: 'Languages & Toolchains', items: [
+    ['Python', '3.11 and 3.13, plus Anaconda for data work'],
+    ['Node.js', 'TypeScript and JavaScript projects'],
+    ['Go', 'Services and CLIs'],
+    ['C++ with CMake', 'DSA practice and systems code'],
+    ['Java (Temurin JDK) and .NET SDK', 'When a project needs them'],
+    ['Android Studio', 'Mobile builds and emulators'],
+    ['Foundry and Sui CLI', 'Solidity and Move smart contracts'],
+  ] },
+  { title: 'Databases', items: [
+    ['PostgreSQL 17', 'With pgAgent and PgBouncer'],
+    ['MySQL 8.4', 'For college and older projects'],
+  ] },
+  { title: 'Security & Networking', items: [
+    ['Burp Suite', 'Testing web apps'],
+    ['Wireshark + Npcap', 'Packet capture and debugging'],
+    ['Cisco Packet Tracer', 'Computer Networks coursework'],
+    ['Cloudflare One (WARP)', 'Secure network access'],
+  ] },
+  { title: 'Design & Content', items: [
+    ['Figma', 'Posters, banners and UI', 'https://github.com/kpj2006/Figma'],
+    ['Inkscape', 'Vector graphics'],
+    ['OBS Studio and Clipchamp', 'Recording and editing my YouTube demos'],
+    ['ShareX and Snipping Tool', 'Screenshots and screen GIFs'],
+  ] },
+  { title: 'Notes & Productivity', items: [
+    ['Notion and AppFlowy', 'Plans, notes and project docs'],
+    ['OneNote, Microsoft To Do, Sticky Notes', 'Class notes and daily tasks'],
+    ['Microsoft Whiteboard', 'Sketching system designs'],
+    ['ActivityWatch', 'Tracks where my time goes'],
+    ['Ditto, AutoHotkey, X-Mouse Button Control', 'Clipboard history, shortcuts and mouse macros'],
+    ['Power Automate and UI.Vision RPA', 'Automating boring desktop tasks'],
+  ] },
+  { title: 'Communication', items: [
+    ['Discord', 'Where most of my open-source work happens'],
+    ['Slack, Telegram, WhatsApp', 'Teams, communities and friends'],
+    ['Zoom, Microsoft Teams, Outlook', 'Calls and mail'],
+  ] },
+  { title: 'Everyday', items: [
+    ['Brave and Chrome', 'Browsers'],
+    ['Spotify', 'Music while coding'],
+    ['7-Zip, TreeSize, Diffchecker', 'Archives, disk space and quick diffs'],
+    ['Samsung Flow and Chrome Remote Desktop', 'Phone ↔ laptop and remote access'],
+  ] },
+  { title: 'Off the clock', items: [
+    ['World of Tanks', 'Gaming on the RTX 4060'],
+    ['Graphic design and photography', 'Free-time hobbies'],
+  ] },
 ];
 
 // Skills shown under each domain on /expertise (keys match ROLES).
